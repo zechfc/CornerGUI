@@ -1,0 +1,9 @@
+{
+    "java.debug.settings.onBuildFailureProceed": true
+    ,
+    "java.test.config": {
+            "workingDirectory": "${workspaceFolder}"
+        }
+
+}
+
