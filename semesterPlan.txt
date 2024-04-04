@@ -1,0 +1,34 @@
+Semester 1:
+ENGL101: Critical Reading and Composition
+MATH141: Calculus I
+CSCE145: Algorithmic Design I
+CSCE190: Computing in the Modern World
+Semester 2:
+ENGL102: Rhetoric and Composition
+MATH142: Calculus II
+CHEM111: General Chemistry I
+CHEM111L: General Chemistry I Lab
+CSCE215: UNIX/Linux Fundamentals
+CSCE146: Algorithmic Design II
+Semester 3:
+CSCE211: Digital Logic Design
+CSCE240: Advanced Programming Techniques
+MATH374: Discrete Structures
+Semester 4:
+CSCE212: Introduction to Computer Architecture
+CSCE247: Software Engineering
+MATH241: Vector Calculus
+Semester 5:
+CSCE311: Operating Systems
+CSCE330: Programming Language Structures
+CSCE350: Data Structures and Algorithms
+CSCE390: Professional Issues in Computer Science and Engineering
+ENGL462: Technical Writing
+Semester 6:
+Semester 7:
+MATH344: Applied Linear Algebra
+MATH344L: Applied Linear Algebra Lab
+CSCE355: Foundations of Computation
+CSCE490: Capstone Computing Project I
+Semester 8:
+CSCE492: Capstone Computing Project II

@@ -1,0 +1,516 @@
+[{
+    "majorid": "a31c3094-3470-4c46-a45f-3b1001d15da2",
+    "name": "Computer Science",
+    "description": "Bachelor of Science in Computer Science",
+    "totalHours":150,
+    "totalHoursProgramRequirements": 46,
+    "programRequirements": [{
+                    "courseID":  "f8b358bf-d69e-4aae-b10c-8dc98f1f651f",
+                    "courseCode": "MATH241",
+                    "title": "Vector Calculus",
+                    "credits": 3,
+                    "recommendedtime": "Sophomore",
+                    "recommendedterm":"Spring"
+                },
+                {
+                    "courseID":  "12b2ee6d-d2c5-47fb-93de-08b5950ea2ae",
+                    "courseCode": "MATH344",
+                    "title": "Applied Linear Algebra",
+                    "credits": 3,
+                    "recommendedtime": "Senior",
+                    "recommendedterm":"Fall"
+                },
+                {
+                    "courseID":  "944f3d4d-9424-48c0-840e-18a79e18e00b",
+                    "courseCode": "MATH344L",
+                    "title": "Applied Linear Algebra Lab",
+                    "credits": 1,
+                    "recommendedtime": "Senior",
+                    "recommendedterm":"Fall"
+                },
+                {
+                    "courseID":  "928eb174-dea9-4b98-80b1-ac594c4360f8",
+                    "courseCode": "MATH374",
+                    "title": "Discrete Structures (must be passed with a grade of C or higher)",
+                    "credits": 3,
+                    "recommendedtime": "Sophomore",
+                    "recommendedterm":"Fall"
+                },
+                {
+                    "courseID":  "f4b55e57-6034-4462-81ca-13c559697988",
+                    "courseCode": "STAT509",
+                    "title": "Statistics for Engineers",
+                    "credits": 3,
+                    "recommendedtime": "Junior",
+                    "recommendedterm":"Spring"
+                },
+                {
+                    "courseID":  "7100ca89-33cf-40da-acbe-84af49e92c3c",
+                    "courseCode": "ENGL462",
+                    "title": "Technical Writing",
+                    "credits": 3,
+                    "recommendedtime": "Junior",
+                    "recommendedterm":"Fall"
+                },
+                {
+                    "courseID":  "c85eb519-e97b-488b-ba02-2947764cfe92",
+                    "courseCode": "ASTR101",
+                    "title": "Introduction to Astronomy",
+                    "credits": 4
+                },
+                {
+                    "courseID":  "2e2ebf3f-c4d3-4dae-956b-d8afa7fca627",
+                    "courseCode": "CSCE145",
+                    "title": "Algorithmic Design I",
+                    "credits": 4,
+                    "recommendedtime": "Freshman",
+                    "recommendedterm":"Fall"
+                },
+                {
+                    "courseID":  "57eaa5d5-a439-43b1-87fc-2d3a4c0b9cd6",
+                    "courseCode": "CSCE146",
+                    "title": "Algorithmic Design II",
+                    "credits": 4,
+                    "recommendedtime": "Freshman",
+                    "recommendedterm":"Spring"
+                },
+                {
+                    "courseID":  "3cca9c4e-a195-4759-a761-cfe09adb20b8",
+                    "courseCode": "CSCE190",
+                    "title": "Computing in the Modern World",
+                    "credits": 1,
+                    "recommendedtime": "Freshman",
+                    "recommendedterm":"Fall"
+                },
+                {
+                    "courseID":  "789c6ed0-53e3-476c-8761-f08bf727d08c",
+                    "courseCode": "CSCE211",
+                    "title": "Digital Logic Design",
+                    "credits": 3,
+                    "recommendedtime": "Sophomore",
+                    "recommendedterm":"Fall"
+                },
+                {
+                    "courseID":  "dd218911-2c00-46b4-99fc-0aa909331369",
+                    "courseCode": "CSCE212",
+                    "title": "Introduction to Computer Architecture",
+                    "credits": 3,
+                    "recommendedtime": "Sophomore",
+                    "recommendedterm":"Spring"
+                },
+                {
+                    "courseID":  "9b9ea0d0-3574-44be-b6cf-1ef50ce2aa23",
+                    "courseCode": "CSCE215",
+                    "title": "UNIX/Linux Fundamentals",
+                    "credits": 1,
+                    "recommendedtime": "Freshman",
+                    "recommendedterm":"Spring"
+                },
+                {
+                    "courseID":  "39046cda-f913-4f9b-a002-f06e7c59f235",
+                    "courseCode": "CSCE240",
+                    "title": "Advanced Programming Techniques",
+                    "credits": 3,
+                    "recommendedtime": "Sophomore",
+                    "recommendedterm":"Fall"
+                },
+                {
+                    "courseID":  "730005f1-113d-446e-865c-31b46dfbc924",
+                    "courseCode": "CSCE247",
+                    "title": "Software Engineering",
+                    "credits": 3,
+                    "recommendedtime": "Sophomore",
+                    "recommendedterm":"Spring"
+                }
+    ],
+    "carolinaCore": [{
+        "courseID":  "12224407-e656-4fe7-9078-88f1d9dc8325",
+        "courseCode": "ENGL101",
+        "title": "English Composition I",
+        "credits": 3,
+        "recommendedtime": "Freshman",
+        "recommendedterm":"Fall"
+
+    },
+    {
+        "courseID":  "980e1056-4ed2-4459-b0e7-56d78eca5d73",
+        "courseCode": "ENGL102",
+        "title": "English Composition II",
+        "credits": 3,
+        "recommendedtime": "Freshman",
+        "recommendedterm":"Spring"
+    },
+    {
+        "courseID":  "4bd274cb-260e-47a5-9893-203a3943d704",
+        "courseCode": "MATH141",
+        "title": "Calculus I",
+        "credits": 3,
+        "recommendedtime": "Freshman",
+        "recommendedterm":"Fall"
+    },
+    {
+        "courseID":  "3d7aa3f8-bfb0-4f9e-af57-49818eacf9a6",
+        "courseCode": "MATH142",
+        "title": "Calculus II",
+        "credits": 3,
+        "recommendedtime": "Freshman",
+        "recommendedterm":"Spring"
+    },
+    {
+        "courseID":  "a379a182-57c9-4b28-950d-35903009bce3",
+        "courseCode": "CHEM111",
+        "title": "General Chemistry I",
+        "credits": 4,
+        "recommendedtime": "Freshman",
+        "recommendedterm":"Spring"
+    },
+    {
+        "courseID":  "b6bf4208-6933-4e10-a961-118f12d7acba",
+        "courseCode": "CHEM111L",
+        "title": "General Chemistry I Lab",
+        "credits": 1,
+        "recommendedtime": "Freshman",
+        "recommendedterm":"Spring"
+    },
+    {
+        "courseID":  "96cd3d5d-590a-4567-9cc3-787e03cc5140",
+        "courseCode": "CSCE390",
+        "title": "Values, Ethics, and Social Responsibility",
+        "credits": 1,
+        "recommendedtime": "Junior",
+        "recommendedterm":"Fall"
+    }
+    ],
+    "carolinaHours":50,
+    "majorRequirements": [{
+        "courseID":  "684f6d78-9f42-4e22-b447-7b15782007b3",
+        "courseCode": "CSCE311",
+        "title": "Operating Systems",
+        "credits": 3,
+        "recommendedtime": "Junior",
+        "recommendedterm":""
+    },
+    {
+        "courseID":  "d71f3a41-5b83-40b6-94a7-609b01ca2caa",
+        "courseCode": "CSCE330",
+        "title": "Programming Language Structures",
+        "credits": 3,
+        "recommendedtime": "Junior",
+        "recommendedterm":"Fall"
+    },
+    {
+        "courseID":  "6c8202fd-b31b-4647-b551-b7f4dbf007a0",
+        "courseCode": "CSCE350",
+        "title": "Data Structures and Algorithms",
+        "credits": 3,
+        "recommendedtime": "Junior",
+        "recommendedterm":"Fall"
+    },
+    {
+        "courseID":  "dcf88287-b888-4fe0-949f-1b2ecd8af011",
+        "courseCode": "CSCE355",
+        "title": "Foundations of Computation",
+        "credits": 3,
+        "recommendedtime": "Senior",
+        "recommendedterm":"Fall"
+    },
+    {
+        "courseID":  "f16c3f7d-4f83-4a11-8b47-632572514136",
+        "courseCode": "CSCE416",
+        "title": "Introduction to Computer Networks",
+        "credits": 3,
+        "recommendedtime": "Junior",
+        "recommendedterm":"Spring"
+    },
+    {
+        "courseID":  "42288ffd-4ead-4718-b840-4be2894d8f30",
+        "courseCode": "CSCE490",
+        "title": "Capstone Computing Project I",
+        "credits": 3,
+        "recommendedtime": "Senior",
+        "recommendedterm":"Fall"
+    },
+    {
+        "courseID":  "f425f91f-92da-4261-be45-347d81b6ab9d",
+        "courseCode": "CSCE492",
+        "title": "Capstone Computing Project II",
+        "credits": 3,
+        "recommendedtime": "Senior",
+        "recommendedterm":"Spring"
+    }
+    ],
+    "majorHours": 30
+},
+
+{
+    "majorid": "cis",
+    "name": "Computer Information Systems",
+    "description": "Bachelor of Science in Computer Information Systems",
+    "totalHours":150,
+
+    "totalHoursProgramRequirements": 48,
+    "programRequirements": [{
+                    "courseID":  "7100ca89-33cf-40da-acbe-84af49e92c3c",
+                    "courseCode": "ENGL462",
+                    "title": "Technical Writing",
+                    "credits": 3,
+                    "recommendedtime": "Junior",
+                    "recommendedterm":"Fall"
+                },
+                {
+                    "courseID":  "54d24a62-03dd-4ed1-97c8-1b08de13d259",
+                    "courseCode": "MATH174",
+                    "title": "Discrete Mathematics for Computer Science 1",
+                    "credits": 3,
+                    "recommendedtime": "Sophomore",
+                    "recommendedterm":"Spring"
+                },
+                {
+                    "courseID":  "f4b55e57-6034-4462-81ca-13c559697988",
+                    "courseCode": "STAT509",
+                    "title": "Statistics for Engineers",
+                    "credits": 3,
+                    "recommendedtime": "Junior",
+                    "recommendedterm":"Fall"
+                },
+                {
+                    "courseID":  "274f0d39-2889-48c6-8bef-ec460e958414",
+                    "courseCode": "STAT516",
+                    "title": "Statistical Methods II",
+                    "credits": 3,
+                    "recommendedtime": "Junior",
+                    "recommendedterm":"Spring"
+                },
+                {
+                    "courseID":  "57eaa5d5-a439-43b1-87fc-2d3a4c0b9cd6",
+                    "courseCode": "CSCE146",
+                    "title": "Algorithmic Design II",
+                    "credits": 4,
+                    "recommendedtime": "Freshman",
+                    "recommendedterm":"Spring"
+                },
+                {
+                    "courseID":  "3cca9c4e-a195-4759-a761-cfe09adb20b8",
+                    "courseCode": "CSCE190",
+                    "title": "Computing in the Modern World",
+                    "credits": 1,
+                    "recommendedtime": "Freshman",
+                    "recommendedterm":"Fall"
+                },
+                {
+                    "courseID":  "cecc9003-5bf5-4d17-b01d-895f24ea03a2",
+                    "courseCode": "CSCE201",
+                    "title": "Introduction to Computer Security",
+                    "credits": 3,
+                    "recommendedtime": "Sophomore",
+                    "recommendedterm":"Spring"
+                },
+                {
+                    "courseID":  "f9bc9ca2-9fe9-43eb-8444-2f0fc53da6c3",
+                    "courseCode": "CSCE210",
+                    "title": "Computer Hardware Foundations",
+                    "credits": 3,
+                    "recommendedtime": "Sophomore",
+                    "recommendedterm":"Fall"
+                },
+                {
+                    "courseID":  "9b9ea0d0-3574-44be-b6cf-1ef50ce2aa23",
+                    "courseCode": "CSCE215",
+                    "title": "UNIX/Linux Fundamentals",
+                    "credits": 1,
+                    "recommendedtime": "Freshman",
+                    "recommendedterm":"Spring"
+                },
+                {
+                    "courseID":  "39046cda-f913-4f9b-a002-f06e7c59f235",
+                    "courseCode": "CSCE240",
+                    "title": "Advanced Programming Techniques",
+                    "credits": 3,
+                    "recommendedtime": "Sophomore",
+                    "recommendedterm":"Spring"
+                },
+                {
+                    "courseID":  "730005f1-113d-446e-865c-31b46dfbc924",
+                    "courseCode": "CSCE247",
+                    "title": "Software Engineering",
+                    "credits": 3,
+                    "recommendedtime": "Sophomore",
+                    "recommendedterm":"Fall"
+                },
+                {
+                    "courseID":  "93c533e9-b50e-4557-b4da-9f31c0b4b839",
+                    "courseCode": "ECON224",
+                    "title": "Introduction to Economics",
+                    "credits": 3,
+                    "recommendedtime": "Sophomore",
+                    "recommendedterm":"Fall"
+                },
+                {
+                    "courseID":  "554472ab-c7cb-4ac6-bf69-0d8b58a99d3d",
+                    "courseCode": "ACCT222",
+                    "title": "Survey of Accounting",
+                    "credits": 3,
+                    "recommendedtime": "Junior",
+                    "recommendedterm":"Fall"
+                },
+                {
+                    "courseID":  "01f15c99-15af-4569-8cf0-4fe263053ed8",
+                    "courseCode": "MGMT371",
+                    "title": "Principles of Management",
+                    "credits": 3,
+                    "recommendedtime": "Junior",
+                    "recommendedterm":"Fall"
+                },
+                {
+                    "courseID":  "377ddfb9-de27-4996-8f72-c86999f08c03",
+                    "courseCode": "MGSC290",
+                    "title": "Computer Information Systems in Business",
+                    "credits": 3,
+                    "recommendedtime": "Sophomore",
+                    "recommendedterm":"Spring"
+                },
+                {
+                    "courseID":  "58152817-98cf-405d-a056-8cfe493a37b6",
+                    "courseCode": "IBUS301",
+                    "title": "Introduction to International Business",
+                    "credits": 3
+                },
+                {
+                    "courseID":  "0f4ffbf3-4153-4545-80b2-5118a35d32c7",
+                    "courseCode": "MKTG350",
+                    "title": "Principles of Marketing",
+                    "credits": 3
+                }
+    ],
+    "carolinaCore": [
+        {
+            "courseID":  "12224407-e656-4fe7-9078-88f1d9dc8325",
+            "courseCode": "ENGL101",
+            "title": "English Composition I",
+            "credits": 3,
+            "recommendedtime": "Freshman",
+            "recommendedterm":"Fall"
+        },
+        {
+            "courseID":  "980e1056-4ed2-4459-b0e7-56d78eca5d73",
+            "courseCode": "ENGL102",
+            "title": "English Composition II",
+            "credits": 3,
+            "recommendedtime": "Freshman",
+            "recommendedterm":"Spring"
+        },
+        {
+            "courseID":  "f8e10b3a-146b-4d43-a3d8-647028c98641",
+            "courseCode": "MATH122",
+            "title":  "Calculus for Business Administration and Social Sciences",
+            "credits": 3,
+            "recommendedtime": "Freshman",
+            "recommendedterm":"Fall"
+        },
+        {
+            "courseID":  "4bd274cb-260e-47a5-9893-203a3943d704",
+            "courseCode": "MATH141",
+            "title": "Calculus I",
+            "credits": 3,
+            "recommendedtime": "Freshman",
+            "recommendedterm":"Fall"
+        },
+        {
+            "courseID":  "4bd274cb-260e-47a5-9893-203a3943d704",
+            "courseCode": "CSCE145",
+            "title": "Algorithmic Design I",
+            "credits": 4,
+            "recommendedtime": "Freshman",
+            "recommendedterm":"Fall"
+        },
+        {
+            "courseID":  "3cca9c4e-a195-4759-a761-cfe09adb20b8",
+            "courseCode": "CSCE190",
+            "title": "Computing in the Modern World",
+            "credits": 1,
+            "recommendedtime": "Freshman",
+            "recommendedterm":"Fall"
+        },
+        {
+            "courseID":  "96cd3d5d-590a-4567-9cc3-787e03cc5140",
+            "courseCode": "CSCE390",
+            "title": "Values, Ethics, and Social Responsibility",
+            "credits": 1,
+            "recommendedtime": "Junior",
+            "recommendedterm":"Fall"
+        }
+
+    ]   ,    
+    "carolinaHours":50,
+    
+    "majorRequirements": [
+        {
+            "courseID":  "9583ee33-5e0b-43fe-9bc7-7ef3816da225",
+            "courseCode": "CSCE205",
+            "title": "Business Applications Programming",
+            "credits": 3,
+            "recommendedtime": "Sophomore",
+            "recommendedterm":"Fall"
+        },
+        {
+            "courseID":  "6c8202fd-b31b-4647-b551-b7f4dbf007a0",
+            "courseCode": "CSCE350",
+            "title": "Data Structures and Algorithms",
+            "credits": 3,
+            "recommendedtime": "Junior",
+            "recommendedterm":"Fall"
+        },
+        {
+            "courseID":  "f16c3f7d-4f83-4a11-8b47-632572514136",
+            "courseCode": "CSCE416",
+            "title": "Introduction to Computer Networks",
+            "credits": 3,
+            "recommendedtime": "Senior",
+            "recommendedterm":"Fall"
+        },
+        {
+            "courseID":  "42288ffd-4ead-4718-b840-4be2894d8f30",
+            "courseCode": "CSCE490",
+            "title": "Capstone Computing Project I",
+            "credits": 3,
+            "recommendedtime": "Senior",
+            "recommendedterm":"Fall"
+        },
+        {
+            "courseID":  "f425f91f-92da-4261-be45-347d81b6ab9d",
+            "courseCode": "CSCE492",
+            "title": "Capstone Computing Project II",
+            "credits": 3,
+            "recommendedtime": "Senior",
+            "recommendedterm":"Spring"
+        },
+        {
+            "courseID":  "86229990-45b3-48e6-b444-0b9db99e8a8c",
+            "courseCode": "CSCE520",
+            "title": "Database System Design",
+            "credits": 3,
+            "recommendedtime": "Junior",
+            "recommendedterm":"Spring"
+        },
+        {
+            "courseID":  "5dfb6a47-ff2c-4977-ab64-588da4f687a4",
+            "courseCode": "CSCE522",
+            "title": "Information Security Principles",
+            "credits": 3,
+            "recommendedtime": "Senior",
+            "recommendedterm":"Fall"
+        },
+        {
+            "courseID":  "fdf13bc5-f270-4c26-a749-720a50d0b00a",
+            "courseCode": "CSCE594",
+            "title": "Strategic Management of Information Systems",
+            "credits": 3,
+            "recommendedtime": "Junior",
+            "recommendedterm":"Spring"
+        }
+    ],
+    "majorHours": 30
+}]
+
+
+
