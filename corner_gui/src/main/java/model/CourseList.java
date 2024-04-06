@@ -29,14 +29,6 @@ public class CourseList {
         return null;
     }
 
-    public ArrayList<Course> getCarolinaCoreCourses() {
-        for (Course course : courseList) {
-            if (course.getCourseName().equals(key) || course.getCourseID().equals(key)) {
-                return course;
-            }
-        }
-        return null;
-    }
 
     public Course checkPrereq(Course course, double grade) {
         //Course c = new Course(null, null, null, null, null, false, 0, null, null, grade);
