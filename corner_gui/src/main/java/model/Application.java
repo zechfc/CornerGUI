@@ -7,6 +7,9 @@ public class Application {
     private AdvisorList advisorList;
     private CourseList classList;
     private MajorList majorList;
+    private Student student;
+
+    
 
     private User user;
 
@@ -73,34 +76,26 @@ public class Application {
     }
 
     //this should prob be done in student
+    //is this what she ment
     public boolean studentProfile(String userID){
         Student student = studentList.getStudent(userID);
-        if(student != null){
-            String firstName = student.getFirstName();
-            String middleName = student.getMiddleName();
-            String lastName = student.getLastName();
-            String email = student.getEmail();
-            String classification = student.getClassification();
-            String college = "UofSC";
-            System.out.println(firstName + " " + middleName + " " + lastName + 
-                "\nEmail: " + email +
-                "\nClassification: " + classification + " at " + college);
+        return student.studentProfile(userID);
+
+    }
+
+    //is this what she ment
+    public boolean getMajorMap(String userID) {
+        Student student = studentList.getStudent(userID);
+        if(student.getMajorMap(userID) != null){
+            System.out.println(student.getMajorMap(userID));
             return true;
         }
         return false;
     }
 
-    public boolean getMajorMap(String userID) {
-        if (user != null && user.getUserID().equals(userID)) {
-            if (user instanceof Student) {
-                System.out.println(((Student) user).getMajorMap());
-                return true;
-            }
-        }
-        return false;
-    }
-
+    //what is this suppose to do?
     public boolean editMajorMap(String userID, MajorMap map) {
+        Student student = studentList.getStudent(userID);
         if (user != null && user.getUserID().equals(userID)) {
             if (user instanceof Student) {
                 ((Student) user).editMajorMap(map);
@@ -110,6 +105,7 @@ public class Application {
         return false;
     }
 
+    //I dont think this part is needed?
     public boolean getSemesterPlan() {
         if (user != null) {
             if (user instanceof Student) {
@@ -201,7 +197,7 @@ public class Application {
     public void getPastClasses(String userID){
         Student student = studentList.getStudent(userID);
         if(student != null){
-            student.getPastCourseValues();
+            student.getPastCourses();
         }
     }
 

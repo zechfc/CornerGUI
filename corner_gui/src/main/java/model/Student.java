@@ -36,9 +36,40 @@ public class Student extends User {
         this.currentCourses = currentCourses;
         this.pastCourses = pastCourses;
         this.advisorID = advisorID;
+        
     }
 
-    
+    public boolean studentProfile(String userID){
+
+        Student student = StudentList.getInstance().getStudent(userID);
+        if(student != null){
+            String firstName = student.getFirstName();
+            String middleName = student.getMiddleName();
+            String lastName = student.getLastName();
+            String email = student.getEmail();
+            String classification = student.getClassification();
+            String college = "UofSC";
+            System.out.println(firstName + " " + middleName + " " + lastName + 
+                "\nEmail: " + email +
+                "\nClassification: " + classification + " at " + college);
+            return true;
+        }
+        return false;
+    }
+
+    //this should prob be done in student
+
+    public MajorMap getMajorMap(String userID) {
+        if (student() != null && student().getUserID().equals(userID)) {
+            if (student() instanceof Student) {
+                MajorMap majorMap =(((Student) student()).getMajorMap());
+                return majorMap;
+            }
+        }
+        return null;
+    }
+
+
 
     public void totalCompletedCredits(int transferCredits, int USC_CREDITS) {
         totalCredits = transferCredits + USC_CREDITS;
@@ -133,8 +164,7 @@ public class Student extends User {
 
     public SemesterPlan getSemesterPlan() {
         return new SemesterPlan(major, (ArrayList<pastCourses>)pastCourses, this.userID);
-        // SemesterPlan needs an ArrayList of completedCourses
-        // Student only stores the hashmap of classesTaken
+        
 
     }
 
