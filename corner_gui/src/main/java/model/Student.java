@@ -172,45 +172,45 @@ public class Student extends User {
         this.applicationArea = area;
     }
 
-    public void getPastCourseValues(){
-        for(int i = 0; i < pastCourses.size(); i++){
-            JSONObject temp = (JSONObject) pastCourses.get(i);
-            //Gets values from JSON array from student JSON
-            String id = (String) temp.get("courseID");
-            String grade = (String) temp.get("grade");
-            String semester = (String) temp.get("semester");
-            int year = ((Long) temp.get("year")).intValue();
+    // public void getPastCourseValues(){
+    //     for(int i = 0; i < pastCourses.size(); i++){
+    //         JSONObject temp = (JSONObject) pastCourses.get(i);
+    //         //Gets values from JSON array from student JSON
+    //         String id = (String) temp.get("courseID");
+    //         String grade = (String) temp.get("grade");
+    //         String semester = (String) temp.get("semester");
+    //         int year = ((Long) temp.get("year")).intValue();
 
-            CourseList courseList = CourseList.getInstance();
-            ArrayList<Course> courses = courseList.getCourses();
-            for(Course course : courses){
-                //Goes through EVERY course (from JSON) and finds matching ID
-                if(course.getCourseID().equals(id)){
-                    System.out.println(course.getCourseName() + ": " + grade + ", taken in " + semester + " " + year);
-                }
-            }
-        }
-    }
+    //         CourseList courseList = CourseList.getInstance();
+    //         ArrayList<Course> courses = courseList.getCourses();
+    //         for(Course course : courses){
+    //             //Goes through EVERY course (from JSON) and finds matching ID
+    //             if(course.getCourseID().equals(id)){
+    //                 System.out.println(course.getCourseName() + ": " + grade + ", taken in " + semester + " " + year);
+    //             }
+    //         }
+    //     }
+    // }
 
-    public void getCurrentCourseValues(){
-        for(int i = 0; i < currentCourses.size(); i++){
-            JSONObject temp = (JSONObject) currentCourses.get(i);
-            //Gets values from JSON array from student JSON
-            String id = (String) temp.get("courseID");
-            String grade = (String) temp.get("grade");
-            String semester = (String) temp.get("semester");
-            int year = ((Long) temp.get("year")).intValue();
+    // public void getCurrentCourseValues(){
+    //     for(int i = 0; i < currentCourses.size(); i++){
+    //         JSONObject temp = (JSONObject) currentCourses.get(i);
+    //         //Gets values from JSON array from student JSON
+    //         String id = (String) temp.get("courseID");
+    //         String grade = (String) temp.get("grade");
+    //         String semester = (String) temp.get("semester");
+    //         int year = ((Long) temp.get("year")).intValue();
 
-            CourseList courseList = CourseList.getInstance();
-            ArrayList<Course> courses = courseList.getCourses();
-            for(Course course : courses){
-                //Goes through EVERY course and matches ID
-                if(course.getCourseID().equals(id)){
-                    System.out.println(course.getCourseName() + ": " + grade + ", taking " + semester + " " + year);
-                }
-            }
-        }
-    }
+    //         CourseList courseList = CourseList.getInstance();
+    //         ArrayList<Course> courses = courseList.getCourses();
+    //         for(Course course : courses){
+    //             //Goes through EVERY course and matches ID
+    //             if(course.getCourseID().equals(id)){
+    //                 System.out.println(course.getCourseName() + ": " + grade + ", taking " + semester + " " + year);
+    //             }
+    //         }
+    //     }
+    // }
 
     public Student student(){
         return student();
