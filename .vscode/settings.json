@@ -3,5 +3,6 @@
     "java.project.sourcePaths": [
         "src",
         "corner_gui/src/main/java/corner_gui"
-    ]
+    ],
+    "java.jdt.ls.java.home": "",
 }
