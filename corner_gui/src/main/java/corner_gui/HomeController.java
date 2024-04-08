@@ -1,4 +1,9 @@
+package corner_gui;
+
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.fxml.Initializable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,11 +31,11 @@ public class HomeController implements Initializable{
             error_label.setText("Incorrect login. Try again.");
             return;
         } //need to remove the i since there are two different login buttons now
-        App.setRoot("advisor_home"); //need to figure this out
+        App.setRoot("advisorhome"); //need to figure this out
     }
 
     @FXML
-    void onLoginStudentClicked(ActionEvent event) {
+    void onLoginStudentClicked(ActionEvent event) throws IOException {
         String username = username_text.getText();
         String password = password_text.getText();
 
@@ -40,7 +45,13 @@ public class HomeController implements Initializable{
             error_label.setText("Incorrect login. Try again.");
             return;
         }//again, need to remove i
-        App.setRoot("student_home"); //need to figure this out
+        App.setRoot("studenthome"); 
+    }
+
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        // TODO Auto-generated method stub
+        //throw new UnsupportedOperationException("Unimplemented method 'initialize'");
     }
 
 }

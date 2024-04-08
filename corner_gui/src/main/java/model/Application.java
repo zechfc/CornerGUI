@@ -8,9 +8,8 @@ public class Application {
     private CourseList classList;
     private MajorList majorList;
     private Student student;
-
+    private static Application application;
     
-
     private User user;
 
     public Application() {
@@ -18,6 +17,17 @@ public class Application {
         this.advisorList = AdvisorList.getInstance();
         this.classList = CourseList.getInstance();
         this.majorList = MajorList.getInstance();
+    }
+
+    public static Application getInstance(){
+        if(application == null){
+            application = new Application();
+        }
+        return application;
+    }
+
+    public User getUser(){
+        return user;
     }
 
     public int checkUser(String input) {
