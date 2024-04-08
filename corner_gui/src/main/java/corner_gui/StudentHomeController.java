@@ -1,11 +1,14 @@
+package corner_gui;
+
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import java.fxml.FXMLLoader;
-import javafxf.fxml.Initializable;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
@@ -43,31 +46,7 @@ public class StudentHomeController implements Initializable{
     @FXML private Label user_name;
     @FXML private Label user_notes;
     private Application application;
-    private Student user;
-
-    @Override
-    public void initialize(){
-        application = Application.getInstance();
-        user = Application.getUser();
-
-        label_title.setText(user.getFirstName() + "'s Profile");
-        
-        //primary
-        user_name.setText("Name: " + user.getFirstName() + " " + user.getLastName()); //can add middle name
-        user_email.setText("Email: " + user.getEmail());
-        
-        //secondary
-        user_major.setText("Major: " + user.getMajorName());
-        user_gpa.setText("GPA: "); //no get gpa method atm
-        user_majorgpa.setText("Major GPA: "); //no get major gpa method atm
-        user_class.setText("Class Level: " + user.getClassification());
-        user_conc.setText("Concentration: " + user.getApplicationArea()); //are app area and concentration the same thing in our code?
-
-        //tertiary
-        user_advisor.setText("Advisor: " + user.getAdvisorID()); //this needs to get the advisor's name, not ID
-        scholarship_status.setText("Scholarship Status: ");
-        academic_standing.setText("Academic Standing: "); //do we want this and the one above?
-    }
+    private User user;
 
     @FXML
     void onEmailAdvisorClicked(ActionEvent event) {
@@ -85,8 +64,8 @@ public class StudentHomeController implements Initializable{
     }
 
     @FXML
-    void onLogoutClicked(ActionEvent event) {
-
+    void onLogoutClicked(ActionEvent event) throws IOException {
+        App.setRoot("home");
     }
 
     @FXML
@@ -100,8 +79,8 @@ public class StudentHomeController implements Initializable{
     }
 
     @FXML
-    void onReturnClicked(ActionEvent event) {
-
+    void onReturnClicked(ActionEvent event) throws IOException{
+        App.setRoot("studenthome");
     }
 
     @FXML
@@ -112,5 +91,29 @@ public class StudentHomeController implements Initializable{
     @FXML
     void onSemesterPlanClicked(ActionEvent event) {
 
+    }
+
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        application = Application.getInstance();
+        user = application.getUser();
+
+        label_title.setText(user.getFirstName() + "'s Profile");
+        
+        //primary
+        user_name.setText("Name: " + user.getFirstName() + " " + user.getLastName()); //can add middle name
+        user_email.setText("Email: " + user.getEmail());
+        
+        //secondary
+        //user_major.setText("Major: " + user.getMajorName());
+        user_gpa.setText("GPA: "); //no get gpa method atm
+        user_majorgpa.setText("Major GPA: "); //no get major gpa method atm
+        //user_class.setText("Class Level: " + user.getClassification());
+        //user_conc.setText("Concentration: " + user.getApplicationArea()); //are app area and concentration the same thing in our code?
+
+        //tertiary
+        //user_advisor.setText("Advisor: " + user.getAdvisorID()); //this needs to get the advisor's name, not ID
+        scholarship_status.setText("Scholarship Status: ");
+        academic_standing.setText("Academic Standing: "); //do we want this and the one above?
     }
 }

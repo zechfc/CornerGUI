@@ -256,6 +256,13 @@
     "description": "Bachelor of Science in Computer Information Systems",
     "totalHours":150,
 
+
+    "programRequirementsHours":46,
+    "carolinaCoreReqHours":18,
+    "majorHours": 30,
+    "carolinaHours":50,
+
+    
     "programRequirements": [{
                     "courseID":  "7100ca89-33cf-40da-acbe-84af49e92c3c",
                     "courseCode": "ENGL462",
