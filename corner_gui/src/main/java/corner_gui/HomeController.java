@@ -27,11 +27,11 @@ public class HomeController implements Initializable{
 
         Application app = Application.getInstance();
 
-        if(!app.login(2, username, password)){
+        if(!app.login(username, password)){
             error_label.setText("Incorrect login. Try again.");
             return;
-        } //need to remove the i since there are two different login buttons now
-        App.setRoot("advisorhome"); //need to figure this out
+        }
+        App.setRoot("advisorhome"); 
     }
 
     @FXML
@@ -41,10 +41,10 @@ public class HomeController implements Initializable{
 
         Application app = Application.getInstance();
 
-        if(!app.login(1, username, password)){
+        if(!app.login(username, password)){
             error_label.setText("Incorrect login. Try again.");
             return;
-        }//again, need to remove i
+        }
         App.setRoot("studenthome"); 
     }
 
