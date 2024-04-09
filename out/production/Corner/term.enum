@@ -1,5 +1,0 @@
-enum term {
-  SPRING,
-  SUMMER,
-  FALL
-}
