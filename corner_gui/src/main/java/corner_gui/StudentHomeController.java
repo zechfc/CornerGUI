@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
@@ -19,7 +20,6 @@ import javafx.scene.text.Text;
 import model.*;
 
 public class StudentHomeController implements Initializable{
-    @FXML private Label academic_standing;
     @FXML private MenuButton advisor_menu;
     @FXML private ProgressBar degree_progress;
     @FXML private MenuItem email_advisor;
@@ -31,11 +31,8 @@ public class StudentHomeController implements Initializable{
     @FXML private VBox prim_info;
     @FXML private Button returnButton;
     @FXML private MenuItem schedule;
-    @FXML private Label scholarship_status;
-    @FXML private VBox sec_info;
     @FXML private Button see_notes_button;
     @FXML private Button semesterPlanButton;
-    @FXML private VBox tert_info;
     @FXML private Label user_advisor;
     @FXML private Label user_class;
     @FXML private Label user_conc;
@@ -44,7 +41,7 @@ public class StudentHomeController implements Initializable{
     @FXML private Label user_major;
     @FXML private Label user_majorgpa;
     @FXML private Label user_name;
-    @FXML private Label user_notes;
+    @FXML private DialogPane user_notes_box;
     private Application application;
     private Student user;
     private String fxml = "studenthome";
@@ -76,7 +73,8 @@ public class StudentHomeController implements Initializable{
 
     @FXML
     void onNotesClicked(ActionEvent event) throws IOException{
-        user_notes.setText(user.getAdvisorNote());
+        user_notes_box.setVisible(true);
+        user_notes_box.setContentText(user.getAdvisorNote());
     }
 
     @FXML
@@ -101,16 +99,15 @@ public class StudentHomeController implements Initializable{
 
         label_title.setText(user.getFirstName() + "'s Profile");
         
-        //primary
+        //user info
         user_name.setText("Name: " + user.getFirstName() + " " + user.getLastName()); //can add middle name
         user_email.setText("Email: " + user.getEmail());
-        
-        //secondary
         user_major.setText("Major: " + user.getMajorName());
         user_gpa.setText("GPA: "); //no get gpa method atm
         user_majorgpa.setText("Major GPA: "); //no get major gpa method atm
         user_class.setText("Class Level: " + user.getClassification());
-        
         user_advisor.setText("Advisor: " + user.getAdvisorID()); //this needs to get the advisor's name, not ID
+
+        user_notes_box.setVisible(false);
     }
 }
