@@ -1,88 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="corner_gui.StudentHomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: F2C48D;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="corner_gui.StudentHomeController">
    <children>
-      <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onReturnClicked" text="Return">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#395950" height="169.0" layoutX="12.0" layoutY="63.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="295.0" />
+      <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onReturnClicked" style="-fx-background-color: #59381B;" text="Return" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="10.0" />
          </font>
       </Button>
-      <Button fx:id="logoutButton" layoutX="67.0" layoutY="14.0" mnemonicParsing="false" onAction="#onLogoutClicked" text="Logout">
+      <Button fx:id="logoutButton" layoutX="67.0" layoutY="14.0" mnemonicParsing="false" onAction="#onLogoutClicked" style="-fx-background-color: #59381B;" text="Logout" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="10.0" />
          </font>
       </Button>
-      <Label layoutX="238.0" layoutY="11.0" text="Pocket Campus">
+      <Label layoutX="266.0" layoutY="11.0" style="-fx-font-weight: bold;" text="Pocket Campus" textAlignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <Label fx:id="label_title" layoutX="286.0" layoutY="38.0" />
-      <VBox fx:id="prim_info" layoutX="17.0" layoutY="47.0" prefHeight="27.0" prefWidth="172.0">
+      <VBox fx:id="prim_info" layoutX="17.0" layoutY="81.0" prefHeight="27.0" prefWidth="172.0">
          <children>
             <Label fx:id="user_name" text="Name: " />
             <Label fx:id="user_email" text="Email: " />
          </children>
       </VBox>
-      <VBox fx:id="tert_info" layoutX="372.0" layoutY="56.0" prefHeight="75.0" prefWidth="172.0">
-         <children>
-            <Label fx:id="user_advisor" text="Advisor: " />
-            <HBox prefHeight="18.0" prefWidth="172.0">
-               <children>
-                  <Label fx:id="user_notes" text="See Notes" />
-                  <Button fx:id="see_notes_button" mnemonicParsing="false" onAction="#onNotesClicked" prefHeight="20.0" prefWidth="18.0" text="v">
-                     <font>
-                        <Font size="9.0" />
-                     </font>
-                  </Button>
-               </children>
-            </HBox>
-            <Label fx:id="scholarship_status" text="Scholarship Status: " />
-            <Label fx:id="academic_standing" text="Academic Standing: " />
-         </children>
-      </VBox>
-      <VBox fx:id="sec_info" layoutX="17.0" layoutY="82.0" prefHeight="90.0" prefWidth="172.0">
+      <VBox fx:id="sec_info" layoutX="16.0" layoutY="114.0" prefHeight="90.0" prefWidth="172.0">
          <children>
             <Label fx:id="user_major" text="Major:" />
             <Label fx:id="user_gpa" text="GPA:" />
             <Label fx:id="user_majorgpa" text="Major GPA:" />
+            <Label fx:id="user_advisor" text="Advisor: " />
             <Label fx:id="user_class" text="Class Level:" />
-            <Label fx:id="user_conc" text="Concentration:" />
+            <VBox fx:id="tert_info" prefHeight="75.0" prefWidth="172.0">
+               <children>
+                  <HBox prefHeight="18.0" prefWidth="172.0" />
+               </children>
+            </VBox>
          </children>
       </VBox>
       <ProgressBar fx:id="degree_progress" layoutX="86.0" layoutY="352.0" prefHeight="18.0" prefWidth="428.0" progress="0.0" />
-      <Button fx:id="semesterPlanButton" layoutX="74.0" layoutY="258.0" mnemonicParsing="false" onAction="#onSemesterPlanClicked" text="Semester Plan">
+      <Button fx:id="semesterPlanButton" layoutX="70.0" layoutY="309.0" mnemonicParsing="false" onAction="#onSemesterPlanClicked" style="-fx-background-color: #59381B;" text="Semester Plan" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="10.0" />
          </font>
       </Button>
-      <Button fx:id="gpaButton" layoutX="168.0" layoutY="258.0" mnemonicParsing="false" onAction="#onGPAClicked" text="GPA Calculator">
+      <Button fx:id="gpaButton" layoutX="164.0" layoutY="309.0" mnemonicParsing="false" onAction="#onGPAClicked" style="-fx-background-color: #59381B;" text="GPA Calculator" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="10.0" />
          </font>
       </Button>
-      <Button fx:id="majorMapButton" layoutX="269.0" layoutY="258.0" mnemonicParsing="false" onAction="#onMajorMapClicked" text="Major Map">
+      <Button fx:id="majorMapButton" layoutX="265.0" layoutY="309.0" mnemonicParsing="false" onAction="#onMajorMapClicked" style="-fx-background-color: #59381B;" text="Major Map" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="10.0" />
          </font>
       </Button>
-      <Button fx:id="gradesButton" layoutX="438.0" layoutY="258.0" mnemonicParsing="false" onAction="#onGradesClicked" text="View Grades">
+      <Button fx:id="gradesButton" layoutX="434.0" layoutY="309.0" mnemonicParsing="false" onAction="#onGradesClicked" style="-fx-background-color: #59381B;" text="View Grades" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="10.0" />
          </font>
       </Button>
-      <MenuButton fx:id="advisor_menu" layoutX="352.0" layoutY="257.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="66.0" text="Advisor">
+      <MenuButton fx:id="advisor_menu" layoutX="348.0" layoutY="308.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="66.0" style="-fx-background-color: #59381B;" text="Advisor" textAlignment="CENTER" textFill="WHITE">
         <items>
           <MenuItem fx:id="email_advisor" mnemonicParsing="false" onAction="#onEmailAdvisorClicked" text="Email Advisor" />
           <MenuItem fx:id="schedule" mnemonicParsing="false" onAction="#onScheduleClicked" text="Schedule Appointment" />
@@ -91,5 +84,21 @@
             <Font size="10.0" />
          </font>
       </MenuButton>
+      <Hyperlink layoutX="83.0" layoutY="350.0" onAction="#onMajorMapClicked" prefHeight="24.0" prefWidth="428.0" text="Hyperlink" />
+      <DialogPane id="NotesPane" fx:id="NotesPane" headerText="Notes" layoutX="12.0" layoutY="232.0" prefHeight="75.0" prefWidth="172.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#59381b" height="169.0" layoutX="327.0" layoutY="63.0" stroke="#7b4f4f" strokeType="INSIDE" width="249.0" />
+      <Text layoutX="394.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image Placeholder" wrappingWidth="79.3333333333332" />
+      <Label fx:id="user_notes" layoutX="18.0" layoutY="203.0" text="See Notes" />
+      <Button fx:id="see_notes_button" layoutX="78.0" layoutY="202.0" mnemonicParsing="false" onAction="#onNotesClicked" prefHeight="20.0" prefWidth="18.0" text="v">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Button>
+      <Text fill="WHITE" layoutX="268.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Campus " textAlignment="CENTER" wrappingWidth="118.80340576171875">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField id="courseSearch" layoutX="428.0" layoutY="13.0" promptText="Course Search" />
    </children>
 </AnchorPane>
