@@ -18,7 +18,7 @@ public class HomeController implements Initializable{
     @FXML private TextField password_text;
     @FXML private TextField username_text;
     @FXML private Label error_label;
-
+    private String fxml;
 
     @FXML
     void onLoginAdvisorClicked(ActionEvent event) throws IOException{
