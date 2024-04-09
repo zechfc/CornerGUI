@@ -144,6 +144,11 @@ public class Student extends User {
         return major;
     }
 
+    public String getRealMajorName (String id) {
+        return MajorList.getInstance().getMajor(id).getMajor();
+
+    }
+
     public MajorMap getMajorMap() {
         return majorMap;
     }
