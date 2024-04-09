@@ -47,20 +47,20 @@ public class StudentHomeController implements Initializable{
     @FXML private Label user_notes;
     private Application application;
     private Student user;
-    private String fxml;
+    private String fxml = "studenthome";
 
     @FXML
-    void onEmailAdvisorClicked(ActionEvent event) {
+    void onEmailAdvisorClicked(ActionEvent event) throws IOException{
 
     }
 
     @FXML
-    void onGPAClicked(ActionEvent event) {
+    void onGPAClicked(ActionEvent event) throws IOException{
 
     }
 
     @FXML
-    void onGradesClicked(ActionEvent event) {
+    void onGradesClicked(ActionEvent event) throws IOException{
 
     }
 
@@ -70,27 +70,27 @@ public class StudentHomeController implements Initializable{
     }
 
     @FXML
-    void onMajorMapClicked(ActionEvent event) {
+    void onMajorMapClicked(ActionEvent event) throws IOException{
 
     }
 
     @FXML
-    void onNotesClicked(ActionEvent event) {
+    void onNotesClicked(ActionEvent event) throws IOException{
         user_notes.setText(user.getAdvisorNote());
     }
 
     @FXML
     void onReturnClicked(ActionEvent event) throws IOException{
-        App.setRoot("studenthome");
+        App.setRoot(fxml);
     }
 
     @FXML
-    void onScheduleClicked(ActionEvent event) {
+    void onScheduleClicked(ActionEvent event) throws IOException{
 
     }
 
     @FXML
-    void onSemesterPlanClicked(ActionEvent event) {
+    void onSemesterPlanClicked(ActionEvent event) throws IOException{
 
     }
 
@@ -106,15 +106,11 @@ public class StudentHomeController implements Initializable{
         user_email.setText("Email: " + user.getEmail());
         
         //secondary
-        //user_major.setText("Major: " + user.getMajorName());
+        user_major.setText("Major: " + user.getMajorName());
         user_gpa.setText("GPA: "); //no get gpa method atm
         user_majorgpa.setText("Major GPA: "); //no get major gpa method atm
-        //user_class.setText("Class Level: " + user.getClassification());
-        //user_conc.setText("Concentration: " + user.getApplicationArea()); //are app area and concentration the same thing in our code?
-
-        //tertiary
-        //user_advisor.setText("Advisor: " + user.getAdvisorID()); //this needs to get the advisor's name, not ID
-        scholarship_status.setText("Scholarship Status: ");
-        academic_standing.setText("Academic Standing: "); //do we want this and the one above?
+        user_class.setText("Class Level: " + user.getClassification());
+        
+        user_advisor.setText("Advisor: " + user.getAdvisorID()); //this needs to get the advisor's name, not ID
     }
 }
