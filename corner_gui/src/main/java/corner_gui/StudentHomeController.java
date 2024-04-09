@@ -46,7 +46,8 @@ public class StudentHomeController implements Initializable{
     @FXML private Label user_name;
     @FXML private Label user_notes;
     private Application application;
-    private User user;
+    private Student user;
+    private String fxml;
 
     @FXML
     void onEmailAdvisorClicked(ActionEvent event) {
@@ -75,7 +76,7 @@ public class StudentHomeController implements Initializable{
 
     @FXML
     void onNotesClicked(ActionEvent event) {
-
+        user_notes.setText(user.getAdvisorNote());
     }
 
     @FXML
@@ -96,7 +97,7 @@ public class StudentHomeController implements Initializable{
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         application = Application.getInstance();
-        user = application.getUser();
+        user = (Student) application.getUser();
 
         label_title.setText(user.getFirstName() + "'s Profile");
         

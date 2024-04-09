@@ -37,24 +37,23 @@ public class Application {
         return 2;
     }
 
-    public boolean login(int i, String email, String password) {
+    public boolean login(String email, String password) {
         ArrayList<Student> students = DataLoader.getStudents();
         ArrayList<Advisor> advisors = DataLoader.getAdvisors();
-        if (i == 1) {
-            for (Student student : students) {
-                if (student != null && student.getEmail().equals(email) && student.getPassword().equals(password)) {
-                    user = student;
-                    return true;
-                }
-            }
-        } else if (i == 2) {
-            for (Advisor advisor : advisors) {
-                if (advisor != null && advisor.getEmail().equals(email) && advisor.getPassword().equals(password)) {
-                    user = advisor;
-                    return true;
-                }
+        for (Student student : students) {
+            if (student != null && student.getEmail().equals(email) && student.getPassword().equals(password)) {
+                user = student;
+                return true;
             }
         }
+        
+        for (Advisor advisor : advisors) {
+            if (advisor != null && advisor.getEmail().equals(email) && advisor.getPassword().equals(password)) {
+                user = advisor;
+                return true;
+            }
+        }
+        
         return false;
     }
 
