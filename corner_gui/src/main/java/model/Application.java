@@ -8,6 +8,7 @@ public class Application {
     private CourseList classList;
     private MajorList majorList;
     private Student student;
+    private Student studentUser;
     private static Application application;
     
     private User user;
@@ -59,6 +60,14 @@ public class Application {
 
     public void logout(){
         user = null;
+    }
+
+    public void setStudentUser(Student student){
+        this.studentUser = student;
+    }
+
+    public Student getStudentUser(){
+        return studentUser;
     }
 
     public User createStudentAccount(String userID, String firstName, String middleName, String lastName, String age,

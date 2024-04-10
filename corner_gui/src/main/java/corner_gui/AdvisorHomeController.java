@@ -58,7 +58,9 @@ public class AdvisorHomeController implements Initializable{
 
     @FXML
     void onStudent1Clicked(ActionEvent event) throws IOException{
-        //studentUser = application
+        studentUser = Application.getInstance().getStudent("jlDoe@email.sc.edu");
+        Application.getInstance().setStudentUser(studentUser);
+        App.setRoot("studenthome");
     }
 
     @FXML

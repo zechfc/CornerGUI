@@ -44,7 +44,7 @@ public class StudentHomeController implements Initializable{
     @FXML private DialogPane user_notes_box;
     private Application application;
     private Student user;
-    private String fxml = "studenthome";
+    private String fxml;
 
     @FXML
     void onEmailAdvisorClicked(ActionEvent event) throws IOException{
@@ -79,7 +79,14 @@ public class StudentHomeController implements Initializable{
 
     @FXML
     void onReturnClicked(ActionEvent event) throws IOException{
+    if(application.getUser() instanceof Advisor){
+        App.setRoot("advisorhome");
+    }else {
+        if(fxml == null){
+            fxml = "studenthome";
+        }
         App.setRoot(fxml);
+        }
     }
 
     @FXML
@@ -95,8 +102,11 @@ public class StudentHomeController implements Initializable{
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         application = Application.getInstance();
-        user = (Student) application.getUser();
-
+        if (application.getUser() instanceof Student){
+            user = (Student) application.getUser();
+        }else {
+            user = application.getStudentUser();
+        }
         label_title.setText(user.getFirstName() + "'s Profile");
         
         //user info
