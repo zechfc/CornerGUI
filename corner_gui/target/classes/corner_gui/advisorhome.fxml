@@ -4,36 +4,34 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="corner_gui.AdvisorHomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: F2C48D;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="corner_gui.AdvisorHomeController">
    <children>
-      <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onReturnClicked" text="Return">
+      <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onReturnClicked" style="-fx-background-color: #59381B;" text="Return" textFill="WHITE">
          <font>
             <Font size="10.0" />
          </font>
       </Button>
-      <Button fx:id="logoutButton" layoutX="67.0" layoutY="14.0" mnemonicParsing="false" onAction="#onLogoutClicked" text="Logout">
+      <Button fx:id="logoutButton" layoutX="67.0" layoutY="14.0" mnemonicParsing="false" onAction="#onLogoutClicked" style="-fx-background-color: #59381B;" text="Logout" textFill="WHITE">
          <font>
             <Font size="10.0" />
          </font>
       </Button>
-      <Label layoutX="238.0" layoutY="11.0" text="Pocket Campus">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
       <Label fx:id="label_title" layoutX="286.0" layoutY="38.0" />
-      <VBox fx:id="prim_info" layoutX="17.0" layoutY="47.0" prefHeight="90.0" prefWidth="172.0">
+      <VBox fx:id="prim_info" layoutX="19.0" layoutY="63.0" prefHeight="90.0" prefWidth="172.0">
          <children>
             <Label fx:id="user_name" text="Name: " />
             <Label fx:id="user_email" text="Email: " />
          </children>
       </VBox>
       <VBox fx:id="tert_info" layoutX="372.0" layoutY="56.0" prefHeight="75.0" prefWidth="172.0" />
-      <MenuButton fx:id="search_menu" layoutX="410.0" layoutY="160.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="96.0" text="Search &#10;for Student">
+      <MenuButton fx:id="search_menu" layoutX="19.0" layoutY="327.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #59381B;" text="Search &#10;for Student" textFill="WHITE">
         <items>
           <MenuItem fx:id="studentSearch1" mnemonicParsing="false" onAction="#onStudent1Clicked" text="John Doe" />
           <MenuItem fx:id="studentSearch2" mnemonicParsing="false" onAction="#onStudent2Clicked" text="Mary Sue" />
@@ -45,7 +43,7 @@
             <Font size="10.0" />
          </font>
       </MenuButton>
-      <MenuButton fx:id="studentMenu" layoutX="410.0" layoutY="208.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="96.0" text="Student">
+      <MenuButton fx:id="studentMenu" layoutX="225.0" layoutY="327.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #59381B;" text="Student" textFill="WHITE">
          <items>
             <MenuItem fx:id="email_student" mnemonicParsing="false" onAction="#onEmailStudentClicked" text="Email Student" />
             <MenuItem fx:id="schedule" mnemonicParsing="false" onAction="#onScheduleClicked" text="Schedule Appointment" />
@@ -54,10 +52,19 @@
             <Font size="10.0" />
          </font>
       </MenuButton>
-      <Button layoutX="410.0" layoutY="244.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="96.0" text="Add Student &#10;to Supervising List" textAlignment="CENTER">
+      <Button layoutX="421.0" layoutY="327.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #59381B;" text="Add Student &#10;to Supervising List" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="10.0" />
          </font>
       </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#395950" height="253.0" layoutX="14.0" layoutY="59.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="258.0" />
+      <Label layoutX="216.0" layoutY="11.0" style="-fx-font-weight: bold;" text="Pocket Campus" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField id="courseSearch" layoutX="378.0" layoutY="13.0" prefHeight="25.0" prefWidth="202.0" promptText="Course Search" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#59381b" height="253.0" layoutX="303.0" layoutY="59.0" stroke="#7b4f4f" strokeType="INSIDE" width="280.0" />
+      <Text layoutX="388.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image Placeholder" wrappingWidth="110.6667073567707" />
    </children>
 </AnchorPane>
