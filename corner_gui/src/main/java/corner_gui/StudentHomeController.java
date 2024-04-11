@@ -136,7 +136,7 @@ public class StudentHomeController implements Initializable{
         label_title.setText(user.getFirstName() + "'s Profile");
         
         //user info
-        user_name.setText("Name: " + user.getFirstName() + " " + user.getLastName()); //can add middle name
+        user_name.setText("Name: " + user.getFullName());
         user_email.setText("Email: " + user.getEmail());
         user_major.setText("Major: " + user.getRealMajorName(user.getMajorName()));
         user_gpa.setText("GPA: "); //no get gpa method atm
