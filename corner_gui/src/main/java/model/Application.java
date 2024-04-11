@@ -286,8 +286,12 @@ public class Application {
         return false;
     }
 
-    public Course getClass(String classCode) {
-        return classList.getCourse(classCode);
+    public boolean getClass(String classCode) {
+        Course course = classList.getCourse(classCode);
+        if(course != null){
+            return true;
+        }
+        return false;
     }
 
     public ArrayList<Course> getClasses() {
