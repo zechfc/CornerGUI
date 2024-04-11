@@ -34,24 +34,25 @@
          </font>
       </Label>
       <Label fx:id="label_title" layoutX="286.0" layoutY="38.0" />
-      <VBox fx:id="prim_info" layoutX="17.0" layoutY="81.0" prefHeight="27.0" prefWidth="172.0">
+      <VBox fx:id="prim_info" layoutX="18.0" layoutY="70.0" prefHeight="27.0" prefWidth="172.0">
          <children>
             <Label fx:id="user_name" text="Name: " />
             <Label fx:id="user_email" text="Email: " />
-         </children>
-      </VBox>
-      <VBox fx:id="sec_info" layoutX="16.0" layoutY="114.0" prefHeight="90.0" prefWidth="172.0">
-         <children>
+            <Label fx:id="user_advisor" text="Advisor: " />
             <Label fx:id="user_major" text="Major:" />
             <Label fx:id="user_gpa" text="GPA:" />
             <Label fx:id="user_majorgpa" text="Major GPA:" />
-            <Label fx:id="user_advisor" text="Advisor: " />
             <Label fx:id="user_class" text="Class Level:" />
-            <VBox fx:id="tert_info" prefHeight="75.0" prefWidth="172.0">
+            <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <HBox prefHeight="18.0" prefWidth="172.0" />
+                  <Label text="See Notes" />
+                  <Button fx:id="see_notes_button" mnemonicParsing="false" onAction="#onNotesClicked" prefHeight="20.0" prefWidth="18.0" text="v">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Button>
                </children>
-            </VBox>
+            </HBox>
          </children>
       </VBox>
       <ProgressBar fx:id="degree_progress" layoutX="86.0" layoutY="352.0" prefHeight="18.0" prefWidth="428.0" progress="0.0" />
@@ -84,21 +85,10 @@
             <Font size="10.0" />
          </font>
       </MenuButton>
-      <Hyperlink layoutX="83.0" layoutY="350.0" onAction="#onMajorMapClicked" prefHeight="24.0" prefWidth="428.0" text="Hyperlink" />
-      <DialogPane id="NotesPane" fx:id="NotesPane" headerText="Notes" layoutX="12.0" layoutY="232.0" prefHeight="75.0" prefWidth="172.0" />
+      <Hyperlink layoutX="83.0" layoutY="350.0" onAction="#onMajorMapClicked" prefHeight="24.0" prefWidth="428.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#59381b" height="169.0" layoutX="327.0" layoutY="63.0" stroke="#7b4f4f" strokeType="INSIDE" width="249.0" />
       <Text layoutX="394.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image Placeholder" wrappingWidth="79.3333333333332" />
-      <Label fx:id="user_notes" layoutX="18.0" layoutY="203.0" text="See Notes" />
-      <Button fx:id="see_notes_button" layoutX="78.0" layoutY="202.0" mnemonicParsing="false" onAction="#onNotesClicked" prefHeight="20.0" prefWidth="18.0" text="v">
-         <font>
-            <Font size="9.0" />
-         </font>
-      </Button>
-      <Text fill="WHITE" layoutX="268.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Campus " textAlignment="CENTER" wrappingWidth="118.80340576171875">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Text>
       <TextField id="courseSearch" layoutX="428.0" layoutY="13.0" promptText="Course Search" />
+      <DialogPane fx:id="user_notes_box" layoutX="106.0" layoutY="242.0" />
    </children>
 </AnchorPane>

@@ -396,7 +396,7 @@
                     "credits": 3
                 }
     ],
-    "carolinaCore": [
+    "carolinaCoreReq": [
         {
             "courseID":  "12224407-e656-4fe7-9078-88f1d9dc8325",
             "courseCode": "ENGL101",

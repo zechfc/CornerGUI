@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="corner_gui.AdvisorHomeController">
+   <children>
+      <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onReturnClicked" text="Return">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <Button fx:id="logoutButton" layoutX="67.0" layoutY="14.0" mnemonicParsing="false" onAction="#onLogoutClicked" text="Logout">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <Label layoutX="238.0" layoutY="11.0" text="Pocket Campus">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_title" layoutX="286.0" layoutY="38.0" />
+      <VBox fx:id="prim_info" layoutX="17.0" layoutY="47.0" prefHeight="90.0" prefWidth="172.0">
+         <children>
+            <Label fx:id="user_name" text="Name: " />
+            <Label fx:id="user_email" text="Email: " />
+         </children>
+      </VBox>
+      <VBox fx:id="tert_info" layoutX="372.0" layoutY="56.0" prefHeight="75.0" prefWidth="172.0" />
+      <MenuButton fx:id="search_menu" layoutX="410.0" layoutY="160.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="96.0" text="Search &#10;for Student">
+        <items>
+          <MenuItem fx:id="studentSearch1" mnemonicParsing="false" onAction="#onStudent1Clicked" text="John Doe" />
+          <MenuItem fx:id="studentSearch2" mnemonicParsing="false" onAction="#onStudent2Clicked" text="Mary Sue" />
+            <MenuItem fx:id="studentSearch3" mnemonicParsing="false" onAction="#onStudent3Clicked" text="Tracy Johnson" />
+            <MenuItem fx:id="studentSearch4" mnemonicParsing="false" onAction="#onStudent4Clicked" text="Brax West" />
+            <MenuItem fx:id="studentSearch5" mnemonicParsing="false" onAction="#onStudent5Clicked" text="Tawnie Hill" />
+        </items>
+         <font>
+            <Font size="10.0" />
+         </font>
+      </MenuButton>
+      <MenuButton fx:id="studentMenu" layoutX="410.0" layoutY="208.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="96.0" text="Student">
+         <items>
+            <MenuItem fx:id="email_student" mnemonicParsing="false" onAction="#onEmailStudentClicked" text="Email Student" />
+            <MenuItem fx:id="schedule" mnemonicParsing="false" onAction="#onScheduleClicked" text="Schedule Appointment" />
+         </items>
+         <font>
+            <Font size="10.0" />
+         </font>
+      </MenuButton>
+      <Button layoutX="410.0" layoutY="244.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="96.0" text="Add Student &#10;to Supervising List" textAlignment="CENTER">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
