@@ -40,6 +40,10 @@ public class User {
     return lastName;
   }
 
+  public String getFullName(){
+    return this.firstName + " " + this.middleName + " " + this.lastName;
+  }
+
   public String getPassword() {
     return password;
   }
