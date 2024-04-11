@@ -28,6 +28,11 @@ public class Advisor extends User{
 
     //Removing student from system, must be admin, checked by Application.java
     //Returns true if student removed from system (default false)
+
+    public String getName(){
+        return this.firstName + " " + this.middleName + " " + this.lastName;
+    }
+
     public boolean removeStudent(String userID){
         StudentList students = StudentList.getInstance();
         //will call Advisors.removeStudent()
