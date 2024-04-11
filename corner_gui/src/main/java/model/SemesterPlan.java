@@ -70,17 +70,20 @@ public class SemesterPlan {
                 Student student = StudentList.getInstance().getStudent(name);
                 if (major.equals("Computer Science")) {
                         // find what year and semester student is in
+                        //cant hard code major ID 
                         Major m = MajorList.getInstance().getMajor("a31c3094-3470-4c46-a45f-3b1001d15da2");
+                        //Need to fix the above
                         CourseList cList = CourseList.getInstance();
-                        JSONArray coursesTaken = student.getPastCourses();
-                        JSONArray coursesRequired = m.getprogramRequirements();
+                        ArrayList <pastCourses> coursesTaken = student.getPastCourses();
+                        ArrayList <CourseReccommended> coursesRequired = m.getprogramRequirements();
                         // iterate and find the specific course
                         // String[] courseTypes = {"getCarolinacoreCourses","getMajorCourses"};
-                        int semestart = (int) (long) ((JSONObject) coursesTaken.get(0)).get("year");
+                        int semestart = (int) (long) (coursesTaken.get(0).getPastCourseYear(""));
+
                         int semester = 0;
                         int currentSemester = 0;
                         for (int i = 0; i < coursesTaken.size(); i++) {
-                                JSONObject courseData = (JSONObject) coursesTaken.get(i);
+                                pastCourses courseData = coursesTaken.get(i);
                                 String term = (String) courseData.get("semester");
                                 semester = (((int) (long) ((JSONObject) coursesTaken.get(i)).get("year")) - semestart)
                                                 * 2;
@@ -89,7 +92,7 @@ public class SemesterPlan {
                                 this.studentRequirements.addCourse(semester,
                                                 cList.getCourse((String) courseData.get("courseID")));
                         }
-                        JSONArray coursesTaking = student.getCurrentCourses();
+                        ArrayList <currentCourses> coursesTaking = student.getCurrentCourses();
                         for (int i = 0; i < coursesTaking.size(); i++) {
                                 JSONObject courseData = (JSONObject) coursesTaking.get(i);
                                 String term = (String) courseData.get("semester");
@@ -123,7 +126,7 @@ public class SemesterPlan {
                                 h += c.getCourseCredtis();
                                 this.studentRequirements.addCourse(sem + 1, c);
                         }
-                        JSONArray carolinaCores = m.getCarolinacoreCoursesReq();
+                        ArrayList carolinaCores = m.getCarolinacoreCoursesReq();
                         h = 0;
                         require = m.getcarolinaHours();
                         for (int i = 0; i < carolinaCores.size() && h < require; i++) {
@@ -144,7 +147,7 @@ public class SemesterPlan {
                                 h += c.getCourseCredtis();
                                 this.studentRequirements.addCourse(sem + 1, c);
                         }
-                        JSONArray majorReqs = m.getMajorCourses();
+                        ArrayList majorReqs = m.getMajorCourses();
                         h = 0;
                         require = m.getcarolinaHours();
                         for (int i = 0; i < majorReqs.size() && h < require; i++) {
