@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -15,8 +16,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import model.*;
 
 public class StudentHomeController implements Initializable{
@@ -42,6 +46,8 @@ public class StudentHomeController implements Initializable{
     @FXML private Label user_majorgpa;
     @FXML private Label user_name;
     @FXML private DialogPane user_notes_box;
+    @FXML private Button editNote;
+    @FXML private TextField note_text;
     private Application application;
     private Student user;
     private String fxml;
@@ -75,6 +81,26 @@ public class StudentHomeController implements Initializable{
     void onNotesClicked(ActionEvent event) throws IOException{
         user_notes_box.setVisible(true);
         user_notes_box.setContentText(user.getAdvisorNote());
+
+        if(application.getUser() instanceof Advisor){
+            editNote.setVisible(true);
+        }
+    }
+
+    @FXML
+    void onEditNoteClicked(ActionEvent event) throws IOException{
+        note_text.setVisible(true);
+        note_text.setOnKeyPressed(new EventHandler<KeyEvent>() {
+
+            public void handle(KeyEvent e){
+                if(e.getCode().equals(KeyCode.ENTER)){
+                    note_text.setVisible(false);
+                    String note = note_text.getText();
+                    user.editAdvisorNote(note);
+                    user_notes_box.setContentText(user.getAdvisorNote());
+                }
+            }
+        });
     }
 
     @FXML
@@ -96,7 +122,7 @@ public class StudentHomeController implements Initializable{
 
     @FXML
     void onSemesterPlanClicked(ActionEvent event) throws IOException{
-
+        App.setRoot("semesterplan");
     }
 
     @Override
@@ -112,12 +138,14 @@ public class StudentHomeController implements Initializable{
         //user info
         user_name.setText("Name: " + user.getFirstName() + " " + user.getLastName()); //can add middle name
         user_email.setText("Email: " + user.getEmail());
-        user_major.setText("Major: " + user.getMajorName());
+        user_major.setText("Major: " + user.getRealMajorName(user.getMajorName()));
         user_gpa.setText("GPA: "); //no get gpa method atm
         user_majorgpa.setText("Major GPA: "); //no get major gpa method atm
         user_class.setText("Class Level: " + user.getClassification());
         user_advisor.setText("Advisor: " + user.getAdvisorID()); //this needs to get the advisor's name, not ID
 
         user_notes_box.setVisible(false);
+        editNote.setVisible(false);
+        note_text.setVisible(false);
     }
 }
