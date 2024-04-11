@@ -48,6 +48,7 @@ public class StudentHomeController implements Initializable{
     @FXML private DialogPane user_notes_box;
     @FXML private Button editNote;
     @FXML private TextField note_text;
+    @FXML private TextField course_search_text;
     private Application application;
     private Student user;
     private String fxml;
@@ -104,6 +105,25 @@ public class StudentHomeController implements Initializable{
     }
 
     @FXML
+    void onCourseSearchClicked(ActionEvent event) throws IOException{
+        String text = course_search_text.getText();
+
+        course_search_text.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            public void handle(KeyEvent e){
+                if(e.getCode().equals(KeyCode.ENTER)){
+                    if(application.getClass(text)){
+                        try {
+                            App.setRoot("coursepage");
+                        } catch (IOException error) {
+                            error.printStackTrace();
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    @FXML
     void onReturnClicked(ActionEvent event) throws IOException{
     if(application.getUser() instanceof Advisor){
         App.setRoot("advisorhome");
@@ -142,7 +162,7 @@ public class StudentHomeController implements Initializable{
         user_gpa.setText("GPA: "); //no get gpa method atm
         user_majorgpa.setText("Major GPA: "); //no get major gpa method atm
         user_class.setText("Class Level: " + user.getClassification());
-        user_advisor.setText("Advisor: " + user.getAdvisorID()); //this needs to get the advisor's name, not ID
+        user_advisor.setText("Advisor: " + user.getRealAdvisorName(user.getAdvisorID())); //this needs to get the advisor's name, not ID
 
         user_notes_box.setVisible(false);
         editNote.setVisible(false);
