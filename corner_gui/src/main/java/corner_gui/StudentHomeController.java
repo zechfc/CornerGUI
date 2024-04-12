@@ -2,7 +2,6 @@ package corner_gui;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -111,12 +110,13 @@ public class StudentHomeController implements Initializable{
         course_search_text.setOnKeyPressed(new EventHandler<KeyEvent>() {
             public void handle(KeyEvent e){
                 if(e.getCode().equals(KeyCode.ENTER)){
-                    if(application.getClass(text)){
-                        try {
-                            App.setRoot("coursepage");
-                        } catch (IOException error) {
-                            error.printStackTrace();
-                        }
+                    if(!application.getClass(text)){
+                        return;
+                    }
+                    try {
+                        App.setRoot("coursepage");
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
                     }
                 }
             }
@@ -125,13 +125,13 @@ public class StudentHomeController implements Initializable{
 
     @FXML
     void onReturnClicked(ActionEvent event) throws IOException{
-    if(application.getUser() instanceof Advisor){
-        App.setRoot("advisorhome");
-    }else {
-        if(fxml == null){
-            fxml = "studenthome";
-        }
-        App.setRoot(fxml);
+        if(application.getUser() instanceof Advisor){
+            App.setRoot("advisorhome");
+        }else {
+            if(fxml == null){
+                fxml = "studenthome";
+            }
+            App.setRoot(fxml);
         }
     }
 

@@ -10,7 +10,7 @@ public class Application {
     private Student student;
     private Student studentUser;
     private static Application application;
-    
+    private Course course;
     private User user;
 
     public Application() {
@@ -68,6 +68,10 @@ public class Application {
 
     public Student getStudentUser(){
         return studentUser;
+    }
+
+    public Course getCourse(){
+        return course;
     }
 
     public User createStudentAccount(String userID, String firstName, String middleName, String lastName, String age,
@@ -287,7 +291,7 @@ public class Application {
     }
 
     public boolean getClass(String classCode) {
-        Course course = classList.getCourse(classCode);
+        course = classList.getCourse(classCode);
         if(course != null){
             return true;
         }
