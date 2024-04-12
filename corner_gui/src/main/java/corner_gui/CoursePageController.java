@@ -1,13 +1,18 @@
 package corner_gui;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.ArrayList;
+
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import model.*;
 
 public class CoursePageController implements Initializable {
@@ -16,10 +21,9 @@ public class CoursePageController implements Initializable {
     @FXML private Label courseName;
     @FXML private Button logoutButton;
     @FXML private Button returnButton;
+    @FXML private TextField course_search_text;
     private Application application;
-    private User user;
-    private CourseList courseList;
-    private ArrayList<Course> courses;
+    private Course course;
     private String fxml;
 
 
@@ -30,24 +34,44 @@ public class CoursePageController implements Initializable {
 
     @FXML
     void onReturnButtonClicked(ActionEvent event) throws IOException{
-        if(user instanceof Student){
-            fxml = "studentpage";
-            App.setRoot(fxml);
-        }else if (user instanceof Advisor){
-            fxml = "advisorpage";
+        if(application.getUser() instanceof Advisor){
+            App.setRoot("advisorhome");
+        }else {
+            if(fxml == null){
+                fxml = "studenthome";
+            }
             App.setRoot(fxml);
         }
     }
 
-    @Override
-    public void initialize(URL arg0, ResourceBundle arg1) {
-        courseList = CourseList.getInstance();
-        application = Application.getInstance();
-        user = application.getUser();
+    @FXML
+    void onCourseSearchClicked(ActionEvent event) throws IOException{
+        String text = course_search_text.getText();
 
-        
-
-
+        course_search_text.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            public void handle(KeyEvent e){
+                if(e.getCode().equals(KeyCode.ENTER)){
+                    if(!application.getClass(text)){
+                        return;
+                    }
+                    try {
+                        App.setRoot("coursepage");
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+                }
+            }
+        });
     }
 
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        application = Application.getInstance();
+        course = application.getCourse();
+
+        courseName.setText("Course Name: " + course.getCourseName());
+        courseCode.setText("Course Code: " + course.getCourseKey());
+        courseDescription.setText("Course Description: " + course.getDescription());
+        courseDescription.setWrapText(true);
+    }
 }
