@@ -24,10 +24,11 @@
          </font>
       </Button>
       <Label fx:id="label_title" layoutX="286.0" layoutY="38.0" />
-      <VBox fx:id="prim_info" layoutX="19.0" layoutY="63.0" prefHeight="90.0" prefWidth="172.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#395950" height="253.0" layoutX="14.0" layoutY="59.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="258.0" />
+      <VBox fx:id="prim_info" layoutX="19.0" layoutY="63.0" prefHeight="94.0" prefWidth="249.0">
          <children>
-            <Label fx:id="user_name" text="Name: " />
-            <Label fx:id="user_email" text="Email: " />
+            <Label fx:id="user_name" prefHeight="18.0" prefWidth="251.0" text="Name: " />
+            <Label fx:id="user_email" prefHeight="18.0" prefWidth="249.0" text="Email: " />
          </children>
       </VBox>
       <VBox fx:id="tert_info" layoutX="372.0" layoutY="56.0" prefHeight="75.0" prefWidth="172.0" />
@@ -57,14 +58,14 @@
             <Font size="10.0" />
          </font>
       </Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#395950" height="253.0" layoutX="14.0" layoutY="59.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="258.0" />
       <Label layoutX="216.0" layoutY="11.0" style="-fx-font-weight: bold;" text="Pocket Campus" textAlignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField id="courseSearch" layoutX="378.0" layoutY="13.0" prefHeight="25.0" prefWidth="202.0" promptText="Course Search" />
+      <TextField id="courseSearch" fx:id="course_search_text" layoutX="378.0" layoutY="13.0" onAction="#onCourseSearchClicked" prefHeight="25.0" prefWidth="202.0" promptText="Course Search" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#59381b" height="253.0" layoutX="303.0" layoutY="59.0" stroke="#7b4f4f" strokeType="INSIDE" width="280.0" />
       <Text layoutX="388.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image Placeholder" wrappingWidth="110.6667073567707" />
+      <Label fx:id="label_title" layoutX="267.0" layoutY="38.0" />
    </children>
 </AnchorPane>

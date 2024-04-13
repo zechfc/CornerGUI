@@ -22,7 +22,7 @@ public class CourseList {
 
     public Course getCourse(String key) {
         for (Course course : courseList) {
-            if (course.getCourseName().equals(key) || course.getCourseID().equals(key)) {
+            if (course.getCourseName().equals(key) || course.getCourseID().equals(key) || course.getCourseKey().equals(key)) {
                 return course;
             }
         }
