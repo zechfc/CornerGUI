@@ -20,15 +20,15 @@ public class currentCourses {
     return this.courseID;
    }
 
-   public String getCurrentCourseGrade(String courseID){
+   public String getCurrentCourseGrade(){
     return this.grade;
    }
 
-   public String getCurrentCourseSemester(String courseID){
+   public String getCurrentCourseSemester(){
     return this.semester;
    }
 
-   public long getCurrentCourseYear(String courseID){
+   public long getCurrentCourseYear(){
     return this.year;
    }
    public Course getCurrentCourse(String courseID){
