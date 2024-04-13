@@ -5,13 +5,17 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import model.*;
 
 public class AdvisorHomeController implements Initializable{
@@ -31,6 +35,7 @@ public class AdvisorHomeController implements Initializable{
     @FXML private VBox tert_info;
     @FXML private Label user_email;
     @FXML private Label user_name;
+    @FXML private TextField course_search_text;
     private Application application;
     private Advisor user;
     private String fxml = "advisorhome";
@@ -89,6 +94,26 @@ public class AdvisorHomeController implements Initializable{
         studentUser = Application.getInstance().getStudent("hillt@email.sc.edu");
         Application.getInstance().setStudentUser(studentUser);
         App.setRoot("studenthome");
+    }
+
+    @FXML
+    void onCourseSearchClicked(ActionEvent event) throws IOException{
+        String text = course_search_text.getText();
+
+        course_search_text.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            public void handle(KeyEvent e){
+                if(e.getCode().equals(KeyCode.ENTER)){
+                    if(!application.getClass(text)){
+                        return;
+                    }
+                    try {
+                        App.setRoot("coursepage");
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+                }
+            }
+        });
     }
 
     @Override

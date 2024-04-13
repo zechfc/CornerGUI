@@ -88,7 +88,7 @@
       <Hyperlink layoutX="83.0" layoutY="350.0" onAction="#onMajorMapClicked" prefHeight="24.0" prefWidth="428.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#59381b" height="169.0" layoutX="327.0" layoutY="63.0" stroke="#7b4f4f" strokeType="INSIDE" width="249.0" />
       <Text layoutX="394.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image Placeholder" wrappingWidth="79.3333333333332" />
-      <TextField id="courseSearch" layoutX="428.0" layoutY="13.0" promptText="Course Search" />
+      <TextField id="courseSearch" fx:id="course_search_text" layoutX="428.0" layoutY="13.0" onAction="#onCourseSearchClicked" promptText="Course Search" />
       <DialogPane fx:id="user_notes_box" layoutX="106.0" layoutY="242.0" />
       <TextField fx:id="note_text" layoutX="104.0" layoutY="242.0" prefHeight="54.0" prefWidth="249.0" />
       <Button fx:id="editNote" layoutX="381.0" layoutY="257.0" mnemonicParsing="false" onAction="#onEditNoteClicked" text="Edit Note" />
