@@ -23,6 +23,7 @@ import javafx.scene.input.KeyEvent;
 import model.*;
 
 public class StudentHomeController implements Initializable{
+    @FXML private Label semesterPlanText;
     @FXML private MenuButton advisor_menu;
     @FXML private ProgressBar degree_progress;
     @FXML private MenuItem email_advisor;
@@ -156,5 +157,8 @@ public class StudentHomeController implements Initializable{
         note_text.setVisible(false);
         course_box.setVisible(false);
         closeCourseBox.setVisible(false);
+
+        // semesterPlanText 
+        semesterPlanText.setText(user.getSemesterPlan());
     }
 }
