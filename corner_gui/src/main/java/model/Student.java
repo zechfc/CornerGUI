@@ -178,8 +178,6 @@ public class Student extends User {
     // }
     public String getSemesterPlan() {
         return semesterPlan.generatePlan();
-        
-
     }
 
     public void editAdvisorNote(String note) {
