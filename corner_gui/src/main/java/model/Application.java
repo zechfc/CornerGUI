@@ -302,6 +302,10 @@ public class Application {
         return classList.getCourses();
     }
 
+    public ArrayList<Student> getStudents(){
+        return studentList.getStudents();
+    }
+
     public Advisor getAdvisor(String userID) {
         User user = advisorList.getAdvisor(userID);
         if (user != null && user instanceof Advisor) {
@@ -316,9 +320,5 @@ public class Application {
             return true;
         }
         return false;
-    }
-
-    public void printAllStudentsAndIDs(){
-        
     }
 }

@@ -26,7 +26,6 @@
             <Font size="10.0" />
          </font>
       </Button>
-      <Label fx:id="label_title" layoutX="286.0" layoutY="38.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#395950" height="253.0" layoutX="14.0" layoutY="59.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="258.0" />
       <VBox fx:id="prim_info" layoutX="19.0" layoutY="63.0" prefHeight="94.0" prefWidth="249.0">
          <children>
@@ -68,11 +67,12 @@
             <Image url="@../../../src/main/java/model/image/Pocket_Campus.png" />
          </image>
       </ImageView>
-      <DialogPane layoutX="123.0" layoutY="30.0" prefHeight="280.0" prefWidth="360.0" />
-      <Button fx:id="closeAddStudentButton" layoutX="453.0" layoutY="37.0" mnemonicParsing="false" onAction="#onCloseAddStudent" text="X" />
-      <Label fx:id="advisorIDLabel" layoutX="130.0" layoutY="184.0" text="Your ID: " />
-      <TextField fx:id="studentIDField" layoutX="130.0" layoutY="214.0" prefHeight="26.0" prefWidth="344.0" promptText="Student ID" />
-      <TextField fx:id="advisorIDField" layoutX="130.0" layoutY="256.0" prefHeight="26.0" prefWidth="344.0" promptText="Advisor ID" />
-      <Label fx:id="listOfStudents" alignment="TOP_LEFT" layoutX="129.0" layoutY="38.0" prefHeight="140.0" prefWidth="319.0" />
+      <DialogPane fx:id="addStudentBox" layoutX="83.0" layoutY="44.0" minHeight="280.0" minWidth="440.0" prefHeight="280.0" prefWidth="440.0" />
+      <Label fx:id="label_error" layoutX="199.0" layoutY="210.0" prefHeight="18.0" prefWidth="202.0" text="Please enter text before hitting enter" textFill="RED" />
+      <Button fx:id="closeAddStudentButton" layoutX="496.0" layoutY="47.0" mnemonicParsing="false" onAction="#onCloseAddStudent" text="X" />
+      <Label fx:id="advisorIDLabel" layoutX="89.0" layoutY="192.0" text="Your ID: " />
+      <TextField fx:id="studentIDField" layoutX="130.0" layoutY="243.0" prefHeight="26.0" prefWidth="344.0" promptText="Student ID" />
+      <TextField fx:id="advisorIDField" layoutX="130.0" layoutY="279.0" prefHeight="26.0" prefWidth="344.0" promptText="Advisor ID" />
+      <Label fx:id="listOfStudents" alignment="TOP_LEFT" layoutX="89.0" layoutY="49.0" prefHeight="140.0" prefWidth="401.0" />
    </children>
 </AnchorPane>

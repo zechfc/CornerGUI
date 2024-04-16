@@ -12,12 +12,16 @@ import java.util.Map;
 public class SemesterPlan {
         private SemesterTextFormatter studentRequirements;
         protected ArrayList<String> SemesterPlan;
+        private String major;
+        private String name;
 
         public SemesterPlan(String major, ArrayList<pastCourses> pastCourses, String name) {
                 this.studentRequirements = new SemesterTextFormatter();
                 this.SemesterPlan = new ArrayList<>();
+                this.major = major;
+                this.name = name;
                 // Generate semester plan based on completed courses and major requirements
-                generatePlan(major, name);
+                generatePlan();
         }
 
         private class SemesterTextFormatter {
@@ -56,7 +60,11 @@ public class SemesterPlan {
         }
 
         // 8 semester plan
-        private String generatePlan(String major, String name) {
+        public String generatePlan() {
+                return this.studentRequirements.generatePlan();
+        }
+        
+        public String createPlan() {
                 // Logic to generate semester plan based on completed courses and major
                 // requirements
                 // This can include checking prerequisites, corequisites, and other major
