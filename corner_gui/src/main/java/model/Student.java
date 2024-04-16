@@ -37,6 +37,7 @@ public class Student extends User {
         this.pastCourses = pastCourses;
         this.advisorID = advisorID;
         
+        makeSemesterPlan();
     }
 
     public boolean studentProfile(String userID){
@@ -170,8 +171,13 @@ public class Student extends User {
         this.semesterPlan = new SemesterPlan("Computer Science", pastCourses, this.userID);
     }
 
-    public SemesterPlan getSemesterPlan() {
-        return new SemesterPlan(major, (ArrayList<pastCourses>)pastCourses, this.userID);
+    // public SemesterPlan getSemesterPlan() {
+    //     return new SemesterPlan(major, (ArrayList<pastCourses>)pastCourses, this.userID);
+        
+
+    // }
+    public String getSemesterPlan() {
+        return semesterPlan.generatePlan();
         
 
     }

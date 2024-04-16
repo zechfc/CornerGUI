@@ -156,5 +156,8 @@ public class StudentHomeController implements Initializable{
         note_text.setVisible(false);
         course_box.setVisible(false);
         closeCourseBox.setVisible(false);
+
+        // semesterPlanText 
+        user.getSemesterPlan()
     }
 }
