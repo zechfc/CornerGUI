@@ -48,24 +48,13 @@ public class StudentHomeController implements Initializable{
     @FXML private Button editNote;
     @FXML private TextField note_text;
     @FXML private TextField course_search_text;
+    @FXML private Button closeCourseBox;
+    @FXML private DialogPane course_box;
     private Application application;
     private Student user;
     private String fxml;
-
-    @FXML
-    void onEmailAdvisorClicked(ActionEvent event) throws IOException{
-
-    }
-
-    @FXML
-    void onGPAClicked(ActionEvent event) throws IOException{
-
-    }
-
-    @FXML
-    void onGradesClicked(ActionEvent event) throws IOException{
-
-    }
+    private boolean box_visible = false;
+    private Course course;
 
     @FXML
     void onLogoutClicked(ActionEvent event) throws IOException {
@@ -73,18 +62,19 @@ public class StudentHomeController implements Initializable{
     }
 
     @FXML
-    void onMajorMapClicked(ActionEvent event) throws IOException{
-
-    }
-
-    @FXML
     void onNotesClicked(ActionEvent event) throws IOException{
-        user_notes_box.setVisible(true);
-        user_notes_box.setContentText(user.getAdvisorNote());
-
-        if(application.getUser() instanceof Advisor){
-            editNote.setVisible(true);
-        }
+        box_visible = !box_visible;
+        if(box_visible){
+            user_notes_box.setVisible(box_visible);
+            user_notes_box.setContentText(user.getAdvisorNote());
+            if(application.getUser() instanceof Advisor){
+                editNote.setVisible(true);
+            }
+        }else {
+            user_notes_box.setVisible(false);
+            editNote.setVisible(false);
+            note_text.setVisible(false);
+        }    
     }
 
     @FXML
@@ -113,11 +103,12 @@ public class StudentHomeController implements Initializable{
                     if(!application.getClass(text)){
                         return;
                     }
-                    try {
-                        App.setRoot("coursepage");
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
+                    course = application.getCourse();
+                    course_box.setVisible(true);
+                    closeCourseBox.setVisible(true);
+                    course_box.setContentText("Course Name: " + course.getCourseName() + "\n"
+                                                + "Course Code: " + course.getCourseKey() + "\n"
+                                                + "Course Description: " + course.getDescription());
                 }
             }
         });
@@ -136,13 +127,9 @@ public class StudentHomeController implements Initializable{
     }
 
     @FXML
-    void onScheduleClicked(ActionEvent event) throws IOException{
-
-    }
-
-    @FXML
-    void onSemesterPlanClicked(ActionEvent event) throws IOException{
-        App.setRoot("semesterplan");
+    void onCloseCourseBox(ActionEvent event) throws IOException {
+        course_box.setVisible(false);
+        closeCourseBox.setVisible(false);
     }
 
     @Override
@@ -167,5 +154,7 @@ public class StudentHomeController implements Initializable{
         user_notes_box.setVisible(false);
         editNote.setVisible(false);
         note_text.setVisible(false);
+        course_box.setVisible(false);
+        closeCourseBox.setVisible(false);
     }
 }

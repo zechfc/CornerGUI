@@ -9,6 +9,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
@@ -36,15 +37,13 @@ public class AdvisorHomeController implements Initializable{
     @FXML private Label user_email;
     @FXML private Label user_name;
     @FXML private TextField course_search_text;
+    @FXML private Button closeCourseBox;
+    @FXML private DialogPane course_box;
     private Application application;
     private Advisor user;
     private String fxml = "advisorhome";
     private Student studentUser;
-
-    @FXML
-    void onEmailStudentClicked(ActionEvent event) throws IOException{
-
-    }
+    private Course course;
 
     @FXML
     void onLogoutClicked(ActionEvent event) throws IOException{
@@ -54,11 +53,6 @@ public class AdvisorHomeController implements Initializable{
     @FXML
     void onReturnClicked(ActionEvent event) throws IOException{
         App.setRoot(fxml);
-    }
-
-    @FXML
-    void onScheduleClicked(ActionEvent event) throws IOException {
-
     }
 
     @FXML
@@ -106,14 +100,21 @@ public class AdvisorHomeController implements Initializable{
                     if(!application.getClass(text)){
                         return;
                     }
-                    try {
-                        App.setRoot("coursepage");
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
+                    course = application.getCourse();
+                    course_box.setVisible(true);
+                    closeCourseBox.setVisible(true);
+                    course_box.setContentText("Course Name: " + course.getCourseName() + "\n"
+                                                + "Course Code: " + course.getCourseKey() + "\n"
+                                                + "Course Description: " + course.getDescription());
                 }
             }
         });
+    }
+
+    @FXML
+    void onCloseCourseBox(ActionEvent event) throws IOException {
+        course_box.setVisible(false);
+        closeCourseBox.setVisible(false);
     }
 
     @Override
@@ -125,6 +126,9 @@ public class AdvisorHomeController implements Initializable{
 
         user_name.setText("Name: " + user.getFirstName() + " " + user.getLastName());
         user_email.setText("Email: " + user.getEmail());
+
+        course_box.setVisible(false);
+        closeCourseBox.setVisible(false);
     }
 
 }
