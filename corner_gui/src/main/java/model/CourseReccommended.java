@@ -16,11 +16,11 @@ public class CourseReccommended {
         return this.courseID;
        }
 
-   public String getCourseRecTime(String courseID){
+   public String getCourseRecTime(){
     return this.recommendedTime;
    }
 
-   public String getCourseRecTerm(String courseID){
+   public String getCourseRecTerm(){
     return this.recommendedTerm;
    }
    public Course getCourseRec(String courseID){

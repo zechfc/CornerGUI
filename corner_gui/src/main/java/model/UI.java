@@ -176,7 +176,7 @@ public class UI {
     }
 
     public void demoscenario1(){
-        System.out.println("\nScenario 1");
+        /*System.out.println("\nScenario 1");
     
         //System.out.println("Type student or advisor for what you are"); // ?
         application.checkUser("student"); 
@@ -210,7 +210,7 @@ public class UI {
 
         // System.out.println("\n Here are the remaining courses you can take \n"); 
         // System.out.println(application.getRemaningProgramRequirements("a31c3094-3470-4c46-a45f-3b1001d15da2","westb@email.sc.edu" )); 
-
+        */
         System.out.println("Making Semester Plan");
         application.getStudent("westb@email.sc.edu").makeSemesterPlan();
 
