@@ -16,8 +16,8 @@
             <Font size="26.0" />
          </font>
       </Label>
-      <TextField fx:id="username_text" layoutX="336.0" layoutY="155.0" />
-      <TextField fx:id="password_text" layoutX="337.0" layoutY="200.0" />
+      <TextField fx:id="username_text" layoutX="336.0" layoutY="155.0" prefHeight="26.0" prefWidth="211.0" />
+      <TextField fx:id="password_text" layoutX="337.0" layoutY="200.0" prefHeight="26.0" prefWidth="211.0" />
       <Label layoutX="260.0" layoutY="159.0" text="Username:" />
       <Label layoutX="260.0" layoutY="204.0" text="Password:" />
       <Label fx:id="error_label" layoutX="338.0" layoutY="222.0" prefHeight="39.0" prefWidth="231.0" textFill="RED" />
