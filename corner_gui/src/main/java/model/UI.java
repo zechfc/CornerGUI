@@ -212,7 +212,7 @@ public class UI {
         // System.out.println(application.getRemaningProgramRequirements("a31c3094-3470-4c46-a45f-3b1001d15da2","westb@email.sc.edu" )); 
         */
         System.out.println("Making Semester Plan");
-        application.getStudent("westb@email.sc.edu").makeSemesterPlan();
+        //application.getStudent("westb@email.sc.edu").makeSemesterPlan();
 
 
 

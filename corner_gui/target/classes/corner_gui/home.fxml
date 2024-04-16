@@ -31,7 +31,7 @@
       </Label>
       <ImageView id="mainimage" fitHeight="356.0" fitWidth="211.0" layoutX="21.0" layoutY="20.0" pickOnBounds="true">
          <image>
-            <Image url="@//C:/Users/zechf/Desktop/CornerGUI/corner_gui/src/main/resources/image/Pocket_Campus.png" />
+            <Image url="@corner_gui\target\classes\image\Pocket_Campus.png" />
          </image>
       </ImageView>
    </children>
