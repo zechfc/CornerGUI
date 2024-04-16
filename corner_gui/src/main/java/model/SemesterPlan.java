@@ -21,7 +21,6 @@ public class SemesterPlan {
                 this.major = major;
                 this.name = name;
                 // Generate semester plan based on completed courses and major requirements
-                generatePlan();
         }
 
         private class SemesterTextFormatter {
@@ -61,10 +60,6 @@ public class SemesterPlan {
 
         // 8 semester plan
         public String generatePlan() {
-                return this.studentRequirements.generatePlan();
-        }
-        
-        public String createPlan() {
                 // Logic to generate semester plan based on completed courses and major
                 // requirements
                 // This can include checking prerequisites, corequisites, and other major
@@ -91,7 +86,7 @@ public class SemesterPlan {
                         ArrayList <CourseReccommended> coursesRequired = m.getprogramRequirements();
                         // iterate and find the specific course
                         // String[] courseTypes = {"getCarolinacoreCourses","getMajorCourses"};
-                        int semestart = (int) (long) (coursesTaken.get(0).getPastCourseYear());
+                        int semestart = (int) (coursesTaken.get(0).getPastCourseYear());
 
                         int semester = 0;
                         int currentSemester = 0;
