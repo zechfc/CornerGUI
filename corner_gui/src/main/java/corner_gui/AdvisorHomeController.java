@@ -17,6 +17,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import model.*;
 
 public class AdvisorHomeController implements Initializable{
@@ -158,6 +160,9 @@ public class AdvisorHomeController implements Initializable{
         advisorIDLabel.setVisible(false);
         listOfStudents.setVisible(false);
         closeAddStudentButton.setVisible(false);
+
+        Image image = new Image(getClass().getResourceAsStream("/images/" + user.().getImageName()));
+        ImageView image_book = new ImageView(image);
     }
 
 }
