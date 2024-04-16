@@ -17,6 +17,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import model.*;
 
 public class AdvisorHomeController implements Initializable{
@@ -39,6 +41,15 @@ public class AdvisorHomeController implements Initializable{
     @FXML private TextField course_search_text;
     @FXML private Button closeCourseBox;
     @FXML private DialogPane course_box;
+    
+    @FXML private Button addStudentButton;
+    @FXML private TextField advisorIDField;
+    @FXML private TextField studentIDField;
+    @FXML private Label advisorIDLabel;
+    @FXML private Button closeAddStudentButton;
+    @FXML private Label listOfStudents;
+    
+
     private Application application;
     private Advisor user;
     private String fxml = "advisorhome";
@@ -117,6 +128,20 @@ public class AdvisorHomeController implements Initializable{
         closeCourseBox.setVisible(false);
     }
 
+    @FXML
+    void onAddStudentClicked(ActionEvent event) throws IOException{
+        // listOfStudents.setText();
+    }
+
+    @FXML
+    void onCloseAddStudent(ActionEvent event) throws IOException{
+        studentIDField.setVisible(false);
+        advisorIDField.setVisible(false);
+        advisorIDLabel.setVisible(false);
+        listOfStudents.setVisible(false);
+        closeAddStudentButton.setVisible(false);
+    }
+
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         application = Application.getInstance();
@@ -129,6 +154,15 @@ public class AdvisorHomeController implements Initializable{
 
         course_box.setVisible(false);
         closeCourseBox.setVisible(false);
+
+        studentIDField.setVisible(false);
+        advisorIDField.setVisible(false);
+        advisorIDLabel.setVisible(false);
+        listOfStudents.setVisible(false);
+        closeAddStudentButton.setVisible(false);
+
+        Image image = new Image(getClass().getResourceAsStream("/images/" + user.().getImageName()));
+        ImageView image_book = new ImageView(image);
     }
 
 }

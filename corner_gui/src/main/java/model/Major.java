@@ -142,9 +142,9 @@ public class Major {
                 } catch (Exception e) {
                      courseName = "not in JSON " + idPastCourse;
                 }                
-                String courseGrade = pastCourses.get(j).getPastCourseGrade(idPastCourse);    
-                String courseSemester = pastCourses.get(j).getPastCourseSemester(idPastCourse);             
-                long courseYear = pastCourses.get(j).getPastCourseYear(idPastCourse);             
+                String courseGrade = pastCourses.get(j).getPastCourseGrade();    
+                String courseSemester = pastCourses.get(j).getPastCourseSemester();             
+                long courseYear = pastCourses.get(j).getPastCourseYear();             
                 String pass = "";
                     if (courseGrade.compareToIgnoreCase("C") <= 0) 
                     {
@@ -194,9 +194,9 @@ public class Major {
                 } catch (Exception e) {
                      courseName = "not in JSON " + idPastCourse;
                 }                
-                String courseGrade = currentCourses.get(j).getCurrentCourseGrade(idPastCourse);             
-                String courseSemester = currentCourses.get(j).getCurrentCourseSemester(idPastCourse);             
-                long courseYear = currentCourses.get(j).getCurrentCourseYear(idPastCourse);             
+                String courseGrade = currentCourses.get(j).getCurrentCourseGrade();             
+                String courseSemester = currentCourses.get(j).getCurrentCourseSemester();             
+                long courseYear = currentCourses.get(j).getCurrentCourseYear();             
 
                    
                     toString = (courseName + " Grade: " + courseGrade + " " + courseSemester + " " + courseYear);
