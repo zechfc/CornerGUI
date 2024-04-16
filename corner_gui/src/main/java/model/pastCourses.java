@@ -20,15 +20,15 @@ public class pastCourses {
     return this.courseID;
     }
 
-    public String getPastCourseGrade(String courseID){
+    public String getPastCourseGrade(){
     return this.grade;
    }
 
-   public String getPastCourseSemester(String courseID){
+   public String getPastCourseSemester(){
     return this.semester;
    }
 
-   public long getPastCourseYear(String courseID){
+   public long getPastCourseYear(){
     return this.year;
    }
    public Course getPastCourse(String courseID){
