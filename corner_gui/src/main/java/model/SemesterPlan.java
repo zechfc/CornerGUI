@@ -56,7 +56,7 @@ public class SemesterPlan {
         }
 
         // 8 semester plan
-        private String generatePlan(String major, String name) {
+        private String generatePlan() {
                 // Logic to generate semester plan based on completed courses and major
                 // requirements
                 // This can include checking prerequisites, corequisites, and other major
