@@ -12,38 +12,47 @@ import java.util.Map;
 public class SemesterPlan {
         private SemesterTextFormatter studentRequirements;
         protected ArrayList<String> SemesterPlan;
+        private String major;
+        private String name;
 
         public SemesterPlan(String major, ArrayList<pastCourses> pastCourses, String name) {
                 this.studentRequirements = new SemesterTextFormatter();
                 this.SemesterPlan = new ArrayList<>();
+                this.major = major;
+                this.name = name;
                 // Generate semester plan based on completed courses and major requirements
-                generatePlan(major, name);
         }
 
         private class SemesterTextFormatter {
-                private Map<Integer, List<Course>> plan;
+                private Map<Integer, List<String>> plan;
 
                 public SemesterTextFormatter() {
                         this.plan = new HashMap<>();
                 }
 
-                public void addCourse(int semester, Course course) {
-                        for (List<Course> courses : plan.values()) {
-                                if (courses.contains(course)) {
+                public void addCourse(int semester, String course) {
+                        for (List<String> courses : plan.values()) {
+                                if (courses.contains(course.toString())) {
                                         return; // Course already exists in the plan, no need to add it again
                                 }
                         }
                         plan.computeIfAbsent(semester, k -> new ArrayList<>()).add(course);
                 } // I am abusing the fact that we can assume they are following the right order
 
+                public void addCourseRegardless(int semester, String course) {
+                        plan.computeIfAbsent(semester, k -> new ArrayList<>()).add(course);
+                }
+
                 public String generatePlan() {
                         StringBuilder builder = new StringBuilder();
                         for (int semester = 1; semester <= 8; semester++) {
+                                
                                 builder.append("Semester ").append(semester).append(":\n");
-                                List<Course> courses = plan.getOrDefault(semester, new ArrayList<>());
-                                for (Course course : courses) {
-                                        if (course != null)
-                                                builder.append(course.toString()).append("\n");
+                                List<String> courses = plan.getOrDefault(semester, new ArrayList<>());
+                                for (String course : courses) {
+                                        if (course != null) {
+                                                builder.append(course).append("\n");
+                                        }
                                 }
                         }
                         return builder.toString();
@@ -51,7 +60,7 @@ public class SemesterPlan {
         }
 
         // 8 semester plan
-        private void generatePlan(String major, String name) {
+        public String generatePlan() {
                 // Logic to generate semester plan based on completed courses and major
                 // requirements
                 // This can include checking prerequisites, corequisites, and other major
@@ -78,28 +87,34 @@ public class SemesterPlan {
                         ArrayList <CourseReccommended> coursesRequired = m.getprogramRequirements();
                         // iterate and find the specific course
                         // String[] courseTypes = {"getCarolinacoreCourses","getMajorCourses"};
-                        int semestart = (int) (long) (coursesTaken.get(0).getPastCourseYear());
+                        int semestart = (int) (coursesTaken.get(0).getPastCourseYear());
 
                         int semester = 0;
                         int currentSemester = 0;
                         for (int i = 0; i < coursesTaken.size(); i++) {
-                                String term = (String) coursesTaken.get(i).getPastCourseSemester();
-                                semester = ((int)(coursesTaken.get(i).getPastCourseYear()) - semestart)* 2;
+                                pastCourses currCourse = coursesTaken.get(i);
+                                Course w = cList.getCourse(coursesTaken.get(i).getPastCourseID());
+                                if (w == null) continue;
+                                String term = currCourse.getPastCourseSemester();
+                                semester = ((int)(currCourse.getPastCourseYear()) - semestart)* 2;
                                 if (term.equals("fall"))
                                         semester += 1;
-                                this.studentRequirements.addCourse(semester,
-                                                cList.getCourse((String) coursesTaken.get(i).getPastCourseID()));
+                                this.studentRequirements.addCourseRegardless(semester,
+                                                w.toString() + "\t" + w.getCourseCredtis() + "\t" + currCourse.getPastCourseGrade());
                         }
                         ArrayList <currentCourses> coursesTaking = student.getCurrentCourses();
                         for (int i = 0; i < coursesTaking.size(); i++) {
-                                String term = (String) coursesTaking.get(i).getCurrentCourseSemester();
-                                semester = (((int) (long) coursesTaking.get(i).getCurrentCourseYear()) - semestart)
+                                currentCourses currCourse = coursesTaking.get(i);
+                                Course w = cList.getCourse(coursesTaking.get(i).getCurrentCourseID());
+                                if (w == null) continue;
+                                String term = currCourse.getCurrentCourseSemester();
+                                semester = (((int)currCourse.getCurrentCourseYear()) - semestart)
                                                 * 2;
                                 if (term.equals("fall"))
                                         semester += 1;
                                 currentSemester = semester;
-                                this.studentRequirements.addCourse(semester,
-                                                cList.getCourse((String) coursesTaking.get(i).getCurrentCourseID()));
+                                this.studentRequirements.addCourseRegardless(semester,
+                                                w.toString() + "\t" + w.getCourseCredtis());
                         }
                         long h = 0;
                         long require = m.getProgramReqHours();
@@ -117,15 +132,15 @@ public class SemesterPlan {
                                 }
                                 if (coursesRequired.get(i).getCourseRecTerm().equals("Spring"))
                                         sem += 1;
-                                if (sem <= currentSemester) continue;
-                                Course c = cList.getCourse((String) coursesRequired.get(i).getCourseRecID());
+                                if (sem < currentSemester) continue;
+                                Course c = cList.getCourse(coursesRequired.get(i).getCourseRecID());
                                 //h += c.getCourseCredtis();
-                                this.studentRequirements.addCourse(sem + 1, c);
+                                this.studentRequirements.addCourse(sem + 1, c.toString() + "\t" + c.getCourseCredtis());
                         }
                         ArrayList<CourseReccommended> carolinaCores = m.getCarolinacoreCoursesReq();
                         h = 0;
                         require = m.getcarolinaHours();
-                        for (int i = 0; i < carolinaCores.size() && h < require; i++) {
+                        for (int i = 0; i < carolinaCores.size(); i++) {
                                 String time = (String) carolinaCores.get(i).getCourseRecTime();
                                 int sem = 0;
                                 if (time.equals("Senior")) {
@@ -135,18 +150,18 @@ public class SemesterPlan {
                                 } else if (time.equals("Sophmore")) {
                                         sem = 2;
                                 }
-                                if (((String) carolinaCores.get(i).getCourseRecTerm()).equals("Spring"))
+                                if ((carolinaCores.get(i).getCourseRecTerm()).equals("Spring"))
                                         sem += 1;
-                                if (sem <= currentSemester) continue;
-                                Course c = cList.getCourse((String) carolinaCores.get(i).getCourseRecID());
+                                if (sem < currentSemester) continue;
+                                Course c = cList.getCourse(carolinaCores.get(i).getCourseRecID());
                                 //h += c.getCourseCredtis();
-                                this.studentRequirements.addCourse(sem + 1, c);
+                                this.studentRequirements.addCourse(sem + 1, c.toString() + "\t" + c.getCourseCredtis());
                         }
                         ArrayList<CourseReccommended> majorReqs = m.getMajorCourses();
                         h = 0;
                         require = m.getcarolinaHours();
                         for (int i = 0; i < majorReqs.size() && h < require; i++) {
-                                String time = (String) majorReqs.get(i).getCourseRecTime();
+                                String time = majorReqs.get(i).getCourseRecTime();
                                 int sem = 0;
                                 if (time.equals("Senior")) {
                                         sem = 6;
@@ -155,24 +170,17 @@ public class SemesterPlan {
                                 } else if (time.equals("Sophmore")) {
                                         sem = 2;
                                 }
-                                if (((String) majorReqs.get(i).getCourseRecTerm()).equals("Spring"))
+                                if ((majorReqs.get(i).getCourseRecTerm()).equals("Spring"))
                                         sem += 1;
-                                if (sem <= currentSemester) continue;
-                                Course c = cList.getCourse((String) majorReqs.get(i).getCourseRecID());
+                                if (sem < currentSemester) continue;
+                                Course c = cList.getCourse(majorReqs.get(i).getCourseRecID());
                                 //h += c.getCourseCredtis();
-                                this.studentRequirements.addCourse(sem + 1, c);
+                                this.studentRequirements.addCourse(sem + 1, c.toString() + "\t" + c.getCourseCredtis());
                         }
                         String s = this.studentRequirements.generatePlan();
-                        System.out.println(s);
-                        try {
-                                FileWriter myWriter = new FileWriter("semesterPlan.txt");
-                                myWriter.write(s);
-                                myWriter.close();
-                        } catch (Exception e) {
-                                e.printStackTrace();
-                        }
+                        return s;
                 }
-
+                return "";
         }
 
         /*

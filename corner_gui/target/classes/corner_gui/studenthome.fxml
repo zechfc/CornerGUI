@@ -9,11 +9,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: F2C48D;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="corner_gui.StudentHomeController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#395950" height="169.0" layoutX="12.0" layoutY="63.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="295.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#395950" height="169.0" layoutX="281.0" layoutY="55.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="295.0" />
       <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onReturnClicked" style="-fx-background-color: #59381B;" text="Return" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="10.0" />
@@ -30,7 +29,7 @@
          </font>
       </Label>
       <Label fx:id="label_title" layoutX="286.0" layoutY="38.0" />
-      <VBox fx:id="prim_info" layoutX="18.0" layoutY="70.0" prefHeight="27.0" prefWidth="172.0">
+      <VBox fx:id="prim_info" layoutX="287.0" layoutY="62.0" prefHeight="27.0" prefWidth="172.0">
          <children>
             <Label fx:id="user_name" text="Name: " />
             <Label fx:id="user_email" text="Email: " />
@@ -51,13 +50,13 @@
             </HBox>
          </children>
       </VBox>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#59381b" height="169.0" layoutX="327.0" layoutY="63.0" stroke="#7b4f4f" strokeType="INSIDE" width="249.0" />
-      <Text layoutX="394.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image Placeholder" wrappingWidth="79.3333333333332" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#59381b" height="169.0" layoutX="281.0" layoutY="228.0" stroke="#7b4f4f" strokeType="INSIDE" width="295.0" />
       <TextField id="courseSearch" fx:id="course_search_text" layoutX="428.0" layoutY="13.0" onAction="#onCourseSearchClicked" promptText="Course Search" />
       <DialogPane fx:id="user_notes_box" layoutX="106.0" layoutY="242.0" />
       <TextField fx:id="note_text" layoutX="104.0" layoutY="242.0" prefHeight="54.0" prefWidth="249.0" />
       <Button fx:id="editNote" layoutX="381.0" layoutY="257.0" mnemonicParsing="false" onAction="#onEditNoteClicked" text="Edit Note" />
       <DialogPane fx:id="course_box" layoutX="47.0" layoutY="172.0" minHeight="140.0" minWidth="520.0" prefHeight="140.0" prefWidth="520.0" />
       <Button fx:id="closeCourseBox" layoutX="541.0" layoutY="174.0" mnemonicParsing="false" onAction="#onCloseCourseBox" prefHeight="0.0" prefWidth="5.0" text="X" />
+      <Label fx:id="semesterPlanText" layoutY="55.0" prefHeight="341.0" prefWidth="279.0" text="Label" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="321.0" AnchorPane.topAnchor="55.0" />
    </children>
 </AnchorPane>
