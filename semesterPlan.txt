@@ -14,6 +14,8 @@ Semester 3:
 CSCE211: Digital Logic Design
 CSCE240: Advanced Programming Techniques
 MATH374: Discrete Structures
+CHEM111: General Chemistry I
+CHEM111L: General Chemistry I Lab
 Semester 4:
 CSCE212: Introduction to Computer Architecture
 CSCE247: Software Engineering
@@ -25,6 +27,8 @@ CSCE350: Data Structures and Algorithms
 CSCE390: Professional Issues in Computer Science and Engineering
 ENGL462: Technical Writing
 Semester 6:
+STAT509: Statistics for Engineers
+CSCE416: Introduction to Computer Networks
 Semester 7:
 MATH344: Applied Linear Algebra
 MATH344L: Applied Linear Algebra Lab

@@ -2,9 +2,11 @@ package corner_gui;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -49,13 +51,15 @@ public class AdvisorHomeController implements Initializable{
     @FXML private Button closeAddStudentButton;
     @FXML private Label listOfStudents;
     @FXML private ImageView advisor_image;
- 
+ @FXML private DialogPane addStudentBox;
+    @FXML private Label label_error;
 
     private Application application;
     private Advisor user;
     private String fxml = "advisorhome";
     private Student studentUser;
     private Course course;
+    private ArrayList<Student> students;
 
     @FXML
     void onLogoutClicked(ActionEvent event) throws IOException{
@@ -131,11 +135,46 @@ public class AdvisorHomeController implements Initializable{
 
     @FXML
     void onAddStudentClicked(ActionEvent event) throws IOException{
-        // listOfStudents.setText();
+        addStudentBox.setVisible(true);
+        studentIDField.setVisible(true);
+        advisorIDField.setVisible(true);
+        advisorIDLabel.setVisible(true);
+        listOfStudents.setVisible(true);
+        closeAddStudentButton.setVisible(true);
+        String list = "";
+        for(Student student : students){
+            list += student.getFullName() + "'s ID: " + student.getUserID() + "\n";
+        }
+        listOfStudents.setText(list);
+        advisorIDLabel.setText("Your ID: " + user.getUserID());
+
+        advisorIDField.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            public void handle(KeyEvent e){
+                if(e.getCode().equals(KeyCode.ENTER)){
+                    String studentID = studentIDField.getText();
+                    String advisorID = advisorIDField.getText();
+                    if(studentID != null && advisorID != null){
+                        if(!application.addStudentList(advisorID, studentID)){
+                            return;
+                        }
+                        addStudentBox.setVisible(false);
+                        studentIDField.setVisible(false);
+                        advisorIDField.setVisible(false);
+                        closeAddStudentButton.setVisible(false);
+                        advisorIDLabel.setVisible(false);
+                        listOfStudents.setVisible(false);
+                    }else {
+                        label_error.setVisible(true);
+                        return;
+                    }
+                }
+            }
+        });
     }
 
     @FXML
     void onCloseAddStudent(ActionEvent event) throws IOException{
+        addStudentBox.setVisible(false);
         studentIDField.setVisible(false);
         advisorIDField.setVisible(false);
         advisorIDLabel.setVisible(false);
@@ -147,6 +186,7 @@ public class AdvisorHomeController implements Initializable{
     public void initialize(URL arg0, ResourceBundle arg1) {
         application = Application.getInstance();
         user = (Advisor) application.getUser();
+        students = application.getStudents();
 
         label_title.setText(user.getFirstName() + "'s Profile");
 
@@ -156,6 +196,8 @@ public class AdvisorHomeController implements Initializable{
         course_box.setVisible(false);
         closeCourseBox.setVisible(false);
 
+        label_error.setVisible(false);
+        addStudentBox.setVisible(false);
         studentIDField.setVisible(false);
         advisorIDField.setVisible(false);
         advisorIDLabel.setVisible(false);
