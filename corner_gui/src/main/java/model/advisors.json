@@ -10,6 +10,7 @@
         "middleName": "John",
         "userid": "5c280f3c-c2a8-4f0a-abe4-754a9aee5bff",
         "age": "36",
+        "image":"markphoto.jpg",
         "email": "markStevens@mailbox.sc.edu"
     },
     {
@@ -23,6 +24,7 @@
         "middleName": "Apple",
         "userid": "4c01faab-34eb-482d-8def-1c45ea80a22d",
         "age": "28",
+        "image":"Johnnyphoto.jpg",
         "email": "johnnyapple@mailbox.sc.edu"
     },
     {
@@ -36,6 +38,8 @@
         "middleName": "Mask",
         "userid": "8d6928e2-140a-4ef8-b5b3-96ceabfd4b45",
         "age": "30",
+        "image":"Jimphoto.jpg",
+
         "email": "jimcarry@mailbox.sc.edu"
     },
     {
@@ -49,6 +53,8 @@
         "middleName": "Mini",
         "userid": "2985970a-8f0d-48da-bf8c-065aa9055948",
         "age": "26",
+        "image":"Lucyphoto.jpg",
+
         "email": "lucyMe@mailbox.sc.edu"
     },
     {
@@ -62,6 +68,7 @@
         "middleName": "Mum",
         "userid": "c3c8f20e-98c4-4ff0-8235-f22fb43552c6",
         "age": "39",
+        "image":"Stacyphoto.jpg",
         "email": "stacygoin@mailbox.sc.edu"
     },
     {
@@ -75,6 +82,7 @@
         "middleName": "Widow",
         "userid": "3c6645f2-6843-46c8-839c-4ba3a3653b72",
         "age": "34",
+        "image":"Scarletphoto.jpg",
         "email": "scarletblack@mailbox.sc.edu"
     },
     {
@@ -88,6 +96,7 @@
         "middleName": "Will",
         "userid": "asifkk-vsfmmmsc-lafd023",
         "age": "34",
+        "image":"Osbertphoto.jpg",
         "email": "oddeno@email.sc.edu"
     }
 ]
