@@ -59,7 +59,7 @@ public class DataWriter extends DataConstants {
 		studentDetails.put(USER_USER_NAME, student.getEmail());
 		studentDetails.put(USER_AGE, student.getUserAge());
 		studentDetails.put(MAJOR, student.getMajorName());
-		// studentDetails.put(COURSES_PRESENT, student.getCurrentYear()); 
+		// studentDetails.put(OURSES_PRESENT, student.getCurrentYear()); 
 		// Courses present is not a current year?
 		studentDetails.put(CLASSIFICATION, student.getClassification());
 		studentDetails.put(NOTES, student.getAdvisorNote());
@@ -67,6 +67,8 @@ public class DataWriter extends DataConstants {
 		studentDetails.put(APPLICATION_AREA, student.getApplicationArea());
 		studentDetails.put(COURSES_PRESENT, student.getCurrentCourses());
 		studentDetails.put(COURSES_PAST, student.getPastCourses());
+		studentDetails.put(IMAGE, student.getImage());
+
 
 		return studentDetails;
 	}
