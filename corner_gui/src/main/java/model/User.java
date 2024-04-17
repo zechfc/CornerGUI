@@ -7,7 +7,7 @@ public class User {
   protected String age;
   protected String email;
   protected String password;
-  protected static String image;
+  protected String image;
 
 
   // new account
