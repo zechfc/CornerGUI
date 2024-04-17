@@ -258,7 +258,7 @@ public class Student extends User {
         return student();
     }
 
-    public string getImage(){
+    public String getImage(){
         return image;
     }
 
