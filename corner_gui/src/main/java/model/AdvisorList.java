@@ -43,8 +43,8 @@ public class AdvisorList {
 
     // method for adding to the JSON
     public void addAdvisor(String userId, ArrayList<String> studentsSupervising, String email, String firstName,
-            String middleName, String lastName, String age, Boolean admin, String password) {
-        advisorList.add(new Advisor(userId, studentsSupervising, email, firstName, middleName, lastName, age, admin, password));
+            String middleName, String lastName, String age, Boolean admin, String password, String image) {
+        advisorList.add(new Advisor(userId, studentsSupervising, email, firstName, middleName, lastName, age, admin, password, image));
         DataWriter.saveAdvisors();
     }
 

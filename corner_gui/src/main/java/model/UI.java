@@ -88,10 +88,12 @@ public class UI {
         int transferCredits = 48;
         String advisorID = "d5478261-e50a-4ff9-b8bf-8c03b0280bc2";
         String note = "...";
+        String image = "...";
+
         ArrayList<currentCourses> currentCourses = new ArrayList<currentCourses>();
         ArrayList<pastCourses> pastCourses = new ArrayList<pastCourses>();
         User newUser = application.createStudentAccount(userID, firstName, middleName, lastName, age, email, password, major, classification, 
-        transferCredits, null, advisorID, note, currentCourses, pastCourses);
+        transferCredits, null, advisorID, note, currentCourses, pastCourses, image);
         if(newUser == null){
             System.out.println("Failed to create account.");
         }else {
@@ -114,11 +116,12 @@ public class UI {
         String userID = "sflkve-dfsfde34fsdfv-csda";
         String advisorID = "d5478261-e50a-4ff9-b8bf-8c03b0280bc2";
         String note = "...";
+        String image = "...";
         int transferCredits = 23;
         ArrayList<currentCourses> currentCourses = new ArrayList<currentCourses>();
         ArrayList<pastCourses> pastCourses = new ArrayList<pastCourses>();
         User newUser = application.createStudentAccount(userID, firstName, middleName, lastName, age, email, password, major, classification, 
-            transferCredits, null, advisorID, note, currentCourses, pastCourses);
+            transferCredits, null, advisorID, note, currentCourses, pastCourses,image);
         if(newUser == null){
             System.out.println("Failed to create account.");
         }else {
@@ -139,7 +142,9 @@ public class UI {
         String password = "safesecurepass";
         ArrayList<String> studentsSupervising = new ArrayList<String>();
         boolean admin = false;
-        User newUser = application.createAdvisorAccount(userID, firstName, middleName, lastName, age, email, password, studentsSupervising, admin);
+        String image = "...";
+
+        User newUser = application.createAdvisorAccount(userID, firstName, middleName, lastName, age, email, password, studentsSupervising, admin,image);
         
         if(newUser == null){
             System.out.println("Failed to create account.");
@@ -222,7 +227,7 @@ public class UI {
         System.out.println("\nScenario 2");
         System.out.println("Creating a new account...");
         ArrayList<String> studentsSupervising = new ArrayList<String>();
-        User newuser = application.createAdvisorAccount("asifkk-vsfmmmsc-lafd023", "Osbert", "Will", "Odden", "34", "oddeno@email.sc.edu", "oddenpassword", studentsSupervising, false);
+        User newuser = application.createAdvisorAccount("asifkk-vsfmmmsc-lafd023", "Osbert", "Will", "Odden", "34", "oddeno@email.sc.edu", "oddenpassword", studentsSupervising, false, "...");
 
         if(newuser == null){
             System.out.println("Failed to create a new account");
