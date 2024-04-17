@@ -25,7 +25,7 @@ public class Student extends User {
         String major, String classification, int transferCredits, String applicationArea, ArrayList<currentCourses> currentCourses, ArrayList<pastCourses> pastCourses, 
         String advisorID, String advisorNote){
             
-        super(userID, firstName, middleName, lastName, age, email, password);
+        super(userID, firstName, middleName, lastName, age, email, password,image);
         this.major = major;
         this.classification = classification; 
         this.advisorNote = advisorNote;
