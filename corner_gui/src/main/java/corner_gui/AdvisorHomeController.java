@@ -206,9 +206,12 @@ public class AdvisorHomeController implements Initializable{
 
 
         //Advisor Image
+        System.out.println(user.getUserImage());
+        System.out.println(user.getUserID());
+        System.out.println(user.getFullName());
         Image image = new Image(getClass().getResourceAsStream("/image/" + user.getUserImage()));
-        advisor_image.setImage(image);
 
+        advisor_image.setImage(image);
 
     }
 
