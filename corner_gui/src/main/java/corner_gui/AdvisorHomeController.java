@@ -51,7 +51,7 @@ public class AdvisorHomeController implements Initializable{
     @FXML private Button closeAddStudentButton;
     @FXML private Label listOfStudents;
     @FXML private ImageView advisor_image;
- @FXML private DialogPane addStudentBox;
+    @FXML private DialogPane addStudentBox;
     @FXML private Label label_error;
 
     private Application application;
@@ -204,8 +204,9 @@ public class AdvisorHomeController implements Initializable{
         listOfStudents.setVisible(false);
         closeAddStudentButton.setVisible(false);
 
+
+        //Advisor Image
         Image image = new Image(getClass().getResourceAsStream("/image/" + user.getUserImage()));
-        // Image image = new Image(getClass().getResourceAsStream("/image/markphoto.jpg"));
         advisor_image.setImage(image);
 
 
