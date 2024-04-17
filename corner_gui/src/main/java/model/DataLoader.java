@@ -28,13 +28,14 @@ public class DataLoader extends DataConstants {
 				String classification = (String) studentJSON.get(CLASSIFICATION);
 				String applicationArea = studentJSON.get(APPLICATION_AREA) != null ? (String)studentJSON.get(COURSE_ELECTIVE_AREA) : null;
 				int transferCredits = ((Long) studentJSON.get(TRANSFER_CREDITS)).intValue();
+				String image = (String) studentJSON.get(IMAGE);
 				JSONArray pastCourses = (JSONArray) studentJSON.get(COURSES_PAST);
 				JSONArray currentCourses = (JSONArray) studentJSON.get(COURSES_PRESENT);
 
 				String advisorID = (String) studentJSON.get(ADVISOR_ID);
 				String advisorNote = (String) studentJSON.get(NOTES);
 				studentList.add(new Student(userID, email, firstName, middleName, lastName, age,
-					password, major, classification, transferCredits, applicationArea, getCurrentCourses(currentCourses), getPastCourses(pastCourses), advisorID, advisorNote));
+					password, major, classification, transferCredits, applicationArea, getCurrentCourses(currentCourses), getPastCourses(pastCourses), advisorID, advisorNote, image));
 			}
 
 
@@ -105,9 +106,10 @@ public class DataLoader extends DataConstants {
 				String age = ((String) advisorJSON.get(USER_AGE));
 				String password = (String) advisorJSON.get(USER_PASSWORD);
 				boolean admin = ((boolean) advisorJSON.get(ADMIN));
+				String image = (String) advisorJSON.get(IMAGE);
 				ArrayList<String> studentList = (ArrayList<String>) advisorJSON.get(STUDENT_LIST);
 				advisorList.add(
-						new Advisor(userid, studentList, firstName, middleName, lastName, age, email, admin, password));
+						new Advisor(userid, studentList, firstName, middleName, lastName, age, email, admin, password, image));
 			}
 
 			return advisorList;
@@ -143,7 +145,7 @@ public class DataLoader extends DataConstants {
 
 
 				majorList.add(
-				new Major(name, getProgramRequirements(programRequirements), getCarolinaCore(carolinaCore), getMajorRequirements(majorRequirements), majorid, description, carolinaHours, majorHours, carolinaReqHours, totalHoursProgramRequirements, totalHours));
+				new Major(name, getRequirements(programRequirements), getRequirements(carolinaCore), getRequirements(majorRequirements), majorid, description, carolinaHours, majorHours, carolinaReqHours, totalHoursProgramRequirements, totalHours));
 			}
 
 			return majorList;
@@ -153,8 +155,8 @@ public class DataLoader extends DataConstants {
 		return majorList; //changed this from null to majorList bc the other major has not be updated in the JSON
 	}
 
-	public static ArrayList<CourseReccommended> getProgramRequirements(JSONArray array) {
-		ArrayList<CourseReccommended> programRequirements = new ArrayList<CourseReccommended>();
+	public static ArrayList<CourseReccommended> getRequirements(JSONArray array) {
+		ArrayList<CourseReccommended> requirements = new ArrayList<CourseReccommended>();
 
 		try {
 		for (int i = 0; i < array.size(); i++) {
@@ -162,49 +164,9 @@ public class DataLoader extends DataConstants {
 			String courseid = (String) programJSON.get(COURSE_ID);
 			String term = (String) programJSON.get(RECCOMMENDED_TERM);
 			String time = (String) programJSON.get(RECCOMMENDED_TIME);
-		programRequirements.add(new CourseReccommended(courseid, time, term));
+		requirements.add(new CourseReccommended(courseid, time, term));
 		} 
-		return programRequirements;
-	}
-		catch (Exception e) 
-		{
-			e.printStackTrace();
-		}
-		return null;
-	}
-
-	public static ArrayList<CourseReccommended> getCarolinaCore(JSONArray array) {
-		ArrayList<CourseReccommended> carolinaCore = new ArrayList<CourseReccommended>();
-
-		try {
-		for (int i = 0; i < array.size(); i++) {
-			JSONObject programJSON = (JSONObject) array.get(i);
-			String courseid = (String) programJSON.get(COURSE_ID);
-			String term = (String) programJSON.get(RECCOMMENDED_TERM);
-			String time = (String) programJSON.get(RECCOMMENDED_TIME);
-			carolinaCore.add(new CourseReccommended(courseid, time, term));
-		} 
-		return carolinaCore;
-	}
-		catch (Exception e) 
-		{
-			e.printStackTrace();
-		}
-		return null;
-	}
-
-	public static ArrayList<CourseReccommended> getMajorRequirements(JSONArray array) {
-		ArrayList<CourseReccommended> majorRequirements = new ArrayList<CourseReccommended>();
-
-		try {
-		for (int i = 0; i < array.size(); i++) {
-			JSONObject programJSON = (JSONObject) array.get(i);
-			String courseid = (String) programJSON.get(COURSE_ID);
-			String term = (String) programJSON.get(RECCOMMENDED_TERM);
-			String time = (String) programJSON.get(RECCOMMENDED_TIME);
-			majorRequirements.add(new CourseReccommended(courseid, time, term));
-		} 
-		return majorRequirements;
+		return requirements;
 	}
 		catch (Exception e) 
 		{

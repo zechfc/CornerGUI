@@ -23,7 +23,7 @@ public class Student extends User {
 
     public Student(String userID, String email, String firstName, String middleName, String lastName, String age, String password,  
         String major, String classification, int transferCredits, String applicationArea, ArrayList<currentCourses> currentCourses, ArrayList<pastCourses> pastCourses, 
-        String advisorID, String advisorNote){
+        String advisorID, String advisorNote, String image){
             
         super(userID, firstName, middleName, lastName, age, email, password,image);
         this.major = major;
@@ -256,6 +256,10 @@ public class Student extends User {
 
     public Student student(){
         return student();
+    }
+
+    public string getImage(){
+        return image;
     }
 
     public void editAdvisorID(String advisorID){
