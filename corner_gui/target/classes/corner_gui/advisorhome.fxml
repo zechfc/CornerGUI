@@ -6,11 +6,12 @@
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: F2C48D;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="corner_gui.AdvisorHomeController">
    <children>
@@ -56,7 +57,10 @@
       </Label>
       <TextField id="courseSearch" fx:id="course_search_text" layoutX="378.0" layoutY="13.0" onAction="#onCourseSearchClicked" prefHeight="25.0" prefWidth="202.0" promptText="Course Search" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#59381b" height="253.0" layoutX="303.0" layoutY="59.0" stroke="#7b4f4f" strokeType="INSIDE" width="280.0" />
-      <Text layoutX="388.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image Placeholder" wrappingWidth="110.6667073567707" />
+      <ImageView fx:id="advisor_image" fitHeight="244.0" fitWidth="273.0" layoutX="306.0" layoutY="64.0" pickOnBounds="true">
+         <image>
+            <Image url="@image/Pocket_Campus.png" />
+         </image></ImageView>
       <Label fx:id="label_title" layoutX="267.0" layoutY="38.0" />
       <DialogPane fx:id="course_box" layoutX="40.0" layoutY="139.0" minHeight="140.0" minWidth="520.0" prefHeight="140.0" prefWidth="520.0" />
       <Button fx:id="closeCourseBox" layoutX="532.0" layoutY="144.0" mnemonicParsing="false" onAction="#onCloseCourseBox" text="X" />
@@ -67,21 +71,5 @@
       <TextField fx:id="studentIDField" layoutX="130.0" layoutY="243.0" prefHeight="26.0" prefWidth="344.0" promptText="Student ID" />
       <TextField fx:id="advisorIDField" layoutX="130.0" layoutY="279.0" prefHeight="26.0" prefWidth="344.0" promptText="Advisor ID" />
       <Label fx:id="listOfStudents" alignment="TOP_LEFT" layoutX="89.0" layoutY="49.0" prefHeight="140.0" prefWidth="401.0" />
-      <ImageView id="advisor_image" fx:id="advisor_image" fitHeight="241.0" fitWidth="269.0" layoutX="310.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../src/main/java/model/image/Pocket_Campus.png" />
-         </image>
-      </ImageView>
-      <DialogPane layoutX="123.0" layoutY="30.0" prefHeight="280.0" prefWidth="360.0" />
-      <Button fx:id="closeAddStudentButton" layoutX="453.0" layoutY="37.0" mnemonicParsing="false" onAction="#onCloseAddStudent" text="X" />
-      <Label fx:id="advisorIDLabel" layoutX="130.0" layoutY="184.0" text="Your ID: " />
-      <TextField fx:id="studentIDField" layoutX="130.0" layoutY="214.0" prefHeight="26.0" prefWidth="344.0" promptText="Student ID" />
-      <TextField fx:id="advisorIDField" layoutX="130.0" layoutY="256.0" prefHeight="26.0" prefWidth="344.0" promptText="Advisor ID" />
-      <Label fx:id="listOfStudents" alignment="TOP_LEFT" layoutX="129.0" layoutY="38.0" prefHeight="140.0" prefWidth="319.0" />
-      <ImageView id="advisor_image" fx:id="advisor_image1" fitHeight="241.0" fitWidth="269.0" layoutX="320.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../src/main/java/model/image/Pocket_Campus.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>

@@ -33,10 +33,10 @@ public class UI {
         application.checkUser("student"); 
         System.out.println("User is a student");
     
-        if(!application.login(1, "jlDoe@email.sc.edu", "password1")){
-            System.out.println("Sorry we couldn't login."); //login failed
-            return;
-        }
+        // if(!application.login(1, "jlDoe@email.sc.edu", "password1")){
+        //     System.out.println("Sorry we couldn't login."); //login failed
+        //     return;
+        // }
         System.out.println("John Doe is now logged in");
 
         Advisor advisor = application.getAdvisor("4c01faab-34eb-482d-8def-1c45ea80a22d");
@@ -64,10 +64,10 @@ public class UI {
         application.checkUser("student");
         System.out.println("User is a student");
     
-        if(!application.login(1, "jlDoe@email.sc.edu", "correctpassword")){
-            System.out.println("Sorry we couldn't login."); //login failed (not the right password in the system)
-            return;
-        }
+        // if(!application.login(1, "jlDoe@email.sc.edu", "correctpassword")){
+        //     System.out.println("Sorry we couldn't login."); //login failed (not the right password in the system)
+        //     return;
+        // }
         System.out.println("John Doe is now logged in");
     }
 
@@ -164,13 +164,13 @@ public class UI {
         //     System.out.println(l.getCourseID());
         // }
         
-        System.out.println("Searching for data on CSCE146");
-        Course c = application.getClass("CSCE146");
-        if (c == null) {
-            System.out.println("Class not found :(");
-            return;
-        }
-        System.out.println("Getting details on CSCE146:\n" + c.getDescription());
+        // System.out.println("Searching for data on CSCE146");
+        // Course c = application.getClass("CSCE146");
+        // if (c == null) {
+        //     System.out.println("Class not found :(");
+        //     return;
+        // }
+        // System.out.println("Getting details on CSCE146:\n" + c.getDescription());
         // System.out.println("Getting availability of CSCE146:\n" + c.getAvailability());
         // System.out.println("These are the prerequisites of CSCE146:\n" + c.getPrereqsToString());
     }
@@ -233,10 +233,10 @@ public class UI {
         
         System.out.println("\nLogging in...");
         //THIS WILL GIVE AN ERROR unless DataWriter append in savestudents and save advisors is removed
-        if(!application.login(2, "oddeno@email.sc.edu", "oddenpassword")){
-            System.out.println("Sorry we couldn't login."); //login failed
-            return;
-        }
+        // if(!application.login(2, "oddeno@email.sc.edu", "oddenpassword")){
+        //     System.out.println("Sorry we couldn't login."); //login failed
+        //     return;
+        // }
         System.out.println(newuser.getFirstName() + " " + newuser.getLastName() + " is now logged in");
         //new idea: variable. Here is the id for Tawnie Hill. Not sure why not student variable but we go with it.
         String studentID = "0a119e07-a0aa-435e-9b9d-21e5b91b1c39";
