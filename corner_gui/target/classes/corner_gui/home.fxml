@@ -3,6 +3,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -27,9 +29,9 @@
             <Font size="26.0" />
          </font>
       </Label>
-      <ImageView id="mainimage" fitHeight="356.0" fitWidth="211.0" layoutX="21.0" layoutY="20.0" pickOnBounds="true">
+      <ImageView fitHeight="362.0" fitWidth="211.0" layoutX="21.0" layoutY="18.0" pickOnBounds="true">
          <image>
-            <Image url="@corner_gui\target\classes\image\Pocket_Campus.png" />
+            <Image url="@image/Pocket_Campus.png" />
          </image>
       </ImageView>
    </children>

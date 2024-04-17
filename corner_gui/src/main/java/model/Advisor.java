@@ -8,7 +8,7 @@ public class Advisor extends User{
 
     public Advisor(String userID, ArrayList<String> studentsSupervising, String firstName, String middleName, String lastName, String age, String email, 
         boolean admin, String password){
-        super(userID, firstName, middleName, lastName, age, email, password);
+        super(userID, firstName, middleName, lastName, age, email, password, image);
         this.admin = admin;
         this.studentsSupervising = studentsSupervising;
     }
