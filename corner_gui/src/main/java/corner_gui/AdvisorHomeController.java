@@ -204,13 +204,9 @@ public class AdvisorHomeController implements Initializable{
         listOfStudents.setVisible(false);
         closeAddStudentButton.setVisible(false);
 
-        // Image image = new Image(getClass().getResourceAsStream("/images/" + user.getUserImage()));
-        Image image = new Image(getClass().getResourceAsStream("/image/markphoto.jpg"));
+        Image image = new Image(getClass().getResourceAsStream("/image/" + user.getUserImage()));
+        // Image image = new Image(getClass().getResourceAsStream("/image/markphoto.jpg"));
         advisor_image.setImage(image);
-        System.out.println(image);
-        System.out.println("test");
-
-        System.out.println(image.getUrl());
 
 
     }
