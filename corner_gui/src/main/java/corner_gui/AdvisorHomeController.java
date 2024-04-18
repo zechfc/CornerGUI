@@ -41,6 +41,8 @@ public class AdvisorHomeController implements Initializable{
     @FXML private Label user_email;
     @FXML private Label user_name;
     @FXML private TextField course_search_text;
+    @FXML private TextField student_search_text;
+
     @FXML private Button closeCourseBox;
     @FXML private DialogPane course_box;
     
@@ -128,6 +130,34 @@ public class AdvisorHomeController implements Initializable{
     }
 
     @FXML
+    void onStudentSearchClicked(ActionEvent event) throws IOException{
+        String text = student_search_text.getText();
+
+        student_search_text.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            public void handle(KeyEvent e){
+                if(e.getCode().equals(KeyCode.ENTER)){
+                    if(application.getStudent(text).equals(null) || application.getStudentName(text).equals(null)){
+                        return;
+                    }
+                    if(text.contains("email")){
+                        studentUser = Application.getInstance().getStudent(text);
+                    }
+                    else{
+                        studentUser = Application.getInstance().getStudentName(text);
+                    }
+                    Application.getInstance().setStudentUser(studentUser);
+                    try {
+                        App.setRoot("studenthome");
+                    } catch (IOException e1) {
+                        // TODO Auto-generated catch block
+                        e1.printStackTrace();
+                    }
+                }
+            }
+        });
+    }
+
+    @FXML
     void onCloseCourseBox(ActionEvent event) throws IOException {
         course_box.setVisible(false);
         closeCourseBox.setVisible(false);
@@ -137,8 +167,6 @@ public class AdvisorHomeController implements Initializable{
     void onAddStudentClicked(ActionEvent event) throws IOException{
         addStudentBox.setVisible(true);
         studentIDField.setVisible(true);
-        advisorIDField.setVisible(true);
-        advisorIDLabel.setVisible(true);
         listOfStudents.setVisible(true);
         closeAddStudentButton.setVisible(true);
         String list = "";
@@ -148,20 +176,18 @@ public class AdvisorHomeController implements Initializable{
         listOfStudents.setText(list);
         advisorIDLabel.setText("Your ID: " + user.getUserID());
 
-        advisorIDField.setOnKeyPressed(new EventHandler<KeyEvent>() {
+        studentIDField.setOnKeyPressed(new EventHandler<KeyEvent>() {
             public void handle(KeyEvent e){
                 if(e.getCode().equals(KeyCode.ENTER)){
                     String studentID = studentIDField.getText();
-                    String advisorID = advisorIDField.getText();
+                    String advisorID = application.getUser().getUserID();
                     if(studentID != null && advisorID != null){
                         if(!application.addStudentList(user.getUserID(), studentID)){
                             return;
                         }
                         addStudentBox.setVisible(false);
                         studentIDField.setVisible(false);
-                        advisorIDField.setVisible(false);
                         closeAddStudentButton.setVisible(false);
-                        advisorIDLabel.setVisible(false);
                         listOfStudents.setVisible(false);
                     }else {
                         label_error.setVisible(true);
@@ -176,8 +202,6 @@ public class AdvisorHomeController implements Initializable{
     void onCloseAddStudent(ActionEvent event) throws IOException{
         addStudentBox.setVisible(false);
         studentIDField.setVisible(false);
-        advisorIDField.setVisible(false);
-        advisorIDLabel.setVisible(false);
         listOfStudents.setVisible(false);
         closeAddStudentButton.setVisible(false);
     }
@@ -199,8 +223,7 @@ public class AdvisorHomeController implements Initializable{
         label_error.setVisible(false);
         addStudentBox.setVisible(false);
         studentIDField.setVisible(false);
-        advisorIDField.setVisible(false);
-        advisorIDLabel.setVisible(false);
+  
         listOfStudents.setVisible(false);
         closeAddStudentButton.setVisible(false);
 
