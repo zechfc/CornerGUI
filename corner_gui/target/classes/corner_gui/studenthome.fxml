@@ -35,7 +35,7 @@
          <children>
             <ScrollPane prefHeight="338.0" prefWidth="250.0">
                <content>
-                  <Label fx:id="semesterPlanText" alignment="TOP_LEFT" prefHeight="337.0" prefWidth="235.0" text="Label" textFill="#0d0d0d" />
+                  <Label fx:id="semesterPlanText" alignment="TOP_LEFT" prefHeight="337.0" prefWidth="599.0" text="Label" textFill="#0d0d0d" />
                </content>
             </ScrollPane>
          </children>
