@@ -154,7 +154,6 @@ public class StudentHomeController implements Initializable{
         user_email.setText("Email: " + user.getEmail());
         user_major.setText("Major: " + user.getRealMajorName(user.getMajorName()));
         user_gpa.setText("GPA: "); //no get gpa method atm
-        user_majorgpa.setText("Major GPA: "); //no get major gpa method atm
         user_class.setText("Class Level: " + user.getClassification());
         user_advisor.setText("Advisor: " + user.getRealAdvisorName(user.getAdvisorID())); //this needs to get the advisor's name, not ID
 

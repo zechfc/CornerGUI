@@ -143,7 +143,7 @@ public class AdvisorHomeController implements Initializable{
         closeAddStudentButton.setVisible(true);
         String list = "";
         for(Student student : students){
-            list += student.getFullName() + "'s ID: " + student.getUserID() + "\n";
+            list += student.getFullName() + "Emails's: " + student.getEmail() + "\n";
         }
         listOfStudents.setText(list);
         advisorIDLabel.setText("Your ID: " + user.getUserID());
@@ -154,7 +154,7 @@ public class AdvisorHomeController implements Initializable{
                     String studentID = studentIDField.getText();
                     String advisorID = advisorIDField.getText();
                     if(studentID != null && advisorID != null){
-                        if(!application.addStudentList(advisorID, studentID)){
+                        if(!application.addStudentList(user.getUserID(), studentID)){
                             return;
                         }
                         addStudentBox.setVisible(false);
