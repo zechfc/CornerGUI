@@ -76,11 +76,6 @@
     {"courseID":"66089424-f471-402b-93de-660c04a87675", "grade": "C", "semester": "summer", "year":2024},
     {"courseID":"c30f5f36-fc9c-49d4-b5c4-baec9cc82194", "grade": "A", "semester": "summer", "year":2024},
     {"courseID":"684f6d78-9f42-4e22-b447-7b15782007b3", "grade": "B+", "semester": "summer","year":2024}],
-    {"courseID":"f8b358bf-d69e-4aae-b10c-8dc98f1f651f", "grade": "A", "semester": "summer", "year":2024},
-    {"courseID":"732e0849-4531-43d5-ae8e-363b59958631", "grade": "B", "semester": "summer", "year":2024},
-    {"courseID":"66089424-f471-402b-93de-660c04a87675", "grade": "C", "semester": "summer", "year":2024},
-    {"courseID":"c30f5f36-fc9c-49d4-b5c4-baec9cc82194", "grade": "A", "semester": "summer", "year":2024},
-    {"courseID":"684f6d78-9f42-4e22-b447-7b15782007b3", "grade": "B+", "semester": "summer","year":2024}],
 
     "coursesPresent": 
     [{"courseID":"d71f3a41-5b83-40b6-94a7-609b01ca2caa", "grade": "TBD","semester": "fall", "year":2024},
