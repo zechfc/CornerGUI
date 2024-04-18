@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: F2F2F2;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="corner_gui.StudentHomeController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#730217" height="169.0" layoutX="281.0" layoutY="55.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="295.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#73021b" height="169.0" layoutX="281.0" layoutY="55.0" opacity="0.5" stroke="#5e0013" strokeType="INSIDE" width="295.0" />
       <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onReturnClicked" style="-fx-background-color: #730202;" text="Return" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="10.0" />
@@ -33,7 +33,7 @@
          <children>
             <Label fx:id="user_name" text="Name: " />
             <Label fx:id="user_email" text="Email: " />
-            <Label fx:id="user_advisor" text="Advisor: " />
+            <Label fx:id="user_advisor" text="Advisor: " textFill="#0d0d0d" />
             <Label fx:id="user_major" text="Major:" textFill="#0d0d0d" />
             <Label fx:id="user_gpa" text="GPA:" />
             <Label fx:id="user_majorgpa" text="Major GPA:" />
