@@ -7,10 +7,12 @@ public class User {
   protected String age;
   protected String email;
   protected String password;
+  protected String image;
+
 
   // new account
   public User(String userID, String firstName, String middleName, String lastName, String age, String email,
-      String password) {
+      String password,String image) {
     this.userID = userID;
     this.firstName = firstName;
     this.middleName = middleName;
@@ -18,6 +20,8 @@ public class User {
     this.age = age;
     this.email = email;
     this.password = password;
+    this.image = image;
+
   }
 
   public String getEmail() {
@@ -27,6 +31,12 @@ public class User {
   public String getUserAge() {
     return age;
   }
+
+  
+  public String getUserImage() {
+    return image;
+  }
+
 
   public String getFirstName() {
     return firstName;

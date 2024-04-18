@@ -34,10 +34,10 @@ public class StudentList {
     //Will need to change JSONArray to ArrayList
     public void addStudent(String userID, String email, String firstName, String middleName, String lastName, String age, String password,  
         String major, String classification, int transferCredits, String applicationArea, JSONArray currentCourses, JSONArray pastCourses, 
-        String advisorID, String advisorNote) {
+        String advisorID, String advisorNote, String image) {
 
         studentList.add(new Student(userID, email, firstName, middleName, lastName, age, password, major, classification,
-                transferCredits, applicationArea, currentCourses, pastCourses, advisorID, advisorNote));
+                transferCredits, applicationArea, currentCourses, pastCourses, advisorID, advisorNote, image));
         DataWriter.saveStudents();
     }
 
