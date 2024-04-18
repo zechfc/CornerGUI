@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DialogPane?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -10,31 +11,40 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: F2C48D;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="corner_gui.StudentHomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: F2F2F2;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="corner_gui.StudentHomeController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#395950" height="169.0" layoutX="281.0" layoutY="55.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="295.0" />
-      <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onReturnClicked" style="-fx-background-color: #59381B;" text="Return" textAlignment="CENTER" textFill="WHITE">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#73021b" height="169.0" layoutX="281.0" layoutY="55.0" opacity="0.5" stroke="#5e0013" strokeType="INSIDE" width="295.0" />
+      <Button fx:id="returnButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onReturnClicked" style="-fx-background-color: #730202;" text="Return" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="10.0" />
          </font>
       </Button>
-      <Button fx:id="logoutButton" layoutX="67.0" layoutY="14.0" mnemonicParsing="false" onAction="#onLogoutClicked" style="-fx-background-color: #59381B;" text="Logout" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="logoutButton" layoutX="67.0" layoutY="14.0" mnemonicParsing="false" onAction="#onLogoutClicked" style="-fx-background-color: #730202;" text="Logout" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="10.0" />
          </font>
       </Button>
-      <Label layoutX="266.0" layoutY="11.0" style="-fx-font-weight: bold;" text="Pocket Campus" textAlignment="CENTER">
+      <Label layoutX="266.0" layoutY="11.0" style="-fx-font-weight: bold;" text="Pocket Campus" textAlignment="CENTER" textFill="#0d0d0d">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <Label fx:id="label_title" layoutX="286.0" layoutY="38.0" />
+      <VBox layoutX="17.0" layoutY="55.0" prefHeight="341.0" prefWidth="250.0">
+         <children>
+            <ScrollPane prefHeight="338.0" prefWidth="250.0">
+               <content>
+                  <Label fx:id="semesterPlanText" alignment="TOP_LEFT" prefHeight="337.0" prefWidth="235.0" text="Label" textFill="#0d0d0d" />
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
       <VBox fx:id="prim_info" layoutX="287.0" layoutY="62.0" prefHeight="27.0" prefWidth="172.0">
          <children>
-            <Label fx:id="user_name" text="Name: " />
-            <Label fx:id="user_email" text="Email: " />
-            <Label fx:id="user_advisor" text="Advisor: " />
-            <Label fx:id="user_major" text="Major:" />
+            <Label fx:id="user_name" text="Name: " textFill="#0d0d0d" />
+            <Label fx:id="user_email" text="Email: " textFill="#0d0d0d" />
+            <Label fx:id="user_advisor" text="Advisor: " textFill="#0d0d0d" />
+            <Label fx:id="user_major" text="Major:" textFill="#0d0d0d" />
             <Label fx:id="user_gpa" text="GPA:" />
             <Label fx:id="user_majorgpa" text="Major GPA:" />
             <Label fx:id="user_class" text="Class Level:" />
@@ -50,13 +60,12 @@
             </HBox>
          </children>
       </VBox>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#59381b" height="169.0" layoutX="281.0" layoutY="228.0" stroke="#7b4f4f" strokeType="INSIDE" width="295.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#730202" height="169.0" layoutX="281.0" layoutY="228.0" stroke="#5e0013" strokeType="INSIDE" width="295.0" />
       <TextField id="courseSearch" fx:id="course_search_text" layoutX="428.0" layoutY="13.0" onAction="#onCourseSearchClicked" promptText="Course Search" />
       <DialogPane fx:id="user_notes_box" layoutX="106.0" layoutY="242.0" />
       <TextField fx:id="note_text" layoutX="104.0" layoutY="242.0" prefHeight="54.0" prefWidth="249.0" />
       <Button fx:id="editNote" layoutX="381.0" layoutY="257.0" mnemonicParsing="false" onAction="#onEditNoteClicked" text="Edit Note" />
       <DialogPane fx:id="course_box" layoutX="47.0" layoutY="172.0" minHeight="140.0" minWidth="520.0" prefHeight="140.0" prefWidth="520.0" />
       <Button fx:id="closeCourseBox" layoutX="541.0" layoutY="174.0" mnemonicParsing="false" onAction="#onCloseCourseBox" prefHeight="0.0" prefWidth="5.0" text="X" />
-      <Label fx:id="semesterPlanText" layoutY="55.0" prefHeight="341.0" prefWidth="279.0" text="Label" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="321.0" AnchorPane.topAnchor="55.0" />
    </children>
 </AnchorPane>
