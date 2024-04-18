@@ -97,7 +97,7 @@
     "classification":"Freshman",
     "notes":"...",
     "transferCredits":30,
-    "image":"Tracyphoto.jpg",
+    "image":"Tracyphoto.jpeg",
     "coursesPast": 
         [{"courseID":"", "grade": "A", "semester": "fall", "year":2023},
         {"courseID":"", "grade": "B", "semester": "fall", "year":2023},
@@ -124,7 +124,7 @@
     "classification":"Junior",
     "notes":"...",
     "transferCredits":48,
-    "image":"Braxphoto.jpg",
+    "image":"Braxphoto.jpeg",
     "coursesPast":
     [{"courseID":"12224407-e656-4fe7-9078-88f1d9dc8325", "grade": "C", "semester": "fall", "year":2022},
     {"courseID":"4bd274cb-260e-47a5-9893-203a3943d704", "grade": "B", "semester": "fall", "year":2022},
@@ -172,7 +172,7 @@
     "classification":"Sophomore",
     "notes":"...",
     "transferCredits":6,
-    "image":"Tawniephoto.jpg",
+    "image":"Tawniephoto.jpeg",
     "coursesPast":
     [{"courseID":"01591088-ef0d-4ca0-a841-81b34dba046e", "grade":"B", "semester":"fall", "year":2022},
     {"courseID":"c72f7f19-ea04-4b39-8b47-e216a02e9c01", "grade":"A-", "semester":"spring", "year":2023}
