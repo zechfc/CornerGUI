@@ -280,6 +280,17 @@ public class Application {
         return null;
     }
 
+    public Student getStudentName(String Name) {
+        String[] firstAndLast = Name.split(" ");
+        String First = firstAndLast[0]; // 004
+        String Last = firstAndLast[1]; // 034556
+        User user = studentList.getStudent(First, Last);
+        if (user != null && user instanceof Student) {
+            return (Student) user;
+        }
+        return null;
+    }
+
     public boolean getAdvisorID(String userID) {
         if (user != null && user.getUserID().equals(userID)) {
             if (user instanceof Student) {

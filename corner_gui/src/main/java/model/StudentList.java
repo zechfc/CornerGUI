@@ -57,7 +57,7 @@ public class StudentList {
 
     public Student getStudent(String key) {
         for (Student student : studentList) {
-            if (student.getEmail().equals(key) || student.getUserID().equals(key)) {
+            if (student.getEmail().equalsIgnoreCase(key) || student.getFullName().equalsIgnoreCase(key) || student.getUserID().equals(key)) {
                 return student;
             }
         }
@@ -75,7 +75,7 @@ public class StudentList {
 
     public Student getStudent(String firstName, String lastName) {
         for (Student student : studentList) {
-            if (student.getFirstName().equals(firstName) && student.getLastName().equals(lastName)) {
+            if (student.getFirstName().equalsIgnoreCase(firstName) && student.getLastName().equalsIgnoreCase(lastName)) {
                 return student;
             }
         }
