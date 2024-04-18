@@ -76,23 +76,23 @@ public class Application {
 
     public User createStudentAccount(String userID, String firstName, String middleName, String lastName, String age,
             String email, String password, String major, String classification, int transferCredits, String applicationArea, String advisorID, 
-            String advisorNote, ArrayList<currentCourses> currentCourses, ArrayList<pastCourses> pastCourses) {
+            String advisorNote, ArrayList<currentCourses> currentCourses, ArrayList<pastCourses> pastCourses, String image) {
         // Email (username) already used
         if (studentList.emailTaken(email) || advisorList.emailTaken(email)){
             return null;
         }
         Student newStudent = new Student(userID, email, firstName, middleName, lastName, age, password, major, classification, 
-                transferCredits, applicationArea, currentCourses, pastCourses, advisorID, advisorNote);
+                transferCredits, applicationArea, currentCourses, pastCourses, advisorID, advisorNote, image);
         studentList.addStudent(newStudent);
         return newStudent; 
     }
 
     public User createAdvisorAccount(String userID, String firstName, String middleName, String lastName, String age, String email, String password,
-        ArrayList<String> studentsSupervising, boolean admin){
+        ArrayList<String> studentsSupervising, boolean admin, String image){
             if (advisorList.emailTaken(email) || studentList.emailTaken(email)){
                 return null;
             }
-        Advisor newAdvisor = new Advisor(userID, studentsSupervising, firstName, middleName, lastName, age, email, admin, password);
+        Advisor newAdvisor = new Advisor(userID, studentsSupervising, firstName, middleName, lastName, age, email, admin, password, image);
         advisorList.addAdvisor(newAdvisor);
         return newAdvisor;
     }

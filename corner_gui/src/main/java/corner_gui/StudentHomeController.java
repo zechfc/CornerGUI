@@ -20,6 +20,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import model.*;
 
 public class StudentHomeController implements Initializable{
@@ -48,6 +50,7 @@ public class StudentHomeController implements Initializable{
     @FXML private DialogPane user_notes_box;
     @FXML private Button editNote;
     @FXML private TextField note_text;
+    @FXML private ImageView student_image;
     @FXML private TextField course_search_text;
     @FXML private Button closeCourseBox;
     @FXML private DialogPane course_box;
@@ -160,5 +163,9 @@ public class StudentHomeController implements Initializable{
 
         // semesterPlanText 
         semesterPlanText.setText(user.getSemesterPlan());
+
+        //Student Image
+        Image image = new Image(getClass().getResourceAsStream("/image/" + user.getUserImage()));
+        student_image.setImage(image);
     }
 }

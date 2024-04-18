@@ -50,8 +50,9 @@ public class SemesterPlan {
                                 builder.append("Semester ").append(semester).append(":\n");
                                 List<String> courses = plan.getOrDefault(semester, new ArrayList<>());
                                 for (String course : courses) {
-                                        if (course != null)
+                                        if (course != null) {
                                                 builder.append(course).append("\n");
+                                        }
                                 }
                         }
                         return builder.toString();
