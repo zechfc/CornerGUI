@@ -24,7 +24,7 @@
         "middleName": "Apple",
         "userid": "4c01faab-34eb-482d-8def-1c45ea80a22d",
         "age": "28",
-        "image":"Johnnyphoto.jpg",
+        "image":"Johnnyphoto.jpeg",
         "email": "johnnyapple@mailbox.sc.edu"
     },
     {
@@ -38,7 +38,7 @@
         "middleName": "Mask",
         "userid": "8d6928e2-140a-4ef8-b5b3-96ceabfd4b45",
         "age": "30",
-        "image":"Jimphoto.jpg",
+        "image":"Jimphoto.jpeg",
 
         "email": "jimcarry@mailbox.sc.edu"
     },
