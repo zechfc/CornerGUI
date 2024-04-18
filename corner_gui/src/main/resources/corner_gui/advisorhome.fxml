@@ -28,7 +28,7 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5e0013" height="253.0" layoutX="14.0" layoutY="59.0" opacity="0.5" stroke="#5e0013" strokeType="INSIDE" width="258.0" />
       <VBox fx:id="prim_info" layoutX="19.0" layoutY="63.0" prefHeight="94.0" prefWidth="249.0">
          <children>
-            <Label fx:id="user_name" prefHeight="18.0" prefWidth="251.0" text="Name: " />
+            <Label fx:id="user_name" prefHeight="18.0" prefWidth="251.0" text="Name: " textFill="#0d0d0d" />
             <Label fx:id="user_email" prefHeight="18.0" prefWidth="249.0" text="Email: " textFill="#0d0d0d" />
          </children>
       </VBox>
