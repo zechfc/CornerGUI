@@ -127,6 +127,9 @@ public class StudentHomeController implements Initializable{
                 fxml = "studenthome";
             }
             App.setRoot(fxml);
+            if(fxml == "studenthome"){
+                App.setRoot("home");
+            }
         }
     }
 
