@@ -42,7 +42,7 @@
     "firstName":"Mary",
     "middleName":"Ann",
     "lastName":"Sue",
-    "age":"18",
+    "age":"20",
     "email": "masue@email.sc.edu",
     "password": "password2",
     "advisorid":"5c280f3c-c2a8-4f0a-abe4-754a9aee5bff",
@@ -71,18 +71,18 @@
     {"courseID":"dd218911-2c00-46b4-99fc-0aa909331369", "grade": "C", "semester": "spring", "year":2024},
     {"courseID":"730005f1-113d-446e-865c-31b46dfbc924", "grade": "A", "semester": "spring", "year":2024},
     {"courseID":"cd9dc2fc-7414-47be-83ea-35519a9db40f", "grade": "B+", "semester": "spring","year":2024},
-    {"courseID":"", "grade": "A", "semester": "summer", "year":2024},
-    {"courseID":"", "grade": "B", "semester": "summer", "year":2024},
-    {"courseID":"", "grade": "C", "semester": "summer", "year":2024},
-    {"courseID":"", "grade": "A", "semester": "summer", "year":2024},
-    {"courseID":"", "grade": "B+", "semester": "summer","year":2024}],
+    {"courseID":"f8b358bf-d69e-4aae-b10c-8dc98f1f651f", "grade": "A", "semester": "summer", "year":2024},
+    {"courseID":"732e0849-4531-43d5-ae8e-363b59958631", "grade": "B", "semester": "summer", "year":2024},
+    {"courseID":"66089424-f471-402b-93de-660c04a87675", "grade": "C", "semester": "summer", "year":2024},
+    {"courseID":"c30f5f36-fc9c-49d4-b5c4-baec9cc82194", "grade": "A", "semester": "summer", "year":2024},
+    {"courseID":"684f6d78-9f42-4e22-b447-7b15782007b3", "grade": "B+", "semester": "summer","year":2024}],
 
     "coursesPresent": 
-    [{"courseID":"", "grade": "TBD","semester": "fall", "year":2024},
-    {"courseID":"", "grade": "TBD","semester": "fall", "year":2024},
-    {"courseID":"", "grade": "TBD", "semester": "fall", "year":2024},
-    {"courseID":"", "grade": "TBD", "semester": "fall", "year":2024},
-    {"courseID":"", "grade": "TBD", "semester": "fall", "year":2024}]
+    [{"courseID":"d71f3a41-5b83-40b6-94a7-609b01ca2caa", "grade": "TBD","semester": "fall", "year":2024},
+    {"courseID":"6c8202fd-b31b-4647-b551-b7f4dbf007a0", "grade": "TBD","semester": "fall", "year":2024},
+    {"courseID":"96cd3d5d-590a-4567-9cc3-787e03cc5140", "grade": "TBD", "semester": "fall", "year":2024},
+    {"courseID":"1e246c44-0c84-487a-acc9-d9fe5fb55ff1", "grade": "TBD", "semester": "fall", "year":2024},
+    {"courseID":"f4b55e57-6034-4462-81ca-13c559697988", "grade": "TBD", "semester": "fall", "year":2024}]
 },
 {
     "userid":"513b2857-a10f-4aac-87a8-b094604a3001",
@@ -99,18 +99,18 @@
     "transferCredits":30,
     "image":"Tracyphoto.jpeg",
     "coursesPast": 
-        [{"courseID":"", "grade": "A", "semester": "fall", "year":2023},
-        {"courseID":"", "grade": "B", "semester": "fall", "year":2023},
-        {"courseID":"", "grade": "C", "semester": "fall", "year":2023},
-        {"courseID":"", "grade": "A", "semester": "fall", "year":2023},
-        {"courseID":"", "grade": "B+", "semester": "fall","year":2023}],
+        [{"courseID":"12224407-e656-4fe7-9078-88f1d9dc8325", "grade": "A", "semester": "fall", "year":2023},
+        {"courseID":"4bd274cb-260e-47a5-9893-203a3943d704", "grade": "B", "semester": "fall", "year":2023},
+        {"courseID":"3cca9c4e-a195-4759-a761-cfe09adb20b8", "grade": "C", "semester": "fall", "year":2023},
+        {"courseID":"2e2ebf3f-c4d3-4dae-956b-d8afa7fca627", "grade": "A", "semester": "fall", "year":2023},
+        {"courseID":"980e1056-4ed2-4459-b0e7-56d78eca5d73", "grade": "B+", "semester": "fall","year":2023}],
     
     "coursesPresent": 
-        [{"courseID":"", "grade": "TBD", "semester": "spring", "year":2024},
-        {"courseID":"", "grade": "TBD", "semester": "spring", "year":2024},
-        {"courseID":"", "grade": "TBD", "semester": "spring", "year":2024},
-        {"courseID":"", "grade": "TBD", "semester": "spring", "year":2024},
-        {"courseID":"", "grade": "TBD", "semester": "spring","year":2024}]    
+        [{"courseID":"3d7aa3f8-bfb0-4f9e-af57-49818eacf9a6", "grade": "TBD", "semester": "spring", "year":2024},
+        {"courseID":"a379a182-57c9-4b28-950d-35903009bce3", "grade": "TBD", "semester": "spring", "year":2024},
+        {"courseID":"b6bf4208-6933-4e10-a961-118f12d7acba", "grade": "TBD", "semester": "spring", "year":2024},
+        {"courseID":"57eaa5d5-a439-43b1-87fc-2d3a4c0b9cd6", "grade": "TBD", "semester": "spring", "year":2024},
+        {"courseID":"9b9ea0d0-3574-44be-b6cf-1ef50ce2aa23", "grade": "TBD", "semester": "spring","year":2024}]    
 },{
     "userid":"81668235-0606-4e6b-bfcf-d3243f916315",
     "firstName":"Brax",
