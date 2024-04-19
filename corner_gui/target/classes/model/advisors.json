@@ -4,7 +4,7 @@
         "lastName": "Stevens",
         "password": "password4",
         "studentList": [
-            "d5478261-e50a-4ff9-b8bf-8c03b0280bc2"
+            "b5478261-e50a-4ff9-b8bf-8c03b0280bc2"
         ],
         "admin": false,
         "middleName": "John",
@@ -18,7 +18,8 @@
         "lastName": "Seed",
         "password": "password5",
         "studentList": [
-            "50809b79-5942-4dd6-9b8b-e64af7066bb6"
+            "d5478261-e50a-4ff9-b8bf-8c03b0280bc2",
+            "81668235-0606-4e6b-bfcf-d3243f916315"
         ],
         "admin": false,
         "middleName": "Apple",
@@ -47,7 +48,7 @@
         "lastName": "Me",
         "password": "password7",
         "studentList": [
-            "513b2857-a10f-4aac-87a8-b094604a3001"
+            "0a119e07-a0aa-435e-9b9d-21e5b91b1c39"
         ],
         "admin": true,
         "middleName": "Mini",
@@ -62,7 +63,7 @@
         "lastName": "Goin",
         "password": "password8",
         "studentList": [
-            "513b2857-a10f-4aac-87a8-b094604a3001"
+            
         ],
         "admin": true,
         "middleName": "Mum",
@@ -76,7 +77,7 @@
         "lastName": "Black",
         "password": "password9",
         "studentList": [
-            "513b2857-a10f-4aac-87a8-b094604a3001"
+            
         ],
         "admin": true,
         "middleName": "Widow",
@@ -90,7 +91,7 @@
         "lastName": "Odden",
         "password": "oddenpassword",
         "studentList": [
-            "0a119e07-a0aa-435e-9b9d-21e5b91b1c39"
+            
         ],
         "admin": false,
         "middleName": "Will",
