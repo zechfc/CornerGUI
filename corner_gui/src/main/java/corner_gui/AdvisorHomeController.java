@@ -74,41 +74,6 @@ public class AdvisorHomeController implements Initializable{
     }
 
     @FXML
-    void onStudent1Clicked(ActionEvent event) throws IOException{
-        studentUser = Application.getInstance().getStudent("jlDoe@email.sc.edu");
-        Application.getInstance().setStudentUser(studentUser);
-        App.setRoot("studenthome");
-    }
-
-    @FXML
-    void onStudent2Clicked(ActionEvent event) throws IOException{
-        studentUser = Application.getInstance().getStudent("masue@email.sc.edu");
-        Application.getInstance().setStudentUser(studentUser);
-        App.setRoot("studenthome");
-    }
-
-    @FXML
-    void onStudent3Clicked(ActionEvent event) throws IOException {
-        studentUser = Application.getInstance().getStudent("tdjohnson@email.sc.edu");
-        Application.getInstance().setStudentUser(studentUser);
-        App.setRoot("studenthome");
-    }
-
-    @FXML
-    void onStudent4Clicked(ActionEvent event) throws IOException{
-        studentUser = Application.getInstance().getStudent("westb@email.sc.edu");
-        Application.getInstance().setStudentUser(studentUser);
-        App.setRoot("studenthome");
-    }
-
-    @FXML
-    void onStudent5Clicked(ActionEvent event) throws IOException{
-        studentUser = Application.getInstance().getStudent("hillt@email.sc.edu");
-        Application.getInstance().setStudentUser(studentUser);
-        App.setRoot("studenthome");
-    }
-
-    @FXML
     void onCourseSearchClicked(ActionEvent event) throws IOException{
         String text = course_search_text.getText();
         System.out.println(course);
