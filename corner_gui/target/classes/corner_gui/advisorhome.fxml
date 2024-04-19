@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
@@ -34,18 +35,22 @@
          <children>
             <ImageView fx:id="advisor_image" fitHeight="280.0" fitWidth="228.0" pickOnBounds="true" preserveRatio="true" />
          </children></VBox>
+      
       <Label layoutX="216.0" layoutY="11.0" style="-fx-font-weight: bold;" text="Pocket Campus" textAlignment="CENTER" textFill="#0d0d0d">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField id="courseSearch" fx:id="course_search_text" layoutX="378.0" layoutY="13.0" onAction="#onStudentSearchClicked" prefHeight="25.0" prefWidth="206.0" promptText="Course Search" />
-      <Label fx:id="label_title" layoutX="267.0" layoutY="38.0" />
+      <TextField id="courseSearch" fx:id="course_search_text" layoutX="378.0" layoutY="13.0" onAction="#onCourseSearchClicked" prefHeight="25.0" prefWidth="206.0" promptText="Course Search" />
       <ScrollPane layoutX="21.0" layoutY="151.0" prefHeight="227.0" prefWidth="287.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="427.0" prefWidth="286.0" />
         </content>
       </ScrollPane>
-      <TextField id="courseSearch" fx:id="student_search_text" layoutX="378.0" layoutY="47.0" onAction="#onCourseSearchClicked" prefHeight="25.0" prefWidth="206.0" promptText="Student Search" />
+
+      <TextField id="studentSearch" fx:id="student_search_text" layoutX="378.0" layoutY="47.0" onAction="#onStudentSearchClicked" prefHeight="25.0" prefWidth="206.0" promptText="Student Search" />
+      <DialogPane fx:id="course_box" layoutX="40.0" layoutY="139.0" minHeight="140.0" minWidth="520.0" prefHeight="140.0" prefWidth="520.0" style="-fx-border-color: black;" />
+      <Button fx:id="closeCourseBox" layoutX="532.0" layoutY="144.0" mnemonicParsing="false" onAction="#onCloseCourseBox" text="X" />
+            <Label fx:id="label_title" contentDisplay="CENTER" layoutX="216.0" layoutY="39.0" prefHeight="17.0" prefWidth="130.0" />
    </children>
 </AnchorPane>
