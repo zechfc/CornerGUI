@@ -8,6 +8,7 @@ public class Application {
     private CourseList classList;
     private MajorList majorList;
     private Student student;
+    private Advisor advisorUser;
     private Student studentUser;
     private static Application application;
     private Course course;
@@ -68,6 +69,14 @@ public class Application {
 
     public Student getStudentUser(){
         return studentUser;
+    }
+
+    public void setAdvisorUser(Advisor advisor){
+        this.advisorUser = advisor;
+    }
+
+    public Advisor getAdvisorUser(){
+        return advisorUser;
     }
 
     public Course getCourse(){
