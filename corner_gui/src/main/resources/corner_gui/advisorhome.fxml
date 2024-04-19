@@ -28,7 +28,7 @@
          <children>
             <Label fx:id="user_name" prefHeight="18.0" prefWidth="249.0" text="Name: " textFill="WHITE" />
             <Label fx:id="user_email" prefHeight="18.0" prefWidth="249.0" text="Email: " textFill="WHITE" />
-            <Label fx:id="user_email1" prefHeight="18.0" prefWidth="249.0" text="Student List: " textFill="WHITE" />
+            <Label fx:id="user_email1" prefHeight="18.0" prefWidth="249.0" text="Student Advising List: " textFill="WHITE" />
          </children>
       </VBox>
       <VBox fx:id="tert_info" layoutX="325.0" layoutY="98.0" prefHeight="280.0" prefWidth="249.0">
