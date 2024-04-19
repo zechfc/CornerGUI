@@ -167,21 +167,21 @@
     "age":"20",
     "email":"hillt@email.sc.edu",
     "password":"hbtpassword",
-    "advisorid":"",
+    "advisorid":"2985970a-8f0d-48da-bf8c-065aa9055948",
     "major":"a31c3094-3470-4c46-a45f-3b1001d15da2",
     "classification":"Sophomore",
     "notes":"...",
     "transferCredits":6,
     "image":"Tawniephoto.jpeg",
     "coursesPast":
-    [{"courseID":"01591088-ef0d-4ca0-a841-81b34dba046e", "grade":"B", "semester":"fall", "year":2022},
-    {"courseID":"c72f7f19-ea04-4b39-8b47-e216a02e9c01", "grade":"A-", "semester":"spring", "year":2023}
+    [{"courseID":"669e88d5-9009-4f74-85aa-e675ffaaaf12", "grade":"B", "semester":"fall", "year":2022},
+    {"courseID":"3ad398a2-c2b4-438a-ac0a-b0525030bf9d", "grade":"A-", "semester":"spring", "year":2023}
     ],
 
     "coursesPresent":
-    [{"courseID":"684f6d78-9f42-4e22-b447-7b15782007b3", "grade": "TBD", "semester": "spring", "year":2024},
-    {"courseID":"d71f3a41-5b83-40b6-94a7-609b01ca2caa", "grade": "TBD", "semester": "spring", "year":2024},
-    {"courseID":"6c8202fd-b31b-4647-b551-b7f4dbf007a0", "grade": "TBD", "semester": "spring", "year":2024},
-    {"courseID":"96cd3d5d-590a-4567-9cc3-787e03cc5140", "grade": "TBD", "semester": "spring", "year":2024},
-    {"courseID":"7100ca89-33cf-40da-acbe-84af49e92c3c", "grade": "TBD", "semester": "spring","year":2024}]
+    [{"courseID":"12224407-e656-4fe7-9078-88f1d9dc8325", "grade": "TBD", "semester": "spring", "year":2024},
+    {"courseID":"4bd274cb-260e-47a5-9893-203a3943d704", "grade": "TBD", "semester": "spring", "year":2024},
+    {"courseID":"3cca9c4e-a195-4759-a761-cfe09adb20b8", "grade": "TBD", "semester": "spring", "year":2024},
+    {"courseID":"2e2ebf3f-c4d3-4dae-956b-d8afa7fca627", "grade": "TBD", "semester": "spring", "year":2024},
+    {"courseID":"980e1056-4ed2-4459-b0e7-56d78eca5d73", "grade": "TBD", "semester": "spring","year":2024}]
 }]

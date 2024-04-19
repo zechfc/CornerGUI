@@ -177,13 +177,15 @@ public class AdvisorHomeController implements Initializable{
         advisor_image.setImage(image);
 
         ArrayList<String> supervisees = user.getStudentList();
-        for(int i = 0; i <= num; i++){
+        for(int i = 0; i <= supervisees.size(); i++){
             VBox vbox = new VBox();
             HBox hbox = new HBox();
             String studentID = supervisees.get(i);
             Student superviseeStudent = user.getStudent(studentID);
             Hyperlink studentLink = new Hyperlink(superviseeStudent.getFullName());
-            studentLink.setStyle("-fx-font-size: 15pt;");
+            studentLink.setStyle("-fx-font-size: 15pt; ");
+            studentLink.getStyleClass().add("studentLink");
+            
             studentLink.setOnAction(e -> {
                 Application.getInstance().setStudentUser(superviseeStudent);
                 try{
