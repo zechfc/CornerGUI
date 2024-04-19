@@ -111,6 +111,7 @@ public class AdvisorHomeController implements Initializable{
     @FXML
     void onCourseSearchClicked(ActionEvent event) throws IOException{
         String text = course_search_text.getText();
+        System.out.println(course);
 
         course_search_text.setOnKeyPressed(new EventHandler<KeyEvent>() {
             public void handle(KeyEvent e){
@@ -119,6 +120,7 @@ public class AdvisorHomeController implements Initializable{
                         return;
                     }
                     course = application.getCourse();
+                    System.out.println(course);
                     course_box.setVisible(true);
                     closeCourseBox.setVisible(true);
                     course_box.setContentText("Course Name: " + course.getCourseName() + "\n"
@@ -135,10 +137,14 @@ public class AdvisorHomeController implements Initializable{
 
         student_search_text.setOnKeyPressed(new EventHandler<KeyEvent>() {
             public void handle(KeyEvent e){
+                System.out.println(text);
+
                 if(e.getCode().equals(KeyCode.ENTER)){
-                    if(application.getStudent(text).equals(null) || application.getStudentName(text).equals(null)){
-                        return;
-                    }
+
+                    //dont know why the below breaks its when uncommented
+                    // if((application.getStudent(text).equals(null) || application.getStudentName(text).equals(null))){
+                    //     return;
+                    // }
                     if(text.contains("email")){
                         studentUser = Application.getInstance().getStudent(text);
                     }
@@ -219,13 +225,6 @@ public class AdvisorHomeController implements Initializable{
 
         course_box.setVisible(false);
         closeCourseBox.setVisible(false);
-
-        label_error.setVisible(false);
-        addStudentBox.setVisible(false);
-        studentIDField.setVisible(false);
-  
-        listOfStudents.setVisible(false);
-        closeAddStudentButton.setVisible(false);
 
 
         //Advisor Image
