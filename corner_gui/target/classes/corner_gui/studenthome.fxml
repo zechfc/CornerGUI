@@ -25,40 +25,43 @@
             <Font size="10.0" />
          </font>
       </Button>
-      <Label layoutX="266.0" layoutY="11.0" style="-fx-font-weight: bold;" text="Pocket Campus" textAlignment="CENTER" textFill="#0d0d0d">
+      <Label layoutX="241.0" layoutY="11.0" style="-fx-font-weight: bold;" text="Pocket Campus" textAlignment="CENTER" textFill="#0d0d0d">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="label_title" layoutX="286.0" layoutY="38.0" />
+      <Label fx:id="label_title" alignment="CENTER" contentDisplay="CENTER" layoutX="240.0" layoutY="39.0" prefHeight="18.0" prefWidth="138.0" />
       <VBox layoutX="18.0" layoutY="224.0" prefHeight="169.0" prefWidth="570.0">
          <children>
             <ScrollPane prefHeight="338.0" prefWidth="250.0">
                <content>
-                  <Label fx:id="semesterPlanText" alignment="TOP_LEFT" prefHeight="1000.0" prefWidth="355.0" text="Label" textFill="#0d0d0d" />
+                  <Label fx:id="semesterPlanText" alignment="TOP_LEFT" prefHeight="1000.0" prefWidth="355.0" textFill="#0d0d0d">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
                </content>
             </ScrollPane>
          </children>
       </VBox>
-      <VBox fx:id="prim_info" layoutX="200.0" layoutY="76.0" prefHeight="27.0" prefWidth="172.0">
+      <VBox layoutX="182.0" layoutY="72.0" prefHeight="111.0" prefWidth="206.0">
          <children>
             <Label fx:id="user_name" text="Name: " textFill="WHITE">
                <font>
-                  <Font size="19.0" />
+                  <Font size="15.0" />
                </font></Label>
             <Label fx:id="user_email" text="Email: " textFill="WHITE">
                <font>
-                  <Font size="19.0" />
+                  <Font size="15.0" />
                </font></Label>
             <Label fx:id="user_advisor" text="Advisor: " textFill="WHITE">
                <font>
-                  <Font size="19.0" />
+                  <Font size="15.0" />
                </font></Label>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Label text="See Note  " textFill="WHITE">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="15.0" />
                      </font></Label>
                   <Button fx:id="see_notes_button" mnemonicParsing="false" onAction="#onNotesClicked" prefHeight="20.0" prefWidth="18.0" text="v">
                      <font>
@@ -70,30 +73,31 @@
          </children>
       </VBox>
       <TextField id="courseSearch" fx:id="course_search_text" layoutX="428.0" layoutY="13.0" onAction="#onCourseSearchClicked" promptText="Course Search" />
-      <ImageView fx:id="student_image" fitHeight="140.0" fitWidth="165.0" layoutX="26.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true" />
-      <DialogPane fx:id="course_box" layoutX="47.0" layoutY="172.0" minHeight="140.0" minWidth="520.0" prefHeight="140.0" prefWidth="520.0" />
-      <Button fx:id="closeCourseBox" layoutX="541.0" layoutY="174.0" mnemonicParsing="false" onAction="#onCloseCourseBox" prefHeight="0.0" prefWidth="5.0" text="X" />
-      <DialogPane fx:id="user_notes_box" layoutX="106.0" layoutY="242.0" />
-      <TextField fx:id="note_text" layoutX="104.0" layoutY="242.0" prefHeight="54.0" prefWidth="249.0" />
+      <ImageView fx:id="student_image" fitHeight="140.0" fitWidth="150.0" layoutX="26.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true" />
+      <DialogPane fx:id="course_box" layoutX="47.0" layoutY="172.0" minHeight="140.0" minWidth="520.0" prefHeight="140.0" prefWidth="520.0" style="-fx-border-width: 2; -fx-border-color: black;" />
+      <Button fx:id="closeCourseBox" layoutX="540.0" layoutY="176.0" mnemonicParsing="false" onAction="#onCloseCourseBox" prefHeight="0.0" prefWidth="5.0" text="X" />
+      <DialogPane fx:id="user_notes_box" layoutX="106.0" layoutY="242.0" style="-fx-border-width: 3;" />
+      <TextField fx:id="note_text" layoutX="104.0" layoutY="242.0" prefHeight="54.0" prefWidth="249.0" style="-fx-border-color: black;" />
       <Button fx:id="editNote" layoutX="381.0" layoutY="257.0" mnemonicParsing="false" onAction="#onEditNoteClicked" text="Edit Note" />
-      <VBox layoutX="372.0" layoutY="76.0" prefHeight="27.0" prefWidth="172.0">
+      <VBox layoutX="394.0" layoutY="72.0" prefHeight="66.0" prefWidth="191.0">
          <children>
             <Label fx:id="user_major" text="Major:" textFill="WHITE">
                <font>
-                  <Font size="19.0" />
+                  <Font size="15.0" />
                </font>
             </Label>
             <Label fx:id="user_gpa" text="GPA:" textFill="WHITE">
                <font>
-                  <Font size="19.0" />
+                  <Font size="15.0" />
                </font>
             </Label>
             <Label fx:id="user_class" text="Class Level:" textFill="WHITE">
                <font>
-                  <Font size="19.0" />
+                  <Font size="15.0" />
                </font>
             </Label>
          </children>
       </VBox>
+      <Button fx:id="addStudentButton" layoutX="428.0" layoutY="40.0" mnemonicParsing="false" onAction="#onAddStudentClicked" prefHeight="26.0" prefWidth="150.0" text="Add Student to List" />
    </children>
 </AnchorPane>

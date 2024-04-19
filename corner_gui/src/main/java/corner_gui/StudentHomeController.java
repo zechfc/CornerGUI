@@ -2,22 +2,17 @@ package corner_gui;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.image.Image;
@@ -26,26 +21,16 @@ import model.*;
 
 public class StudentHomeController implements Initializable{
     @FXML private Label semesterPlanText;
-    @FXML private MenuButton advisor_menu;
-    @FXML private ProgressBar degree_progress;
-    @FXML private MenuItem email_advisor;
-    @FXML private Button gpaButton;
-    @FXML private Button gradesButton;
     @FXML private Label label_title;
     @FXML private Button logoutButton;
-    @FXML private Button majorMapButton;
-    @FXML private VBox prim_info;
     @FXML private Button returnButton;
-    @FXML private MenuItem schedule;
     @FXML private Button see_notes_button;
-    @FXML private Button semesterPlanButton;
     @FXML private Label user_advisor;
     @FXML private Label user_class;
     @FXML private Label user_conc;
     @FXML private Label user_email;
     @FXML private Label user_gpa;
     @FXML private Label user_major;
-    @FXML private Label user_majorgpa;
     @FXML private Label user_name;
     @FXML private DialogPane user_notes_box;
     @FXML private Button editNote;
@@ -54,8 +39,11 @@ public class StudentHomeController implements Initializable{
     @FXML private TextField course_search_text;
     @FXML private Button closeCourseBox;
     @FXML private DialogPane course_box;
+    @FXML private Button addStudentButton;
     private Application application;
     private Student user;
+    private Advisor advisorUser;
+    private ArrayList<Student> students;
     private String fxml;
     private boolean box_visible = false;
     private Course course;
@@ -139,23 +127,34 @@ public class StudentHomeController implements Initializable{
         closeCourseBox.setVisible(false);
     }
 
+    @FXML
+    void onAddStudentClicked(ActionEvent event) {
+        application.addStudentList(advisorUser.getUserID(), user.getUserID());
+    }
+
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         application = Application.getInstance();
         if (application.getUser() instanceof Student){
             user = (Student) application.getUser();
+            addStudentButton.setVisible(false);
         }else {
             user = application.getStudentUser();
+            advisorUser = application.getAdvisorUser();
+            if(advisorUser != null && !advisorUser.getStudentList().contains(user.getUserID())){
+                addStudentButton.setVisible(true);
+            }else {
+                addStudentButton.setVisible(false);
+            }
         }
         label_title.setText(user.getFirstName() + "'s Profile");
         
-        //user info
         user_name.setText("Name: " + user.getFullName());
         user_email.setText("Email: " + user.getEmail());
         user_major.setText("Major: " + user.getRealMajorName(user.getMajorName()));
         user_gpa.setText("GPA: "); //no get gpa method atm
         user_class.setText("Class Level: " + user.getClassification());
-        user_advisor.setText("Advisor: " + user.getRealAdvisorName(user.getAdvisorID())); //this needs to get the advisor's name, not ID
+        user_advisor.setText("Advisor: " + user.getRealAdvisorName(user.getAdvisorID())); 
 
         user_notes_box.setVisible(false);
         editNote.setVisible(false);
