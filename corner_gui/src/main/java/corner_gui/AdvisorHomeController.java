@@ -177,7 +177,7 @@ public class AdvisorHomeController implements Initializable{
         advisor_image.setImage(image);
 
         ArrayList<String> supervisees = user.getStudentList();
-        for(int i = 0; i <= supervisees.size(); i++){
+        for(int i = 0; i < supervisees.size(); i++){
             VBox vbox = new VBox();
             HBox hbox = new HBox();
             String studentID = supervisees.get(i);
