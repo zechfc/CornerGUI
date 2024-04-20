@@ -76,9 +76,10 @@
       <ImageView fx:id="student_image" fitHeight="140.0" fitWidth="150.0" layoutX="26.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true" />
       <DialogPane fx:id="course_box" layoutX="47.0" layoutY="172.0" minHeight="140.0" minWidth="520.0" prefHeight="140.0" prefWidth="520.0" style="-fx-border-width: 2; -fx-border-color: black;" />
       <Button fx:id="closeCourseBox" layoutX="540.0" layoutY="176.0" mnemonicParsing="false" onAction="#onCloseCourseBox" prefHeight="0.0" prefWidth="5.0" text="X" />
-      <DialogPane fx:id="user_notes_box" layoutX="106.0" layoutY="242.0" style="-fx-border-width: 3;" />
-      <TextField fx:id="note_text" layoutX="104.0" layoutY="242.0" prefHeight="54.0" prefWidth="249.0" style="-fx-border-color: black;" />
-      <Button fx:id="editNote" layoutX="381.0" layoutY="257.0" mnemonicParsing="false" onAction="#onEditNoteClicked" text="Edit Note" />
+      <DialogPane fx:id="user_notes_box" layoutX="106.0" layoutY="242.0" style="-fx-border-width: 2; -fx-border-color: black;" />
+      <Button fx:id="closeNoteBox" layoutX="443.0" layoutY="246.0" mnemonicParsing="false" onAction="#onCloseNoteBox" prefHeight="0.0" prefWidth="5.0" text="X" />
+      <TextField fx:id="note_text" layoutX="106.0" layoutY="242.0" prefHeight="59.0" prefWidth="250.0" style="-fx-border-color: black;" />
+      <Button fx:id="editNote" layoutX="362.0" layoutY="271.0" mnemonicParsing="false" onAction="#onEditNoteClicked" text="Edit Note" />
       <VBox layoutX="394.0" layoutY="72.0" prefHeight="66.0" prefWidth="191.0">
          <children>
             <Label fx:id="user_major" text="Major:" textFill="WHITE">

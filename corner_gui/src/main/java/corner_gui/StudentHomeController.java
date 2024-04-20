@@ -40,6 +40,7 @@ public class StudentHomeController implements Initializable{
     @FXML private Button closeCourseBox;
     @FXML private DialogPane course_box;
     @FXML private Button addStudentButton;
+    @FXML private Button closeNoteBox;
     private Application application;
     private Student user;
     private Advisor advisorUser;
@@ -57,6 +58,7 @@ public class StudentHomeController implements Initializable{
     void onNotesClicked(ActionEvent event) throws IOException{
         box_visible = !box_visible;
         if(box_visible){
+            closeNoteBox.setVisible(true);
             user_notes_box.setVisible(box_visible);
             user_notes_box.setContentText(user.getAdvisorNote());
             if(application.getUser() instanceof Advisor){
@@ -64,9 +66,19 @@ public class StudentHomeController implements Initializable{
             }
         }else {
             user_notes_box.setVisible(false);
+            closeNoteBox.setVisible(false);
             editNote.setVisible(false);
             note_text.setVisible(false);
         }    
+    }
+
+    @FXML
+    void onCloseNoteBox(ActionEvent event) {
+        user_notes_box.setVisible(false);
+        closeNoteBox.setVisible(false);
+        editNote.setVisible(false);
+        note_text.setVisible(false);
+        box_visible = false;
     }
 
     @FXML
@@ -165,6 +177,7 @@ public class StudentHomeController implements Initializable{
         user_notes_box.setVisible(false);
         editNote.setVisible(false);
         note_text.setVisible(false);
+        closeNoteBox.setVisible(false);
         course_box.setVisible(false);
         closeCourseBox.setVisible(false);
 
