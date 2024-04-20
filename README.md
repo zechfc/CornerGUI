@@ -6,4 +6,4 @@ Kyle Akers, Drew Dabe, Zechariah Fisher-Coleman, Vigneswaran Chinnasami, and Isa
 
 Application is developed as a system similar to the University of South Carolina's "Degree Works" where students see classes they will need to complete for their degree.
 
-Initial Github: [Pocket Campus](https://github.com/zechfc/Corner.git) test
+Initial Github: [Pocket Campus](https://github.com/zechfc/Corner.git)
