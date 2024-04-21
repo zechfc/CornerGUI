@@ -181,27 +181,39 @@ public class AdvisorHomeController implements Initializable{
 
     public void addSupervisees(){
         ArrayList<String> supervisees = user.getStudentList();
-        VBox vbox = new VBox();
-        for(int i = 0; i < supervisees.size(); i++){
+        if(supervisees.get(0).equals("")){
+            VBox vbox = new VBox();
             HBox hbox = new HBox();
-            String studentID = supervisees.get(i);
-            Student superviseeStudent = user.getStudent(studentID);
-            Hyperlink studentLink = new Hyperlink(superviseeStudent.getFullName());
-            studentLink.setStyle("-fx-font-size: 15pt; ");
-            studentLink.getStyleClass().add("studentLink");
-            
-            studentLink.setOnAction(e -> {
-                Application.getInstance().setStudentUser(superviseeStudent);
-                try{
-                    App.setRoot("studenthome");
-                } catch(IOException e1){
-                    e1.printStackTrace();
-                }
-            });
-            hbox.getChildren().add(studentLink);
+            Label label = new Label();
+            label.setText("No supervisees");
+            label.setStyle("-fx-font-size: 15px;");
+            hbox.getChildren().add(label);
             vbox.getChildren().add(hbox);
+            listBox.getChildren().add(vbox);
+        }else {
+            VBox vbox = new VBox();
+            for(int i = 0; i < supervisees.size(); i++){
+                HBox hbox = new HBox();
+                String studentID = supervisees.get(i);
+                Student superviseeStudent = user.getStudent(studentID);
+                Hyperlink studentLink = new Hyperlink(superviseeStudent.getFullName());
+                studentLink.setStyle("-fx-font-size: 15pt; ");
+                studentLink.getStyleClass().add("studentLink");
+                
+                studentLink.setOnAction(e -> {
+                    Application.getInstance().setStudentUser(superviseeStudent);
+                    try{
+                        App.setRoot("studenthome");
+                    } catch(IOException e1){
+                        e1.printStackTrace();
+                    }
+                });
+                hbox.getChildren().add(studentLink);
+                vbox.getChildren().add(hbox);
+            }
+            listBox.getChildren().add(vbox);
         }
-        listBox.getChildren().add(vbox);
+        
     }
 
 }
