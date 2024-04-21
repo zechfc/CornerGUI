@@ -14,6 +14,7 @@ public class SemesterPlan {
         protected ArrayList<String> SemesterPlan;
         private String major;
         private String name;
+        private int semestart;
 
         public SemesterPlan(String major, ArrayList<pastCourses> pastCourses, String name) {
                 this.studentRequirements = new SemesterTextFormatter();
@@ -43,11 +44,25 @@ public class SemesterPlan {
                         plan.computeIfAbsent(semester, k -> new ArrayList<>()).add(course);
                 }
 
+                public String buildForSemester(int i) {
+                        StringBuilder builder = new StringBuilder();
+                        builder.append("Semester ").append(i).append("\n");
+                        List<String> courses = plan.getOrDefault(i, new ArrayList<>());
+                        for (String course : courses) {
+                                if (course != null) {
+                                        builder.append(course).append("\n");
+                                }
+                        }
+                        return builder.toString();
+                }
+
                 public String generatePlan() {
                         StringBuilder builder = new StringBuilder();
+                        String sem = "";
                         for (int semester = 1; semester <= 8; semester++) {
-                                
-                                builder.append("Semester ").append(semester).append(":\n");
+                                if (semester % 2 == 0) sem = "Spring "; 
+                                else sem = "Fall ";
+                                builder.append(sem).append((int)semestart+(semester/2)).append(":\n");
                                 List<String> courses = plan.getOrDefault(semester, new ArrayList<>());
                                 for (String course : courses) {
                                         if (course != null) {
@@ -58,6 +73,7 @@ public class SemesterPlan {
                         return builder.toString();
                 }
         }
+
 
         // 8 semester plan
         public String generatePlan() {
@@ -87,8 +103,8 @@ public class SemesterPlan {
                         ArrayList <CourseReccommended> coursesRequired = m.getprogramRequirements();
                         // iterate and find the specific course
                         // String[] courseTypes = {"getCarolinacoreCourses","getMajorCourses"};
-                        int semestart = (int) (coursesTaken.get(0).getPastCourseYear());
-
+                        semestart = (int) (coursesTaken.get(0).getPastCourseYear());
+                        
                         int semester = 0;
                         int currentSemester = 0;
                         for (int i = 0; i < coursesTaken.size(); i++) {
@@ -276,6 +292,10 @@ public class SemesterPlan {
          * Application Area Elective
          * See Bulletin listing
          */
+
+        public String getSemesterPlanSemester(int i) {
+                return studentRequirements.buildForSemester(i);
+        }
 
         public ArrayList<String> getStudentReq(String majorReq) {
                 // Logic to retrieve specific student requirements based on major
