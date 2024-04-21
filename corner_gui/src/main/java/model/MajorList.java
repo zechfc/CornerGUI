@@ -1,3 +1,8 @@
+ /**
+     * Method to set the major name
+     * This method does not currently change the functionality of the code
+     * It returns the input major string without making any changes
+     */
 package model;
 import java.util.ArrayList;
 
