@@ -258,10 +258,6 @@ public class Student extends User {
         return student();
     }
 
-    public String getImage(){
-        return image;
-    }
-
     public void editAdvisorID(String advisorID){
         
             this.advisorID = advisorID;

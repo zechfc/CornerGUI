@@ -20,6 +20,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import model.*;
 
 public class AdvisorHomeController implements Initializable{
@@ -37,9 +38,8 @@ public class AdvisorHomeController implements Initializable{
     @FXML private Button closeAddStudentButton;
     @FXML private Label listOfStudents;
     @FXML private ImageView advisor_image;
-    @FXML private DialogPane addStudentBox;
     @FXML private Label label_error;
-    @FXML private VBox listVBOX;
+    @FXML private AnchorPane listBox;
 
     private Application application;
     private Advisor user;
@@ -56,7 +56,6 @@ public class AdvisorHomeController implements Initializable{
     @FXML
     void onReturnClicked(ActionEvent event) throws IOException{
         App.setRoot(fxml);
-        initialize(null, null);
     }
 
     @FXML
@@ -176,8 +175,12 @@ public class AdvisorHomeController implements Initializable{
         Image image = new Image(getClass().getResourceAsStream("/image/" + user.getUserImage()));
 
         advisor_image.setImage(image);
+        addSupervisees();
+    }
 
-        
+
+    public void addSupervisees(){
+        listBox.getChildren().clear();
         ArrayList<String> supervisees = user.getStudentList();
         for(int i = 0; i < supervisees.size(); i++){
             VBox vbox = new VBox();
@@ -198,9 +201,8 @@ public class AdvisorHomeController implements Initializable{
             });
             hbox.getChildren().add(studentLink);
             vbox.getChildren().add(hbox);
-            listVBOX.getChildren().add(vbox);
+            listBox.getChildren().add(vbox);
         }
-
     }
 
 }

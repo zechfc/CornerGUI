@@ -59,18 +59,45 @@ public class DataWriter extends DataConstants {
 		studentDetails.put(USER_USER_NAME, student.getEmail());
 		studentDetails.put(USER_AGE, student.getUserAge());
 		studentDetails.put(MAJOR, student.getMajorName());
-		// studentDetails.put(OURSES_PRESENT, student.getCurrentYear()); 
-		// Courses present is not a current year?
 		studentDetails.put(CLASSIFICATION, student.getClassification());
 		studentDetails.put(NOTES, student.getAdvisorNote());
 		studentDetails.put(TRANSFER_CREDITS, student.getTransferCredits());
 		studentDetails.put(APPLICATION_AREA, student.getApplicationArea());
-		studentDetails.put(COURSES_PRESENT, student.getCurrentCourses());
-		studentDetails.put(COURSES_PAST, student.getPastCourses());
-		studentDetails.put(IMAGE, student.getImage());
+
+		JSONArray pastCourses = convertToJsonArray(student.getPastCourses());
+		JSONArray currentCourses = convertToJsonArray(student.getCurrentCourses());
+		studentDetails.put(COURSES_PRESENT, currentCourses);
+		studentDetails.put(COURSES_PAST, pastCourses);
+
+		studentDetails.put(IMAGE, student.getUserImage());
 
 
 		return studentDetails;
+	}
+
+	public static JSONArray convertToJsonArray(ArrayList<?> array){
+		JSONArray jsonArray = new JSONArray();
+
+		for(Object obj : array){
+			if(obj instanceof pastCourses){
+				pastCourses course = (pastCourses) obj;
+				JSONObject courseJSON = new JSONObject();
+				courseJSON.put(COURSE_ID, course.getPastCourseID());
+				courseJSON.put(GRADE, course.getPastCourseGrade());
+            	courseJSON.put(SEMESTER, course.getPastCourseSemester());
+            	courseJSON.put(YEAR, course.getPastCourseYear());
+            	jsonArray.add(courseJSON);
+        } else if (obj instanceof currentCourses) {
+            currentCourses course = (currentCourses) obj;
+            JSONObject courseJSON = new JSONObject();
+            courseJSON.put(COURSE_ID, course.getCurrentCourseID());
+            courseJSON.put(GRADE, course.getCurrentCourseGrade());
+            courseJSON.put(SEMESTER, course.getCurrentCourseSemester());
+            courseJSON.put(YEAR, course.getCurrentCourseYear());
+            jsonArray.add(courseJSON);
+			}
+		}
+		return jsonArray;
 	}
 
 	// todo
@@ -91,6 +118,7 @@ public class DataWriter extends DataConstants {
 		advisorDetails.put(USER_AGE, advisor.getUserAge());
 		advisorDetails.put(USER_USER_NAME, advisor.getEmail());
 		advisorDetails.put(ADMIN, advisor.getAdmin());
+		advisorDetails.put(IMAGE, advisor.getUserImage());
 		
 		return advisorDetails;
 	}

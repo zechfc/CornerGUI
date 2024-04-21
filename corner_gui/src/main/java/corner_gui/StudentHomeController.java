@@ -41,6 +41,7 @@ public class StudentHomeController implements Initializable{
     @FXML private DialogPane course_box;
     @FXML private Button addStudentButton;
     @FXML private Button closeNoteBox;
+    
     private Application application;
     private Student user;
     private Advisor advisorUser;

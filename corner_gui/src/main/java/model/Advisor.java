@@ -39,15 +39,9 @@ public class Advisor extends User{
         return false;
     }
 
-    public boolean addStudent(String userID){
-        Student student = StudentList.getInstance().getStudentID(userID);
-        if(student != null && !hasStudent(student.userID)){
-            studentsSupervising.add(student.userID);
-            DataWriter.saveAdvisors();
-            return true;
-        }
-        return false;
-
+    public void addStudent(String userID){
+        studentsSupervising.add(userID);
+        DataWriter.saveAdvisors();
     }
 
     public ArrayList<String> getStudentList(){
