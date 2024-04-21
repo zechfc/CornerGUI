@@ -167,10 +167,12 @@ public class StudentHomeController implements Initializable{
         user_gpa.setText("GPA: "); //no get gpa method atm
         user_class.setText("Class Level: " + user.getClassification());
 
-        if(user.getRealAdvisorName(user.getAdvisorID()) == null)
+        if(user.getAdvisorID().equals("")){
             user_advisor.setText("No advisor");
-        else
+        } else {
             user_advisor.setText("Advisor: " + user.getRealAdvisorName(user.getAdvisorID()));
+        }
+            
 
         // user_advisor.setText("Advisor: " + user.getRealAdvisorName(user.getAdvisorID())); 
 

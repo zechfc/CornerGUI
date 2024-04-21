@@ -56,6 +56,7 @@ public class AdvisorHomeController implements Initializable{
     @FXML
     void onReturnClicked(ActionEvent event) throws IOException{
         App.setRoot(fxml);
+        initialize(null, null);
     }
 
     @FXML
@@ -176,6 +177,7 @@ public class AdvisorHomeController implements Initializable{
 
         advisor_image.setImage(image);
 
+        
         ArrayList<String> supervisees = user.getStudentList();
         for(int i = 0; i < supervisees.size(); i++){
             VBox vbox = new VBox();
