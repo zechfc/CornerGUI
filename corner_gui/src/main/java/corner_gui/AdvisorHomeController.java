@@ -180,10 +180,9 @@ public class AdvisorHomeController implements Initializable{
 
 
     public void addSupervisees(){
-        listBox.getChildren().clear();
         ArrayList<String> supervisees = user.getStudentList();
+        VBox vbox = new VBox();
         for(int i = 0; i < supervisees.size(); i++){
-            VBox vbox = new VBox();
             HBox hbox = new HBox();
             String studentID = supervisees.get(i);
             Student superviseeStudent = user.getStudent(studentID);
@@ -201,8 +200,8 @@ public class AdvisorHomeController implements Initializable{
             });
             hbox.getChildren().add(studentLink);
             vbox.getChildren().add(hbox);
-            listBox.getChildren().add(vbox);
         }
+        listBox.getChildren().add(vbox);
     }
 
 }

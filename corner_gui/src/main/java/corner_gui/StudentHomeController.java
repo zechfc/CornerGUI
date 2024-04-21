@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.DialogPane;
@@ -123,12 +124,13 @@ public class StudentHomeController implements Initializable{
     void onReturnClicked(ActionEvent event) throws IOException{
         if(application.getUser() instanceof Advisor){
             App.setRoot("advisorhome");
+
         }else {
             if(fxml == null){
                 fxml = "studenthome";
             }
             App.setRoot(fxml);
-            if(fxml == "studenthome"){
+            if(fxml.equals("studenthome")){
                 App.setRoot("home");
             }
         }
