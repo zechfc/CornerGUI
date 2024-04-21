@@ -1,3 +1,4 @@
+// This class represents the mapping of a major to its required courses and electives
 package model;
 import java.util.ArrayList;
 import java.util.HashMap;
